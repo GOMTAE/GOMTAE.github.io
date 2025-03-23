@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Academic Project Page</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">High Temporal Consistency through Semantic Similarity Propagation in
+              Semi-Supervised Video Semantic Segmentation for
+              Autonomous Flight</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+              <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Cédric Vincent</a><sup>1,2,*</sup>,
+              </span>
+              <span class="author-block">
+              <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Taehyoung Kim</a><sup>2,*</sup>,
+              </span>
+              <span class="author-block">
+              <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Henri Meeß</a><sup>2</sup>
+              </span>
+            </div>
+  
+            <div class="is-size-5 publication-authors">
+                <span class="author-block">1. Télécom Paris, Institut Polytechnique de Paris</span>
+                <span class="author-block">2. Fraunhofer IVI</span></br>
+                <span class="author-block">CVPR 2025</span>
+              <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+            </div>
+  
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2503.15676.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                  <!-- Supplementary PDF link -->
+                  <span class="link-block">
+                    <a href="https://cvpr.thecvf.com/virtual/2025/poster/35092" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>CVPR 2025</span>
+                  </a>
+                </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/FraunhoferIVI/SSP" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="http://arxiv.org/abs/2503.15676" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        <source src="static/videos/ssp_banner_video.mp4"
+        type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-left">
+        Our proposed <strong>Semantic Similarity Propagation (SSP)</strong> method enhances temporal consistency in real-time aerial video
+        segmentation by propagating predictions across frames using feature similarity and global registration alignment.
+        Additionally, our <strong>Knowledge Distillation SSP (KD-SSP)</strong> leverages sparsely labeled datasets to train an efficient model
+        with high-quality supervision, achieving superior TC than other methods while maintaining competitive
+        accuracy and inference speed.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Semantic segmentation from RGB cameras is essential to the perception of autonomous flying vehicles. The stability of
+            predictions through the captured videos is paramount to their reliability and, by extension, to the trustworthiness of
+            the agents. In this paper, we propose a lightweight video semantic segmentation approach—suited to onboard real-time
+            inference—achieving high temporal consistency on aerial data through <strong>Semantic Similarity
+            Propagation</strong> across frames. <strong>SSP</strong> temporally propagates the predictions of an efficient image
+            segmentation model with global registration alignment to compensate for camera movements. It combines the current
+            estimation and the prior prediction with linear interpolation using weights computed from the features similarities of
+            the two frames. Because data availability is a challenge in this domain, we propose a consistency-aware
+            <strong>Knowledge Distillation</strong> training procedure for sparsely labeled datasets with few annotations. Using a
+            large image segmentation model as a teacher to train the efficient SSP, we leverage the strong correlations between
+            labeled and unlabeled frames in the same training videos to obtain high-quality supervision on all frames.
+            <strong>KD-SSP</strong> obtains a significant temporal consistency increase over the base image segmentation model of 12.5%
+            and 6.7% TC on UAVid and RuralScapes respectively, with higher accuracy and comparable inference speed. On these
+            aerial datasets, KD-SSP provides a superior segmentation quality and inference speed trade-off than other video methods
+            proposed for general applications and shows considerably higher consistency.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Section 1: SSP Overview - Normal -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title">SSP Overview</h2>
+      <figure class="image">
+        <img src="static/images/1_SSP_overview.png" alt="Overview of Semantic Similarity Propagation (SSP)">
+      </figure>
+      <div class="columns is-centered mt-2">
+        <div class="content has-text-justified">
+          <p>
+            SSP enhances temporal consistency by combining current segmentation predictions with past frame predictions
+            using linear
+            interpolation. The interpolation weights, determined by semantic feature similarities between consecutive
+            frames, are
+            computed through convolutional layers. Additionally, global registration alignment compensates efficiently
+            for camera
+            movements, aligning previous predictions to the current frame without relying on expensive optical flow.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 2: SSP Architecture - Light -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title">Inference over a Video</h2>
+      <figure class="image">
+        <img src="static/images/2_SSP_Architecture.png" alt="Architecture of SSP during video inference">
+      </figure>
+      <div class="columns is-centered mt-2">
+        <div class="content has-text-justified">
+          <p>
+            The detailed architecture shows the step-by-step inference process. During inference, SSP combines
+            the current frame prediction (logits) from an image segmentation model with the previous frame's aligned
+            prediction
+            using linear interpolation. This alignment is achieved via a global registration homography transformation
+            (H) to
+            compensate efficiently for camera movements. Interpolation weights are computed by a similarity layer, which
+            uses
+            convolutional layers to analyze semantic feature maps extracted from both current and past frames. This
+            design
+            facilitates efficient, stable, and accurate semantic predictions throughout entire videos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 3: SSP Training Process - Normal -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title">Consistency-Aware Knowledge Distillation</h2>
+      <figure class="image">
+        <img src="static/images/3_SSP_Training.png" alt="SSP Training Process">
+      </figure>
+      <div class="columns is-centered mt-2">
+        <div class="content has-text-justified">
+          <p>
+            Due to sparse labeling in aerial datasets, the paper proposes a semi-supervised knowledge distillation (KD)
+            training
+            process. A larger, high-quality teacher model provides consistent annotations across all frames, enabling
+            the SSP model
+            to learn effectively from unlabeled frames. This method significantly enhances accuracy and temporal
+            consistency without
+            sacrificing inference speed.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 4: Comparison on Validation Sets - Light -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title">Results</h2>
+      <figure class="image">
+        <img src="static/images/4_Comparison_Table.png" alt="Comparison on Validation Sets of UAVid and RuralScapes">
+      </figure>
+      <div class="columns is-centered mt-2">
+        <div class="content has-text-justified">
+          <p>
+            Experiments on UAVid and RuralScapes datasets demonstrate that SSP and KD-SSP significantly outperform
+            baseline image
+            models and other established video segmentation methods. Specifically, KD-SSP achieves 80.63% mIoU and
+            91.53% Temporal
+            Consistency (TC) on UAVid and 64.56% mIoU and 94.00% TC on RuralScapes, showing a superior balance of
+            accuracy,
+            consistency, and inference speed.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 5: Qualitative Results - Normal -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title">Qualitative Results</h2>
+      <figure class="image">
+        <img src="static/images/5_SSP_Qualitative_Results.png" alt="Qualitative Results of SSP">
+      </figure>
+      <div class="columns is-centered mt-2">
+        <div class="content has-text-justified">
+          <p>
+            Qualitative comparisons confirm SSP's superior temporal stability and segmentation quality across video frames, clearly
+            outperforming traditional image-based models and other video segmentation methods like NetWarp and TCB-OCR. Overall, SSP
+            provides an efficient, accurate, and highly temporally consistent video segmentation solution suited for autonomous UAV
+            applications, effectively addressing the unique challenges posed by aerial footage, including limited annotations and
+            camera motion.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Youtube video -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <h2 class="title is-3">Video Presentation - TBA</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="publication-video">
+            <!-- Youtube embed code here -->
+            <!-- <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End youtube video -->
+
+
+<!-- Video carousel -->
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3"></h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" autoplay controls muted loop height="100%">
+            <source src="static/videos/carousel1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" autoplay controls muted loop height="100%">
+            <source src="static/videos/carousel2.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\
+            <source src="static/videos/carousel3.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End video carousel -->
+
+<!-- Paper poster -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+<!--End paper poster -->
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{vincent2025hightemporalconsistencysemantic,
+      title={High Temporal Consistency through Semantic Similarity Propagation in Semi-Supervised Video Semantic Segmentation
+      for Autonomous Flight},
+      author={Cédric Vincent and Taehyoung Kim and Henri Meeß},
+      year={2025},
+      eprint={2503.15676},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2503.15676},
+      }</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            <small>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </small>
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+  </html>
