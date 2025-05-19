@@ -190,3 +190,14 @@ body {
 .slider-btn.next {
   right: 1rem;
 }
+
+/* force each slide to stay full‐width */
+#ssp-slider {
+  display: flex;
+  overflow: hidden;
+}
+
+#ssp-slider .slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+}
