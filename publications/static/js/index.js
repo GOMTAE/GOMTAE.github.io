@@ -19,3 +19,18 @@ $(document).ready(function() {
     bulmaSlider.attach();
 
 })
+
+document.addEventListener('DOMContentLoaded', () => {
+	const slider = document.getElementById('ssp-slider');
+	const slides = Array.from(slider.querySelectorAll('.slide'));
+	let idx = 0;
+  
+	function showSlide(n) {
+	  slides[idx].classList.remove('active');
+	  idx = (n + slides.length) % slides.length;
+	  slides[idx].classList.add('active');
+	}
+  
+	slider.querySelector('.next').addEventListener('click', () => showSlide(idx + 1));
+	slider.querySelector('.prev').addEventListener('click', () => showSlide(idx - 1));
+  });
