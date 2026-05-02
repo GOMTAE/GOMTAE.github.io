@@ -1,0 +1,192 @@
+{
+  "Manipulation": [
+    {
+      "image": "_static/mission_webps/CityEnv_drone_landing_pad_mission4_start_fp_image.png",
+      "instruction": "Find and land on the drone landing pad"
+    }
+  ],
+  "Patrol": [
+    {
+      "image": "_static/mission_webps/AirSimNHEnv_main_road_mission3_start_fp_image.png",
+      "instruction": "Follow the main road and perform a patrol mission around the whole neighborhood"
+    },
+    {
+      "image": "_static/mission_webps/Africa_SavannahEnv_road_track_mission3_start_fp_image.png",
+      "instruction": "Follow the road track until it ends"
+    }
+  ],
+  "Visual_Inspection": [
+    {
+      "image": "_static/mission_webps/NHEnv_grey_car_mission29_start_fp_image.png",
+      "instruction": "Fly towards and down close to a position such that the rear license plate of the illegally parked 'grey' car is centered in the camera view and in close up and clearly legible. Read and report all the characters/numbers visible on the rear license plate."
+    },
+    {
+      "image": "_static/mission_webps/NHEnv_van_license_plate_number_mission25_start_fp_image.png",
+      "instruction": "Navigate to the van and find the license plate number"
+    },
+    {
+      "image": "_static/mission_webps/NHEnv_burning_wind_turbine_mission21_start_fp_image.png",
+      "instruction": "Navigate to the burning wind turbing and go around safely and inspect the engine from the behind. Take a closer look such that the full engine rear side is in the frame."
+    },
+    {
+      "image": "_static/mission_webps/NHEnv_swimming_Pool_mission6_start_fp_image.png",
+      "instruction": "decend to the swimming pool near the house and navigate close to the swimming pool, such that the swimming pool is centered and covers a very large porition of the image"
+    },
+    {
+      "image": "_static/mission_webps/NHEnv_burning_pole_mission25_start_fp_image.png",
+      "instruction": "Navigate to the burning pole and report which section is under fire"
+    },
+    {
+      "image": "_static/mission_webps/NHEnv_grey_car_mission30_start_fp_image.png",
+      "instruction": "inspect the front license plate of the car parked on the road right infront, descend take a closer look and report the license plate number"
+    },
+    {
+      "image": "_static/mission_webps/NHEnv_illegally_parked_car_mission30_start_fp_image.png",
+      "instruction": "Navigate to the rear side of the car to descend and report the license plate of the illegally parked grey car that is blocking the route for emergency vehicles."
+    },
+    {
+      "image": "_static/mission_webps/NHEnv_red_car_mission30_start_fp_image.png",
+      "instruction": "decend to the rear license plate of the red car, take a closer look and report the license plate number."
+    },
+    {
+      "image": "_static/mission_webps/NHEnv_greenish_rock_mission30_start_fp_image.png",
+      "instruction": "there is a greenish rock in the farm area infront of the house, take a closer look at the object by descending and making sure that the object is in closeup in the frame."
+    },
+    {
+      "image": "_static/mission_webps/NHEnv_advertisement_Board_mission10_start_fp_image.png",
+      "instruction": "Find and read the advertisement board, report the contact information."
+    },
+    {
+      "image": "_static/mission_webps/NHEnv_road_sign_mission30_start_fp_image.png",
+      "instruction": "At the intersection on the left side, there is a street sign, descend and navigate close such that the full sign is in closeup in the frame and report what it reads"
+    },
+    {
+      "image": "_static/mission_webps/NHEnv_burning_house_mission31_start_fp_image.png",
+      "instruction": "a house is burning, your task is to descend near the entrance of the house, navigate down to the entrance of the burning house for inspection"
+    },
+    {
+      "image": "_static/mission_webps/NHEnv_burning_windturbine_mission4_start_fp_image.png",
+      "instruction": "Navigate to the burning wind turbine and have a closer look at the damage from the front side of the wind turbine. Make sure to have a closer look such that the damage and the wind turine are significant portions of the frame."
+    },
+    {
+      "image": "_static/mission_webps/AirSimNHEnv_deer_statue_mission10_start_fp_image.png",
+      "instruction": "Inspect the statue and find out what it represents."
+    },
+    {
+      "image": "_static/mission_webps/AirSimNHEnv_red_car_mission1_start_fp_image.png",
+      "instruction": "Navigate to the Red Car and turn to face its front license plate"
+    },
+    {
+      "image": "_static/mission_webps/AirSimNHEnv_basket_ball_ring_mission9_start_fp_image.png",
+      "instruction": "Inspect whether the basketball ring has any damage and report if the net exists or not"
+    },
+    {
+      "image": "_static/mission_webps/AirSimNHEnv_red_car_mission6_start_fp_image.png",
+      "instruction": "Find the license plate number of the red car parked near the swimming pool"
+    },
+    {
+      "image": "_static/mission_webps/AirSimNHEnv_red_car_license_plate_low_altitude_mission11_start_fp_image.png",
+      "instruction": "Find the front license Plate of the Red Car"
+    },
+    {
+      "image": "_static/mission_webps/AirSimNHEnv_basketball_ring_mission3_start_fp_image.png",
+      "instruction": "Inspect the basketball ring"
+    },
+    {
+      "image": "_static/mission_webps/AirSimNHEnv_street_sign_low_altitude_mission12_start_fp_image.png",
+      "instruction": "Find the name of the current street"
+    },
+    {
+      "image": "_static/mission_webps/AirSimNHEnv_street_name_mission2_start_fp_image.png",
+      "instruction": "Find the name of the current street"
+    },
+    {
+      "image": "_static/mission_webps/AirSimNHEnv_grey_car_mission7_start_fp_image.png",
+      "instruction": "Find the license plate number of the grey car"
+    },
+    {
+      "image": "_static/mission_webps/AirSimNHEnv_deer_statue_mission4_start_fp_image.png",
+      "instruction": "Inspect the statue and find out what it represents."
+    },
+    {
+      "image": "_static/mission_webps/AirSimNHEnv_grey_car_license_plate_mission15_start_fp_image.png",
+      "instruction": "Find the rear license plate number of the grey car"
+    },
+    {
+      "image": "_static/mission_webps/AirSimNHEnv_street_sign_mission8_start_fp_image.png",
+      "instruction": "Find the name of the current street"
+    },
+    {
+      "image": "_static/mission_webps/AirSimNHEnv_grey_car_mission5_start_fp_image.png",
+      "instruction": "Navigate to the grey car and inspect its rear license plate from behind the vehicle"
+    },
+    {
+      "image": "_static/mission_webps/AirSimNHEnv_basketball_ring__low_altitude_mission13_start_fp_image.png",
+      "instruction": "Inspect the basketball ring"
+    },
+    {
+      "image": "_static/mission_webps/AirSimNHEnv_deer_statue_low_alititude_mission14_start_fp_image.png",
+      "instruction": "Inspect the statue and find what it represents"
+    },
+    {
+      "image": "_static/mission_webps/CityEnv_rooftopfarmingSoilSample_mission20_start_fp_image.png",
+      "instruction": "Move ahead the building and inspect roof top farming soil sample."
+    },
+    {
+      "image": "_static/mission_webps/CityEnv_outdoor_unit_mission2_start_fp_image.png",
+      "instruction": "Inspect outdoor unit"
+    },
+    {
+      "image": "_static/mission_webps/CityEnv_rooftopfarming2_mission4_start_fp_image.png",
+      "instruction": "Inspect rooftop farming2"
+    },
+    {
+      "image": "_static/mission_webps/CityEnv_outdoor_unit_mission11_start_fp_image.png",
+      "instruction": "fly up and inspect the outdoor unit"
+    },
+    {
+      "image": "_static/mission_webps/CityEnv_building_mission8_start_fp_image.png",
+      "instruction": "Move around the building for inspection"
+    },
+    {
+      "image": "_static/mission_webps/CityEnv_building_mission16_start_fp_image.png",
+      "instruction": "Navigate towards the building and inspect the building."
+    },
+    {
+      "image": "_static/mission_webps/CityEnv_toppled_car_mission2_start_fp_image.png",
+      "instruction": "Navigate close to the vehicle and report what happened"
+    },
+    {
+      "image": "_static/mission_webps/CityEnv_building_mission17_start_fp_image.png",
+      "instruction": "Navigate towards the cell tower and inspect."
+    },
+    {
+      "image": "_static/mission_webps/CityEnv_pedestrianCross_mission19_start_fp_image.png",
+      "instruction": "Move ahead the road and monitor pedestrian cross."
+    },
+    {
+      "image": "_static/mission_webps/CityEnv_pedestrianCross_mission5_start_fp_image.png",
+      "instruction": "Watch the pedestrianCross"
+    },
+    {
+      "image": "_static/mission_webps/CityEnv_pedestrianCross_mission9_start_fp_image.png",
+      "instruction": "fly to the pedestrian cross and watch"
+    },
+    {
+      "image": "_static/mission_webps/CityEnv_outdoorUnit_mission18_start_fp_image.png",
+      "instruction": "Navigate towards the outdoorunit and inspect."
+    },
+    {
+      "image": "_static/mission_webps/CityEnv_rooftopfarming_mission3_start_fp_image.png",
+      "instruction": "Inspect rooftop farming"
+    },
+    {
+      "image": "_static/mission_webps/CityEnv_building_mission15_start_fp_image.png",
+      "instruction": "fly from bottom to top of building and inspect it"
+    },
+    {
+      "image": "_static/mission_webps/CityEnv_ship_photo_mission13_start_fp_image.png",
+      "instruction": "fly toward ship and take photos "
+    }
+  ]
+}

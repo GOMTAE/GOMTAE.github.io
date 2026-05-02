@@ -1,0 +1,23 @@
+[
+  {"model": "Gemini 3.1 Pro", "sn": false, "success_rate": 34.8, "mission_progress": 73.3, "oracle_sr": 17.2, "cr": 4.3, "eff": 53.6, "open": false},
+  {"model": "Gemini 2.5 Pro", "sn": false, "success_rate": 8.9, "mission_progress": 54.2, "oracle_sr": 14.4, "cr": 2.9, "eff": 18.2, "open": false},
+  {"model": "Gemini 3 Flash", "sn": false, "success_rate": 7.9, "mission_progress": 54.0, "oracle_sr": 20.2, "cr": 4.9, "eff": 30.8, "open": false},
+  {"model": "Gemini 2.5 Flash", "sn": false, "success_rate": 5.6, "mission_progress": 39.0, "oracle_sr": 12.4, "cr": 4.1, "eff": 24.7, "open": false},
+  {"model": "Gemini 3.1 Flash Lite", "sn": false, "success_rate": 6.9, "mission_progress": 24.0, "oracle_sr": 8.1, "cr": 2.5, "eff": 29.9, "open": false},
+  {"model": "Gemini Robotics 1.5", "sn": false, "success_rate": 0.0, "mission_progress": 35.9, "oracle_sr": 6.9, "cr": 5.8, "eff": 32.1, "open": false},
+  {"model": "Gemini Robotics 1.6", "sn": true, "success_rate": 32.2, "mission_progress": 70.3, "oracle_sr": 17.8, "cr": 0.1, "eff": 24.2, "open": false},
+  {"model": "Gemma 4-31B-IT", "sn": true, "success_rate": 26.7, "mission_progress": 59.3, "oracle_sr": 11.1, "cr": 1.6, "eff": 13.6, "open": true},
+  {"model": "Claude Opus 4.6", "sn": false, "success_rate": 3.3, "mission_progress": 18.9, "oracle_sr": 10.0, "cr": 4.7, "eff": 16.6, "open": false},
+  {"model": "Claude Sonnet 4.6", "sn": false, "success_rate": 4.7, "mission_progress": 31.2, "oracle_sr": 7.1, "cr": 2.0, "eff": 30.2, "open": false},
+  {"model": "GPT 5.4", "sn": false, "success_rate": 2.0, "mission_progress": 45.0, "oracle_sr": 0.0, "cr": 4.0, "eff": 17.9, "open": false},
+  {"model": "GPT 5.4 Mini", "sn": false, "success_rate": 1.0, "mission_progress": 20.0, "oracle_sr": 0.0, "cr": 5.0, "eff": 25.7, "open": false},
+  {"model": "Nova Premier", "sn": false, "success_rate": 1.1, "mission_progress": 15.0, "oracle_sr": 5.6, "cr": 1.7, "eff": 17.0, "open": false},
+  {"model": "Nova Pro", "sn": false, "success_rate": 0.0, "mission_progress": 15.2, "oracle_sr": 3.3, "cr": 2.0, "eff": 59.0, "open": false},
+  {"model": "Qwen 3.5 2B", "sn": true, "success_rate": 0, "mission_progress": -1, "oracle_sr": -1, "cr": -1, "eff": -1, "open": true},
+  {"model": "Qwen 3.5 4B", "sn": true, "success_rate": 1.1, "mission_progress": -1, "oracle_sr": -1, "cr": -1, "eff": -1, "open": true},
+  {"model": "Qwen 3.5 9B", "sn": true, "success_rate": 3.3, "mission_progress": 34.8, "oracle_sr": 7.8, "cr": 6.22, "eff": 29.0, "open": true},
+  {"model": "Qwen 3.5 27B", "sn": true, "success_rate": 10.0, "mission_progress": 53.2, "oracle_sr": 8.9, "cr": 0.0, "eff": 16.7, "open": true},
+  {"model": "Qwen 3.5 35B-A3B", "sn": false, "success_rate": 2.2, "mission_progress": 39.1, "oracle_sr": 7.8, "cr": 7.5, "eff": 32.1, "open": true},
+  {"model": "Qwen 3.6 35B-A3B-Q8", "sn": true, "success_rate": 7.9, "mission_progress": 41.5, "oracle_sr": 7.9, "cr": 0.2, "eff": 29.5, "open": true},
+  {"model": "InternVL3.5 14B", "sn": true, "success_rate": 1.1, "mission_progress": 29.2, "oracle_sr": 6.7, "cr": 0.2, "eff": 11.4, "open": true}
+]

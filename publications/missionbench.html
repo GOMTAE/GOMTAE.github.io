@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="MissionBench: Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents">
+  <meta property="og:title" content="MissionBench"/>
+  <meta property="og:description" content="Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents"/>
+  <meta property="og:url" content="https://GOMTAE.github.io/publications/missionbench.html"/>
+  <meta property="og:image" content="../images/MissionBench/missionbench_intro.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:title" content="MissionBench">
+  <meta name="twitter:description" content="Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents">
+  <meta name="twitter:image" content="../images/MissionBench/missionbench_intro.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="MissionBench, aerial robotics, MLLM, benchmark, drone, UAV, zero-shot">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MissionBench</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <style>
+    .mission-grid {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .mission-card {
+      width: 30%;
+      min-width: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .mission-card img {
+      width: 100%;
+      border-radius: 6px;
+      object-fit: cover;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .mission-caption {
+      font-size: 0.9em;
+      font-weight: 600;
+      margin-bottom: 8px;
+      text-align: center;
+      color: #363636;
+    }
+    .section-divider {
+      height: 1px;
+      border: 0;
+      background: #dbdbdb;
+      margin: 24px auto;
+      max-width: 900px;
+    }
+    :root {
+      --pst-color-text-base: #e0e0e0;
+      --pst-color-border: rgba(200, 200, 200, 0.25);
+    }
+    .leaderboard-container {
+      max-width: 100%;
+      overflow-x: auto;
+      border: 1px solid #444;
+      border-radius: 8px;
+      padding: 20px;
+      background: #1a1a2e;
+    }
+    #grouped_by_family {
+      height: 400px;
+      max-width: 100%;
+    }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">MissionBench</h1>
+          <h2 class="subtitle is-4" style="margin-top: -0.5rem; margin-bottom: 1.5rem;">
+            Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents
+          </h2>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://www.linkedin.com/in/sumanrbt97/" target="_blank">Suman Navaratnarajah</a><sup>1,2,*</sup>,</span>
+            <span class="author-block"><a href="https://GOMTAE.github.io/" target="_blank">Taehyoung Kim</a><sup>2,*</sup>,</span>
+            <span class="author-block"><a href="https://www.linkedin.com/in/ishaanbhimwal/" target="_blank">Ishaan Bhimwal</a><sup>2,3</sup>,</span>
+            <span class="author-block"><a href="https://www.linkedin.com/in/ryousuke-yamada-21b233195/" target="_blank">Ryousuke Yamada</a><sup>1,4</sup>,</span>
+            <span class="author-block"><a href="https://www.linkedin.com/in/yannik-blei-9a7686155/" target="_blank">Yannik Blei</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://www.linkedin.com/in/burgard/" target="_blank">Wolfram Burgard</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://www.linkedin.com/in/jona-ruthardt/" target="_blank">Jona Ruthardt</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://www.linkedin.com/in/yuki-m-asano/" target="_blank">Yuki M. Asano</a><sup>1</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors" style="margin-top: 0.75rem;">
+            <span class="author-block"><sup>1</sup> <a href="https://www.utn.de/" target="_blank">University of Technology Nuremberg</a></span>
+            &nbsp;&nbsp;&nbsp;
+            <span class="author-block"><sup>2</sup> <a href="https://www.ivi.fraunhofer.de" target="_blank">Fraunhofer IVI</a></span>
+            &nbsp;&nbsp;&nbsp;
+            <span class="author-block"><sup>3</sup> <a href="https://www.thws.de/en/" target="_blank">THWS</a></span>
+            &nbsp;&nbsp;&nbsp;
+            <span class="author-block"><sup>4</sup> <a href="https://www.aist.go.jp/" target="_blank">AIST</a></span>
+            <br>
+            <span class="eql-cntrb" style="font-size: 1rem;"><sup>*</sup>Equal contribution</span>
+          </div>
+
+          <div class="column has-text-centered" style="margin-top: 1rem;">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://github.com/suman1209/MissionBench" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper (coming soon)</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hero image -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <figure class="image">
+        <img src="../images/MissionBench/missionbench_intro.png" alt="MissionBench overview figure">
+      </figure>
+      <p class="has-text-justified" style="margin-top: 1rem; font-size: 0.95rem; color: #555; max-width: 860px; margin-left: auto; margin-right: auto;">
+        <strong>MissionBench.</strong> Our proposed MLLM benchmark evaluates mission-level aerial reasoning across three task families:
+        Visual Inspection, Manipulation, and Patrol, and five types of environments. Each episode begins with a single
+        natural-language directive. The agent must then iteratively decide where to go, how to position itself, and what
+        outcomes to report to complete the mission.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            MissionBench is a mission-level aerial benchmark for testing frozen, off-the-shelf MLLMs on
+            long-horizon drone tasks from a single high-level instruction. Instead of evaluating isolated
+            skills, it measures end-to-end performance in realistic environments where agents must coordinate
+            perception, planning, movement, viewpoint selection, and reporting. Across 20 models evaluated
+            in the paper, even the best systems achieve below 35% success, showing that mission-level
+            embodied reasoning remains a hard open problem.
+          </p>
+          <ul>
+            <li><strong>120 missions</strong> across <strong>5 photorealistic environments</strong>.</li>
+            <li><strong>3 task families</strong>: Visual Inspection, Manipulation, and Patrol.</li>
+            <li>A <strong>closed-loop evaluation protocol</strong> that separates mission understanding from spatial execution.</li>
+            <li>Evaluation of <strong>22 open- and closed-source MLLMs</strong> in zero-shot settings.</li>
+          </ul>
+          <p>
+            Current models struggle with robust mission completion in aerial environments. Performance
+            improves with model scale, but gains are still far from reliable autonomy. Strong mission
+            performance requires coordinated capabilities beyond visual recognition alone.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sample Missions -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title has-text-centered">Sample Missions</h2>
+
+      <h3 class="title is-5 has-text-centered" style="margin-top: 2rem;">Visual Inspection</h3>
+      <div class="mission-grid">
+        <div class="mission-card">
+          <div class="mission-caption">Inspect the top of the isolated house</div>
+          <img src="../images/MissionBench/mission_webps/CityEnv_isolated_house_rooftop_mission25_TPV.webp"
+               alt="Isolated House Rooftop">
+        </div>
+        <div class="mission-card">
+          <div class="mission-caption">Find and report the cause of the fire</div>
+          <img src="../images/MissionBench/mission_webps/ForestEnv_forest_fire_mission1_TPV.webp"
+               alt="Forest Fire">
+        </div>
+        <div class="mission-card">
+          <div class="mission-caption">Report license number of the red car</div>
+          <img src="../images/MissionBench/mission_webps/NHEnv_red_car_mission29_TPV.webp"
+               alt="Red Car">
+        </div>
+      </div>
+
+      <hr class="section-divider">
+
+      <h3 class="title is-5 has-text-centered">Area Patrolling</h3>
+      <div class="mission-grid">
+        <div class="mission-card">
+          <div class="mission-caption">Patrol the main road</div>
+          <img src="../images/MissionBench/mission_webps/NHEnv_main_road_mission3_TPV.webp"
+               alt="Main Road">
+        </div>
+        <div class="mission-card">
+          <div class="mission-caption">Patrol the coastal region</div>
+          <img src="../images/MissionBench/mission_webps/ForestEnv_coastal_region_mission3_TPV.webp"
+               alt="Coastal Region">
+        </div>
+        <div class="mission-card">
+          <div class="mission-caption">Patrol all the wind turbines</div>
+          <img src="../images/MissionBench/mission_webps/ForestEnv_wind_turbine_mission2_TPV.webp"
+               alt="Wind Turbines">
+        </div>
+      </div>
+
+      <hr class="section-divider">
+
+      <h3 class="title is-5 has-text-centered">Object Manipulation</h3>
+      <div class="mission-grid">
+        <div class="mission-card">
+          <div class="mission-caption">Drop medical supplies on yard</div>
+          <img src="../images/MissionBench/mission_webps/NHEnv_yard_mission3_TPV.webp"
+               alt="Yard">
+        </div>
+        <div class="mission-card">
+          <div class="mission-caption">Land the drone on the building</div>
+          <img src="../images/MissionBench/mission_webps/red_cross_mission8_TPV.webp"
+               alt="Red Cross Building">
+        </div>
+        <div class="mission-card">
+          <div class="mission-caption">Land the drone on the red cross</div>
+          <img src="../images/MissionBench/mission_webps/ForestEnv_red_cross_mission4_TPV.webp"
+               alt="Red Cross Forest">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Leaderboard -->
+<section class="section hero is-light" id="leaderboard">
+  <div class="container is-max-desktop">
+    <h2 class="title has-text-centered">MissionBench Leaderboard</h2>
+    <p class="has-text-centered" style="margin-bottom: 1.5rem;">
+      Performance of 20 models on the MissionBench evaluation set (SR5).
+      Open-weight models shown with transparent fill.
+    </p>
+    <div class="leaderboard-container">
+      <canvas id="grouped_by_family" width="900" height="400"></canvas>
+    </div>
+    <p class="has-text-centered is-size-7" style="margin-top: 0.75rem; color: #888;">
+      For full documentation and configuration templates, see the
+      <a href="https://github.com/suman1209/MissionBench" target="_blank">GitHub repository</a>.
+    </p>
+  </div>
+</section>
+
+<!-- Qualitative Results -->
+<section class="section hero is-light" id="qualitative">
+  <div class="container is-max-desktop">
+    <h2 class="title has-text-centered">Qualitative Results (Failure Modes)</h2>
+    <p class="has-text-centered" style="margin-bottom: 2rem; color: #555;">
+      Even top-performing models exhibit systematic failure patterns across mission types.
+    </p>
+    <div class="mission-grid">
+      <div class="mission-card">
+        <img src="../images/MissionBench/qualitative/campfire_mission4_premature_termination.png"
+             alt="Premature Termination">
+        <div class="mission-caption" style="margin-top: 0.6rem;">
+          <span class="tag is-danger is-light" style="margin-bottom: 0.4rem; display: inline-block;">Premature Termination</span><br>
+          The agent declares task completion before reaching or confirming the target, cutting the mission short.
+        </div>
+      </div>
+      <div class="mission-card">
+        <img src="../images/MissionBench/qualitative/isolated_house_rooftop_mission25_alignement_failure_case.png"
+             alt="Alignment Failure">
+        <div class="mission-caption" style="margin-top: 0.6rem;">
+          <span class="tag is-warning is-light" style="margin-bottom: 0.4rem; display: inline-block;">Alignment Failure</span><br>
+          The drone positions itself near the target but fails to achieve the required viewpoint alignment for accurate inspection.
+        </div>
+      </div>
+      <div class="mission-card">
+        <img src="../images/MissionBench/qualitative/street_name_mission31_1_drift_and_oscillation.png"
+             alt="Drift & Oscillation">
+        <div class="mission-caption" style="margin-top: 0.6rem;">
+          <span class="tag is-info is-light" style="margin-bottom: 0.4rem; display: inline-block;">Drift &amp; Oscillation</span><br>
+          Repeated back-and-forth movement around a waypoint prevents stable hovering and leads to mission timeout.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BibTeX -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{MissionBench,
+  title   = {MissionBench: Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents},
+  author  = {Suman Navaratnarajah and Taehyoung Kim and Ishaan Bhimwal and
+             Ryousuke Yamada and Yannik Blei and Wolfram Burgard and
+             Jona Ruthardt and Yuki M. Asano},
+  year    = {2026}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            <small>
+              This page was built using the
+              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+              &nbsp;|&nbsp;
+              <a href="https://GOMTAE.github.io/">Taehyoung Kim</a>
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="missionbench/grouped_chart.js"></script>
+
+</body>
+</html>
