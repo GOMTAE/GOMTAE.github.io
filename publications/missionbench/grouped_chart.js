@@ -241,15 +241,9 @@
                     const chartRight = chart.chartArea?.right ?? (chart.width || 0);
                     dx = Math.max(chartLeft + 2, Math.min(dx, chartRight - logoW - 2));
 
-                    // Apply inversion in dark mode so PNG logos remain visible on dark backgrounds
-                    const prevFilter = ctx.filter || 'none';
-                    try {
-                        ctx.filter = isDarkTheme() ? 'invert(1)' : 'none';
-                    } catch (e) {
-                        ctx.filter = 'none';
-                    }
+                    ctx.fillStyle = '#ffffff';
+                    ctx.fillRect(dx, dy, logoW, logoH);
                     ctx.drawImage(image, dx, dy, logoW, logoH);
-                    ctx.filter = prevFilter;
                 });
 
                 ctx.restore();
