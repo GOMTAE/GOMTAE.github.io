@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="FlexPath: Learned Semantic Path Priors for Image-Based Planning">
+  <meta property="og:title" content="FlexPath"/>
+  <meta property="og:description" content="Learned Semantic Path Priors for Image-Based Planning"/>
+  <meta property="og:url" content="https://GOMTAE.github.io/publications/flexpath.html"/>
+  <meta property="og:image" content="../images/FlexPath/FrontFigure_v4.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:title" content="FlexPath">
+  <meta name="twitter:description" content="Learned Semantic Path Priors for Image-Based Planning">
+  <meta name="twitter:image" content="../images/FlexPath/FrontFigure_v4.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="FlexPath, path planning, heuristic learning, imitation learning, image-based planning, ECCV">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>FlexPath</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <style>
+    .result-figure {
+      margin-bottom: 2.5rem;
+    }
+    .result-figure img {
+      width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .result-caption {
+      margin-top: 0.75rem;
+      font-size: 0.92rem;
+      color: #555;
+      text-align: justify;
+    }
+    .section-divider {
+      height: 1px;
+      border: 0;
+      background: #dbdbdb;
+      margin: 24px auto;
+      max-width: 900px;
+    }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">FlexPath: Learned Semantic Path Priors for Image-Based Planning</h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://www.linkedin.com/in/taehyoung-kim-935949140/" target="_blank">Taehyoung Kim</a><sup>1,*</sup>,</span>
+            <span class="author-block"><a href="https://www.linkedin.com/in/tim-sch%C3%B6nbrod-615782304/" target="_blank">Tim Schönbrod</a><sup>1,2,*</sup>,</span>
+            <span class="author-block"><a href="https://www.linkedin.com/in/david-e-8a9744360/" target="_blank">David Eckel</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://www.linkedin.com/in/henri-meess/" target="_blank">Henri Meeß</a><sup>1</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors" style="margin-top: 0.75rem;">
+            <span class="author-block"><sup>1</sup> <a href="https://www.ivi.fraunhofer.de/" target="_blank">Fraunhofer IVI</a></span>
+            &nbsp;&nbsp;&nbsp;
+            <span class="author-block"><sup>2</sup> <a href="https://www.thi.de/" target="_blank">Technische Hochschule Ingolstadt</a></span>
+            <br>
+            <span class="eql-cntrb" style="font-size: 1rem;"><sup>*</sup>Equal contribution</span>
+          </div>
+
+          <div class="is-size-6 publication-authors" style="margin-top: 0.5rem; color: #777;">
+            Preprint
+          </div>
+
+          <div class="column has-text-centered" style="margin-top: 1rem;">
+            <div class="publication-links">
+              <span class="link-block">
+                <a class="external-link button is-normal is-rounded is-dark"
+                   style="pointer-events:none; opacity:0.6;" disabled>
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code (coming soon)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a class="external-link button is-normal is-rounded is-dark"
+                   style="pointer-events:none; opacity:0.6;" disabled>
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper (coming soon)</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser Figure -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <figure class="image">
+        <img src="../images/FlexPath/FrontFigure_v4.png" alt="FlexPath overview figure">
+      </figure>
+      <p class="has-text-justified" style="margin-top: 1rem; font-size: 0.95rem; color: #555; max-width: 860px; margin-left: auto; margin-right: auto;">
+        <strong>FlexPath.</strong> A single pretrained model adapts to multiple planning objectives without retraining.
+        Given the same visual map, FlexPath generates a task-agnostic feasibility prior (Stage 1) that is then steered
+        toward shortest-path, obstacle-clearance, or waypoint-guided routes via differentiable Path Shape Objectives (Stage 2).
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recent learning-based path planners use neural networks to process visual map representations and
+            approximate heuristics for classical search algorithms, yielding near-optimal paths with reduced search
+            effort. However, these methods are tied to the shortest-path objective implicit in their supervision,
+            which limits their flexibility to accommodate alternative criteria.
+          </p>
+          <p>
+            FlexPath introduces a two-stage framework that decouples feasibility from preference. In Stage 1,
+            imitation learning acquires a task-independent spatial prior over feasible paths from visual map inputs.
+            In Stage 2, differentiable Path Shape Objectives (PSOs) adapt this prior toward task-specific criteria
+            without relearning path structure. A single pretrained model can be adapted to multiple objectives.
+          </p>
+          <p>
+            For shortest-path planning, FlexPath reduces search effort on TMP by <strong>14.3%</strong> compared to
+            TransPath while also finding lower-cost paths and demonstrating strong zero-shot generalization across
+            three unseen domains. For obstacle clearance (d<sub>min</sub> = 2), it achieves <strong>96.8%</strong>
+            full obstacle avoidance while maintaining low search cost. The framework extends to semantic-aware
+            avoidance and waypoint guidance via objective-level adaptation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Method Overview -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title has-text-centered">Method Overview</h2>
+    <p class="has-text-centered" style="margin-bottom: 2rem; color: #555;">
+      FlexPath separates the learning of <em>where paths can go</em> from <em>which paths are preferred</em>.
+    </p>
+    <div class="result-figure">
+      <figure class="image">
+        <img src="../images/FlexPath/method_overview.png" alt="FlexPath method overview">
+      </figure>
+      <p class="result-caption">
+        <strong>Two-stage framework.</strong> Stage 1 (top): a neural network learns a task-agnostic feasibility
+        prior via recall-biased imitation learning on rasterized planner demonstrations. Stage 2 (bottom): the
+        prior is adapted through differentiable Path Shape Objectives (PSOs) encoding task-specific preferences
+        — including connectivity, collision avoidance, cost minimization, and semantic clearance — without
+        relearning path structure.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Results: Shortest Path -->
+<section class="section hero is-light" id="results">
+  <div class="container is-max-desktop">
+    <h2 class="title has-text-centered">Results</h2>
+    <h3 class="title is-4 has-text-centered" style="margin-top: -1rem; margin-bottom: 2rem; color: #555;">Shortest Path Planning</h3>
+
+    <div class="result-figure">
+      <figure class="image">
+        <img src="../images/FlexPath/main_table.png" alt="Main results table on TMP benchmark">
+      </figure>
+      <p class="result-caption">
+        <strong>Quantitative results on TMP.</strong> FlexPath reduces search effort by <strong>14.3%</strong>
+        compared to TransPath while finding lower-cost paths across out-of-distribution maps.
+      </p>
+    </div>
+
+    <hr class="section-divider">
+
+    <div class="result-figure">
+      <figure class="image">
+        <img src="../images/FlexPath/OptimalityFigure.png" alt="Optimality vs clearance-aware paths">
+      </figure>
+      <p class="result-caption">
+        <strong>Qualitative comparison on shortest-path planning.</strong> Expanded nodes (green) and resulting
+        paths (red) for A*, Neural A*, iA*, DAA*, TransPath, and FlexPath across multiple map instances. FlexPath
+        explores fewer nodes while recovering paths of comparable quality to the baselines.
+      </p>
+    </div>
+
+    <hr class="section-divider">
+
+    <div class="result-figure">
+      <figure class="image">
+        <img src="../images/FlexPath/ood_qualitative.png" alt="Out-of-distribution generalization">
+      </figure>
+      <p class="result-caption">
+        <strong>Zero-Shot Out-of-Distribution Generalization.</strong> FlexPath generalizes to unseen map
+        domains (VoxelGym, City/Street Map, StarCraft) without fine-tuning, demonstrating that the learned
+        feasibility prior captures domain-agnostic spatial structure.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Results: Distance & Semantics -->
+<section class="section" id="results-semantics">
+  <div class="container is-max-desktop">
+    <h3 class="title is-4 has-text-centered" style="margin-bottom: 2rem; color: #555;">Distance &amp; Semantic-Aware Planning</h3>
+
+    <div class="result-figure">
+      <figure class="image">
+        <img src="../images/FlexPath/dis_table.png" alt="Distance and semantic clearance results table">
+      </figure>
+      <p class="result-caption">
+        <strong>Obstacle-clearance evaluation on TMP 640k.</strong> Stage 2 adaptation steers the pretrained prior
+        toward clearance-constrained paths without retraining. At d<sub>min</sub> = 2, FlexPath achieves
+        <strong>96.8%</strong> full obstacle avoidance while maintaining low search cost comparable to the
+        shortest-path variant. Performance degrades gracefully at the tighter d<sub>min</sub> = 3 threshold,
+        outperforming both WA* baselines in full avoidance rate.
+      </p>
+    </div>
+
+    <hr class="section-divider">
+
+    <div class="result-figure">
+      <figure class="image">
+        <img src="../images/FlexPath/SemanticFigure_withCaption.png" alt="Semantic-aware avoidance and waypoint guidance">
+      </figure>
+      <p class="result-caption">
+        <strong>Semantic-aware clearance and waypoint guidance.</strong>
+        <em>Left:</em> A second semantic obstacle class (pink) requires a larger minimum clearance of
+        d<sub>min</sub> = 4 pixels compared to d<sub>min</sub> = 2 for standard obstacles. The adapted model
+        maintains the required clearance in <strong>70.5%</strong> of test environments while preserving
+        strong avoidance of standard obstacles — all via Stage 2 objective adaptation, without redesigning
+        the planner or cost map.
+        <em>Right:</em> Waypoint-guided planning. Intermediate waypoint pixels (WP) act as soft constraints;
+        the adapted model successfully routes start → waypoint → goal in <strong>98.3%</strong> of test cases.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Results: More Qualitative -->
+<section class="section hero is-light" id="results-qualitative">
+  <div class="container is-max-desktop">
+    <h3 class="title is-4 has-text-centered" style="margin-bottom: 2rem; color: #555;">Qualitative Comparison</h3>
+
+    <div class="result-figure">
+      <figure class="image">
+        <img src="../images/FlexPath/bunchofimgs.png" alt="Qualitative comparison on TMP 640k">
+      </figure>
+      <p class="result-caption">
+        <strong>FlexPath across Stage 2 objectives.</strong> A single pretrained model adapted to four
+        distinct objectives via Stage 2 PSO fine-tuning: obstacle avoidance at d<sub>min</sub> = 2,
+        obstacle avoidance at d<sub>min</sub> = 3, semantic-aware clearance, and waypoint guidance.
+        No retraining is required — only the Stage 2 objective changes.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- BibTeX -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{FlexPath2026,
+  title         = {FlexPath: Learned Semantic Path Priors for Image-Based Planning},
+  author        = {Taehyoung Kim and Tim Sch{\"o}nbrod and David Eckel and Henri Mee{\ss}},
+  year          = {2026},
+  eprint        = {2026.00000},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  url           = {https://arxiv.org/abs/2026.00000}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            <small>
+              This page was built using the
+              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+              &nbsp;|&nbsp;
+              <a href="https://GOMTAE.github.io/">Taehyoung Kim</a>
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
