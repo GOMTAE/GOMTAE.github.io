@@ -39,7 +39,7 @@
 		<nav id="nav">
 			<ul class="links">
 				<li><a href="index.html">About Me</a></li>
-				<li><a href="projects.html">Projects</a></li>
+				<li class="active"><a href="projects.html" aria-current="page">Projects</a></li>
 				<li><a href="publications.html">Publications</a></li>
 			</ul>
 			<ul class="icons">
@@ -55,58 +55,51 @@
 		<!-- Main -->
 		<div id="main">
 
-			<!-- Posts -->
+			<header class="major">
+				<h2>Academic Thesis</h2>
+				<p>Research projects completed as part of graduate thesis work in aerial robotics and learning-based autonomy.</p>
+			</header>
+
 			<section class="posts">
 				<article>
 					<header>
-						<h2><a href="#">Toy Project<br />
-								Autonomous Driving</a></h2>
+						<h2>Master Thesis<br />
+								Fault-tolerant Quadrotor Controller using Deep RL</h2>
 					</header>
-					<a href="#" class="image fit"><img src="images/Autonomous Driving.gif" alt="" /></a>
-					<p>Aim to develop an autonomous driving system that can map its environment and navigate a
-						predefined track while avoiding collisions, staying on the road, and obeying traffic signals.
-					</p>
-					<ul class="actions special">
-						<li><a href="generic.html" class="button">Full Story</a></li>
-					</ul>
+					<span class="image fit"><img src="images/Fault-Tolerant UAV Controller.gif" alt="Fault-tolerant quadrotor controller demo" /></span>
+					<p>Designed a fault-tolerant quadrotor controller with deep reinforcement learning, exploring both the potential and practical limits of learned recovery strategies.</p>
 				</article>
 				<article>
 					<header>
-						<h2><a href="#">Toy Project<br />
-								Area Mesh Generation</a></h2>
+						<h2>Master Thesis<br />
+								A One-Shot DL Approach to UAV Path Planning</h2>
 					</header>
-					<a href="#" class="image fit"><img src="images/Area Mesh Generation.gif" alt="" /></a>
-					<p>Integrate computer vision, and geometric modeling to develop an autonomous system that can
-						generate point cloud from disparity images and produce 3D surface mesh.</p>
-					<ul class="actions special">
-						<li><a href="generic.html" class="button">Full Story</a></li>
-					</ul>
+					<span class="image fit"><img src="images/UAV Path Planning with DL.gif" alt="One-shot UAV path planning demo" /></span>
+					<p>Developed a single-shot UAV path planner that combines supervised learning and reinforcement learning in an image-to-image planning framework.</p>
+				</article>
+			</section>
+
+			<header class="major">
+				<h2>Toy Projects</h2>
+				<p>Side explorations used to prototype ideas in perception, mapping, and autonomous navigation.</p>
+			</header>
+
+			<section class="posts">
+				<article>
+					<header>
+						<h2>Toy Project<br />
+								Autonomous Driving</h2>
+					</header>
+					<span class="image fit"><img src="images/Autonomous Driving.gif" alt="Autonomous driving project demo" /></span>
+					<p>Built an autonomous driving prototype that maps its surroundings, follows a predefined track, avoids collisions, stays on the road, and reacts to traffic signals.</p>
 				</article>
 				<article>
 					<header>
-						<h2><a href="#">Master Thesis<br />
-								Fault-tolerant quadrotor controller using Deep RL</a></h2>
+						<h2>Toy Project<br />
+								Area Mesh Generation</h2>
 					</header>
-					<a href="#" class="image fit"><img src="images/Fault-Tolerant UAV Controller.gif" alt="" /></a>
-					<p>Aim to design a fault-tolerant quadrotor controller using deep reinforcement learning
-						techniques,
-						highlighting both the possibilities and limitations of this novel approach.</p>
-					<ul class="actions special">
-						<li><a href="generic.html" class="button">Full Story</a></li>
-					</ul>
-				</article>
-				<article>
-					<header>
-						<h2><a href="#">Master Thesis<br />
-								A One-Shot DL Approach to UAV Path Planning</a></h2>
-					</header>
-					<a href="#" class="image fit"><img src="images/UAV Path Planning with DL.gif" alt="" /></a>
-					<p> Introduce a pioneering method for designing a learning-based, single-shot UAV path planner
-						combining supervised learning with reinforcement learning in an image-to-image single-shot
-						strategy.</p>
-					<ul class="actions special">
-						<li><a href="generic.html" class="button">Full Story</a></li>
-					</ul>
+					<span class="image fit"><img src="images/Area Mesh Generation.gif" alt="Area mesh generation project demo" /></span>
+					<p>Combined computer vision and geometric modeling to reconstruct point clouds from disparity images and generate 3D surface meshes.</p>
 				</article>
 			</section>
 

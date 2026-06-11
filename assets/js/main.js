@@ -112,6 +112,11 @@
 
 	// Play initial animations on page load.
 		$window.on('load', function() {
+			var yearElement = document.getElementById('year');
+
+			if (yearElement)
+				yearElement.textContent = new Date().getFullYear();
+
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
 			}, 100);

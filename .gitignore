@@ -7,3 +7,7 @@
 # vibes
 .omc/
 .claude/
+.github/
+
+# reference
+reference/
