@@ -7,6 +7,7 @@
         Nova: '#B07AA1',
         InternVL: '#76B7B2',
         Gemma: '#F28E2B',
+        Human: '#D4145A',
         Other: '#9C755F'
     };
 
@@ -62,6 +63,7 @@
         'Claude': '../images/MissionBench/model_logos/claude.png',
         'Nova': '../images/MissionBench/model_logos/aws.png',
         'InternVL': '../images/MissionBench/model_logos/internvl.png',
+        'Human': { type: 'emoji', value: '\u{1F9D1}‍✈️' },
         'Other': '../images/MissionBench/model_logos/gemini.png'
     };
 
@@ -127,13 +129,13 @@
         if (!Array.isArray(rows) || rows.length === 0) return;
 
         const items = rows
-            .map(r => ({ model: r.model, sr5: Number(r.success_rate ?? r.sr5), open: Boolean(r.open) }))
+            .map(r => ({ model: r.model, sr5: Number(r.success_rate ?? r.sr5), open: Boolean(r.open), short: r.short }))
             .filter(r => r.model && Number.isFinite(r.sr5));
 
         const familyMap = new Map();
         for (const it of items) {
             const fam = familyOf(it.model);
-            const entry = { model: it.model, sr5: it.sr5, family: fam, short: shortModelName(it.model), open: !!it.open };
+            const entry = { model: it.model, sr5: it.sr5, family: fam, short: it.short || shortModelName(it.model), open: !!it.open };
             if (!familyMap.has(fam)) familyMap.set(fam, []);
             familyMap.get(fam).push(entry);
             familyMap.get(fam).sort((a, b) => b.sr5 - a.sr5);
@@ -210,18 +212,28 @@
                 ctx.textBaseline = 'top';
 
                     familyGroups.forEach(group => {
-                    const src = getLogoSrc(group.family);
-                    const image = getLogoImage(src);
-                    if (!image || !image.complete || !image.naturalWidth || !image.naturalHeight) return;
-
                     const meta = chart.getDatasetMeta(group.datasetIndex);
                     const bar = meta?.data?.[group.firstIndex];
                     if (!bar) return;
 
                     // Render every logo inside a fixed bounding box so they appear uniform.
                     // Use a 'contain' fit so each logo scales down to fit inside the box.
-                    const boxW = 75; 
-                    const boxH = 25;  
+                    const boxW = 75;
+                    const boxH = 25;
+
+                    const descriptor = familyLogoPaths[group.family] || familyLogoPaths.Other;
+                    if (descriptor && typeof descriptor === 'object' && descriptor.type === 'emoji') {
+                        const fontSize = 22;
+                        ctx.font = `${fontSize}px "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif`;
+                        const ex = Math.round(bar.x);
+                        const ey = Math.round(bar.y - boxH - topPadding + (boxH - fontSize) / 2);
+                        ctx.fillText(descriptor.value, ex, ey);
+                        return;
+                    }
+
+                    const src = getLogoSrc(group.family);
+                    const image = getLogoImage(src);
+                    if (!image || !image.complete || !image.naturalWidth || !image.naturalHeight) return;
 
                     const nw = image.naturalWidth;
                     const nh = image.naturalHeight;
@@ -308,7 +320,7 @@
                                 const entry = labelEntries[point.dataIndex];
                                 if (!entry) return point.label || '';
                                 const srText = entry.sr5 === 0.3 ? '0%' : `${entry.sr5.toFixed(1)}%`;
-                                return [entry.model, `SR5: ${srText}`];
+                                return [entry.model, `SR: ${srText}`];
                             },
                             label: (context) => {
                                 if (context.value === null || context.value === undefined) return null;
@@ -344,7 +356,7 @@
                         stacked: true,
                         beginAtZero: true, 
                         max: yAxisMax, 
-                        title: { display: true, text: 'SR5 (%)', color: getThemeColor('--pst-color-text-base', '#4a4a4a'), font: { size: 11 } }, 
+                        title: { display: true, text: 'SR (%)', color: getThemeColor('--pst-color-text-base', '#4a4a4a'), font: { size: 11 } },
                         grid: {
                             color: getThemeColor('--pst-color-border', 'rgba(127, 127, 127, 0.18)'),
                             borderColor: getThemeColor('--pst-color-border', 'rgba(127, 127, 127, 0.18)')

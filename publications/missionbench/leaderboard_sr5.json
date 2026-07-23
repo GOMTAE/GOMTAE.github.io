@@ -13,11 +13,14 @@
   {"model": "GPT 5.4 Mini", "sn": false, "success_rate": 1.0, "mission_progress": 20.0, "oracle_sr": 0.0, "cr": 5.0, "eff": 25.7, "open": false},
   {"model": "Nova Premier", "sn": false, "success_rate": 1.1, "mission_progress": 15.0, "oracle_sr": 5.6, "cr": 1.7, "eff": 17.0, "open": false},
   {"model": "Nova Pro", "sn": false, "success_rate": 0.0, "mission_progress": 15.2, "oracle_sr": 3.3, "cr": 2.0, "eff": 59.0, "open": false},
-  {"model": "Qwen 3.5 2B", "sn": true, "success_rate": 0, "mission_progress": -1, "oracle_sr": -1, "cr": -1, "eff": -1, "open": true},
-  {"model": "Qwen 3.5 4B", "sn": true, "success_rate": 1.1, "mission_progress": -1, "oracle_sr": -1, "cr": -1, "eff": -1, "open": true},
-  {"model": "Qwen 3.5 9B", "sn": true, "success_rate": 3.3, "mission_progress": 34.8, "oracle_sr": 7.8, "cr": 6.22, "eff": 29.0, "open": true},
+  {"model": "Qwen 3.5 2B", "sn": true, "success_rate": 0, "mission_progress": 18.1, "oracle_sr": 5.6, "cr": 0.0, "eff": 48.3, "open": true},
+  {"model": "Qwen 3.5 4B", "sn": true, "success_rate": 1.1, "mission_progress": 28.6, "oracle_sr": 5.6, "cr": 0.0, "eff": 36.8, "open": true},
+  {"model": "Qwen 3.5 9B", "sn": true, "success_rate": 3.3, "mission_progress": 34.8, "oracle_sr": 7.8, "cr": 6.2, "eff": 29.0, "open": true},
   {"model": "Qwen 3.5 27B", "sn": true, "success_rate": 10.0, "mission_progress": 53.2, "oracle_sr": 8.9, "cr": 0.0, "eff": 16.7, "open": true},
+  {"model": "Qwen 3.6 27B", "sn": true, "success_rate": 5.6, "mission_progress": 32.5, "oracle_sr": 8.9, "cr": 3.2, "eff": 10.6, "open": true},
   {"model": "Qwen 3.5 35B-A3B", "sn": false, "success_rate": 2.2, "mission_progress": 39.1, "oracle_sr": 7.8, "cr": 7.5, "eff": 32.1, "open": true},
   {"model": "Qwen 3.6 35B-A3B-Q8", "sn": true, "success_rate": 7.9, "mission_progress": 41.5, "oracle_sr": 7.9, "cr": 0.2, "eff": 29.5, "open": true},
-  {"model": "InternVL3.5 14B", "sn": true, "success_rate": 1.1, "mission_progress": 29.2, "oracle_sr": 6.7, "cr": 0.2, "eff": 11.4, "open": true}
+  {"model": "InternVL3.5 14B", "sn": true, "success_rate": 1.1, "mission_progress": 29.2, "oracle_sr": 6.7, "cr": 0.2, "eff": 11.4, "open": true},
+  {"model": "Human baseline (VLM interface)", "short": "VLM interface", "sn": false, "success_rate": 70.0, "mission_progress": 79.0, "oracle_sr": 36.7, "cr": 0.1, "eff": 36.0, "open": false},
+  {"model": "Human baseline (keyboard control)", "short": "Keyboard control", "sn": false, "success_rate": 84.4, "mission_progress": 94.2, "oracle_sr": 51.1, "cr": 0.0, "eff": null, "open": false}
 ]
