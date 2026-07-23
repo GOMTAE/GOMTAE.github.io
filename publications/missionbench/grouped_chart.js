@@ -7,7 +7,7 @@
         Nova: '#B07AA1',
         InternVL: '#76B7B2',
         Gemma: '#F28E2B',
-        Human: '#D4145A',
+        Human: '#D4AF37',
         Other: '#9C755F'
     };
 
@@ -224,10 +224,31 @@
                     const descriptor = familyLogoPaths[group.family] || familyLogoPaths.Other;
                     if (descriptor && typeof descriptor === 'object' && descriptor.type === 'emoji') {
                         const fontSize = 22;
-                        ctx.font = `${fontSize}px "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif`;
-                        const ex = Math.round(bar.x);
+                        const emojiFont = `${fontSize}px "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif`;
+                        const labelFont = 'bold 13px sans-serif';
+                        const label = 'HUMAN';
+                        const gap = 5;
+
+                        ctx.font = emojiFont;
+                        const emojiWidth = ctx.measureText(descriptor.value).width;
+                        ctx.font = labelFont;
+                        const labelWidth = ctx.measureText(label).width;
+
+                        const totalWidth = emojiWidth + gap + labelWidth;
+                        const startX = Math.round(bar.x - totalWidth / 2);
                         const ey = Math.round(bar.y - boxH - topPadding + (boxH - fontSize) / 2);
-                        ctx.fillText(descriptor.value, ex, ey);
+
+                        const prevAlign = ctx.textAlign;
+                        ctx.textAlign = 'left';
+
+                        ctx.font = emojiFont;
+                        ctx.fillText(descriptor.value, startX, ey);
+
+                        ctx.font = labelFont;
+                        ctx.fillStyle = familyColors.Human;
+                        ctx.fillText(label, Math.round(startX + emojiWidth + gap), ey + 4);
+
+                        ctx.textAlign = prevAlign;
                         return;
                     }
 
