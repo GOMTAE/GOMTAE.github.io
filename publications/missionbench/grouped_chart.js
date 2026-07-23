@@ -235,7 +235,9 @@
                         const labelWidth = ctx.measureText(label).width;
 
                         const totalWidth = emojiWidth + gap + labelWidth;
-                        const startX = Math.round(bar.x - totalWidth / 2);
+                        let startX = Math.round(bar.x - totalWidth / 2);
+                        const chartLeft = chart.chartArea?.left ?? 0;
+                        startX = Math.max(chartLeft + 4, startX);
                         const ey = Math.round(bar.y - boxH - topPadding + (boxH - fontSize) / 2);
 
                         const prevAlign = ctx.textAlign;
