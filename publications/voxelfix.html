@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="VoxelFix corrects semantic labels in completed 3D voxel maps while preserving geometry and occupancy.">
+  <meta property="og:title" content="VoxelFix: Post-Hoc Semantic Correction of Completed 3D Voxel Maps">
+  <meta property="og:description" content="Map-only semantic correction for completed 3D voxel maps, with interactive result inspection.">
+  <meta property="og:url" content="https://GOMTAE.github.io/publications/voxelfix.html">
+  <meta property="og:image" content="https://GOMTAE.github.io/images/VoxelFix/overview.png">
+  <meta property="og:image:width" content="2020">
+  <meta property="og:image:height" content="860">
+  <meta name="twitter:title" content="VoxelFix: Post-Hoc Semantic Correction of Completed 3D Voxel Maps">
+  <meta name="twitter:description" content="Map-only semantic correction for completed 3D voxel maps, with interactive result inspection.">
+  <meta name="twitter:image" content="https://GOMTAE.github.io/images/VoxelFix/overview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="VoxelFix, semantic voxel map, 3D semantic mapping, graph attention, aerial robotics">
+  <meta name="author" content="Sunesh Praveen Raja Sundarasami, Taehyoung Kim, Johannes Scherer, Tomaž Cotič, Sivasubiramaniam Subbiah, Andreas Greiner, Paul Spannaus, Sebastian Houben">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>VoxelFix</title>
+  <link rel="icon" href="../images/VoxelFix/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="voxelfix/voxelfix.css">
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+<body class="voxelfix-page">
+
+<main>
+  <section class="hero publication-header">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">VoxelFix: Post-Hoc Semantic Correction of Completed 3D Voxel Maps</h1>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Sunesh Praveen Raja Sundarasami<sup>1,2,*</sup>,</span>
+              <span class="author-block">Taehyoung Kim<sup>1,*,†</sup>,</span>
+              <span class="author-block">Johannes Scherer<sup>1</sup>,</span>
+              <span class="author-block">Tomaž Cotič<sup>1,3</sup>,</span>
+              <span class="author-block">Sivasubiramaniam Subbiah<sup>1,4</sup>,</span>
+              <span class="author-block">Andreas Greiner<sup>1,5</sup>,</span>
+              <span class="author-block">Paul Spannaus<sup>1</sup>,</span>
+              <span class="author-block">Sebastian Houben<sup>2</sup></span>
+            </div>
+
+            <div class="is-size-6 publication-authors voxelfix-affiliations">
+              <span class="author-block"><sup>1</sup>Fraunhofer IVI</span>
+              <span class="author-block"><sup>2</sup>Hochschule Bonn-Rhein-Sieg</span>
+              <span class="author-block"><sup>3</sup>University of Bologna</span>
+              <span class="author-block"><sup>4</sup>FAU</span>
+              <span class="author-block"><sup>5</sup>THI</span>
+            </div>
+
+            <div class="publication-authors voxelfix-contributions">
+              <span><sup>*</sup>Equal contribution</span>
+              <span><sup>†</sup>Corresponding author</span>
+            </div>
+
+            <div class="is-size-6 publication-authors voxelfix-status">
+              Manuscript under review
+            </div>
+
+            <div class="column has-text-centered voxelfix-links">
+              <div class="publication-links" aria-label="Publication resources">
+                <span class="link-block">
+                  <button class="button is-normal is-rounded is-dark" type="button" disabled title="Available with the preprint">
+                    <span class="icon"><i class="fas fa-file-pdf" aria-hidden="true"></i></span>
+                    <span>Paper</span>
+                  </button>
+                </span>
+                <span class="link-block">
+                  <button class="button is-normal is-rounded is-dark" type="button" disabled title="Available after code release">
+                    <span class="icon"><i class="fab fa-github" aria-hidden="true"></i></span>
+                    <span>Code</span>
+                  </button>
+                </span>
+                <span class="link-block">
+                  <button class="button is-normal is-rounded is-dark" type="button" disabled title="Available after data release">
+                    <span class="icon"><i class="fas fa-cubes" aria-hidden="true"></i></span>
+                    <span>Data</span>
+                  </button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser voxelfix-teaser" aria-labelledby="overview-caption">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <figure class="voxelfix-figure">
+          <img src="../images/VoxelFix/overview.png" alt="VoxelFix overview showing observations mapped into a completed semantic voxel map, followed by graph-based geometric and semantic correction.">
+          <figcaption id="overview-caption" class="voxelfix-caption">
+            <strong>Map-only post-hoc semantic correction.</strong> A standard mapping pipeline aggregates semantic predictions into a completed voxel map. VoxelFix begins after construction and uses only fixed voxel geometry and semantic labels to correct accumulated errors. Source images, depth maps, camera poses, and intermediate reconstruction state are not required.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero is-light" id="abstract">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Semantic 3D maps are increasingly constructed automatically for aerial robotics by integrating learned semantic predictions into 3D representations. While this avoids costly manual 3D annotation, errors in the perception and mapping pipeline can persist in the resulting map, reducing its reliability for downstream autonomous tasks. Existing 3D semantic map refinement methods either rely on the original observations, treat occupancy as part of the prediction problem, or apply non-learned local regularization to completed maps.
+            </p>
+            <p>
+              Instead, we study post-hoc semantic correction, asking whether semantic accuracy can be recovered directly from the completed map while keeping its geometry and occupancy fixed. We introduce VoxelFix, a graph-based model that corrects voxel labels based on local geometry and neighboring semantic information. To obtain training pairs, we corrupt contiguous regions of annotated OccuFly maps according to class confusions observed in upstream maps.
+            </p>
+            <p>
+              We evaluate VoxelFix on completed OccuFly maps generated from predictions of four independently trained 2D segmentation models. VoxelFix consistently improves mIoU by <strong>4.23-5.00 percentage points</strong>, with gains broadly distributed across the evaluated semantic classes and particularly strong improvements for tree, roof, and wall. Results on an independently reconstructed out-of-distribution aerial scene further suggest that the learned correction can transfer beyond the environments seen during training.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="method">
+    <div class="container is-max-desktop">
+      <h2 class="title has-text-centered">Method Overview</h2>
+      <h3 class="title is-4 has-text-centered voxelfix-section-intro">
+        VoxelFix reasons over complementary geometric and semantic neighborhoods without altering map geometry or occupancy.
+      </h3>
+      <figure class="voxelfix-figure" aria-labelledby="method-caption">
+        <img src="../images/VoxelFix/method.png" alt="VoxelFix architecture with a fixed k-nearest-neighbor graph, geometric and semantic GATv2 branches, learned fusion, and correction and error-detection heads.">
+        <figcaption id="method-caption" class="voxelfix-caption">
+          <strong>VoxelFix architecture.</strong> Each occupied voxel becomes a graph node described by local geometry, a frozen volumetric embedding, its current label, and class-conditioned agreement features. Parallel GATv2 branches process geometric and semantic edge information, then a voxel-wise gate fuses both views for relabeling. Dashed paths indicate training-only corruption, prototype updates, and auxiliary error-detection supervision.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section hero is-light" id="results">
+    <div class="container is-max-desktop">
+      <h2 class="title has-text-centered">Quantitative and Qualitative Results</h2>
+      <h3 class="title is-4 has-text-centered voxelfix-subtitle">In-Distribution Evaluation</h3>
+
+      <figure class="voxelfix-figure voxelfix-table-figure" aria-labelledby="baseline-caption">
+        <img src="../images/VoxelFix/baseline-comparison.png" alt="Baseline comparison table. VoxelFix reaches 30.66 mIoU, gains 4.86 points, reaches 68.34 percent accuracy and 25.36 percent error correction rate, with 3.55 percent damage rate.">
+        <figcaption id="baseline-caption" class="voxelfix-caption">
+          <strong>Map-level correction on the fixed OccuFly test scene.</strong> With SegFormer-MiT-B3 upstream predictions, VoxelFix reaches <strong>30.66 mIoU</strong>, a <strong>4.86-point gain</strong> over the uncorrected Radix map and 2.14 points over MinkUNet. It corrects 25.36% of initially erroneous voxels while changing 3.55% of initially correct labels incorrectly. Learned models report mean and standard deviation over eight cross-validation splits.
+        </figcaption>
+      </figure>
+
+      <hr class="voxelfix-divider">
+
+      <figure class="voxelfix-figure voxelfix-table-figure" aria-labelledby="upstream-caption">
+        <img src="../images/VoxelFix/upstream-robustness.png" alt="Robustness table showing VoxelFix gains from 4.23 to 5.00 mIoU points across SegFormer, two UPerNet variants, and Mask2Former.">
+        <figcaption id="upstream-caption" class="voxelfix-caption">
+          <strong>Robustness across upstream models.</strong> On the same fixed test scene, VoxelFix improves completed maps from SegFormer, UPerNet with SwinV2-T, UPerNet with ConvNeXtV2-T, and Mask2Former. Gains range from <strong>4.23 to 5.00 mIoU points</strong> despite different initial map quality and error characteristics.
+        </figcaption>
+      </figure>
+
+      <hr class="voxelfix-divider">
+
+      <figure class="voxelfix-figure" aria-labelledby="id-qualitative-caption">
+        <img src="../images/VoxelFix/id-qualitative.png" alt="Three in-distribution scenes comparing Radix input, KNN, CRF, geometry heuristic, MinkUNet, VoxelFix, and ground truth voxel maps.">
+        <figcaption id="id-qualitative-caption" class="voxelfix-caption">
+          <strong>Qualitative correction on the fixed OccuFly test scene.</strong> VoxelFix more consistently repairs spatially coherent roof, wall, tree, and grass errors while preserving surrounding labels than local smoothing, geometry-only refinement, and learned volumetric correction.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="ood-results">
+    <div class="container is-max-desktop">
+      <h3 class="title is-4 has-text-centered voxelfix-subtitle">Out-of-Distribution Evaluation</h3>
+
+      <figure class="voxelfix-figure voxelfix-table-figure voxelfix-table-narrow" aria-labelledby="ood-table-caption">
+        <img src="../images/VoxelFix/ood-results.png" alt="Out-of-distribution comparison table. VoxelFix improves the reconstructed scene from 30.95 to 32.66 mIoU, a gain of 1.71 points.">
+        <figcaption id="ood-table-caption" class="voxelfix-caption">
+          <strong>Correction on an independently reconstructed aerial scene.</strong> The scene is excluded from training and model selection. Using Mask2Former predictions, VoxelFix raises mIoU from 30.95 to <strong>32.66</strong>, a <strong>1.71-point gain</strong>, with a 15.65% error correction rate and a 1.03% damage rate.
+        </figcaption>
+      </figure>
+
+      <hr class="voxelfix-divider">
+
+      <figure class="voxelfix-figure" aria-labelledby="ood-qualitative-caption">
+        <img src="../images/VoxelFix/ood-qualitative.png" alt="Three out-of-distribution scenes comparing Radix input, KNN, CRF, geometry heuristic, MinkUNet, VoxelFix, and ground truth voxel maps.">
+        <figcaption id="ood-qualitative-caption" class="voxelfix-caption">
+          <strong>Qualitative OOD correction.</strong> VoxelFix repairs several coherent errors on unseen scene geometry while largely preserving correct labels. Ambiguous structures remain challenging when the completed map does not contain enough evidence for the correct class.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section hero is-light" id="viewer">
+    <div class="container is-max-widescreen">
+      <h2 class="title has-text-centered">Interactive Voxel Viewer</h2>
+      <p class="has-text-centered voxelfix-section-intro">
+        Inspect the results above in 3D. Select a scene and upstream model, then compare the input, VoxelFix output, and ground truth with synchronized cameras.
+      </p>
+
+      <div class="catalog-controls" aria-label="Hosted example selection">
+        <label class="catalog-field" for="scene-select">
+          <span>Scene</span>
+          <select id="scene-select" disabled>
+            <option>Loading scene catalog...</option>
+          </select>
+        </label>
+        <label class="catalog-field" for="model-select">
+          <span>Upstream model</span>
+          <select id="model-select" disabled>
+            <option>Loading models...</option>
+          </select>
+        </label>
+        <div class="catalog-status" aria-live="polite">
+          <span id="scene-load-status">Preparing hosted examples...</span>
+          <button id="retry-scene" type="button" hidden>Retry</button>
+        </div>
+      </div>
+
+      <div class="scene-metrics" id="scene-metrics" hidden aria-label="Selected scene metrics">
+        <div><small>Input mIoU</small><strong id="metric-input">-</strong></div>
+        <div><small>Output mIoU</small><strong id="metric-output">-</strong></div>
+        <div><small>Gain</small><strong id="metric-gain">-</strong></div>
+        <div><small>Resolution</small><strong>0.5 m</strong></div>
+      </div>
+
+      <div class="viewer-shell">
+        <div class="viewer-toolbar">
+          <div class="segmented-control" role="group" aria-label="Voxel display mode">
+            <button class="mode-button active" type="button" data-mode="semantic" aria-pressed="true">Semantic</button>
+            <button class="mode-button" type="button" data-mode="changes" aria-pressed="false">What changed</button>
+            <button class="mode-button" type="button" data-mode="outcomes" aria-pressed="false">Correction outcome</button>
+          </div>
+          <div class="viewer-options">
+            <label class="check-control"><input id="changed-only" type="checkbox"> Changed only</label>
+            <button id="reset-camera" class="icon-button" type="button" title="Reset camera" aria-label="Reset synchronized camera">
+              <i class="fas fa-crosshairs" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="canvas-grid">
+          <article class="viewport-card">
+            <header><span>A</span><div><strong>Noisy input</strong><small id="input-view-subtitle">Completed Radix map</small></div></header>
+            <canvas id="input-canvas" tabindex="0" aria-label="Interactive noisy input voxel map. Drag to orbit, use the mouse wheel or trackpad to zoom, and double-click to reset."></canvas>
+            <div class="canvas-hint">Drag to orbit <span>/</span> Scroll to zoom</div>
+          </article>
+          <article class="viewport-card featured">
+            <header><span>B</span><div><strong>VoxelFix output</strong><small id="output-view-subtitle">Corrected semantics</small></div></header>
+            <canvas id="output-canvas" tabindex="0" aria-label="Interactive corrected voxel map. Camera movement is synchronized with the other views."></canvas>
+            <div class="canvas-hint">All three cameras stay synchronized</div>
+          </article>
+          <article class="viewport-card">
+            <header><span>C</span><div><strong>Ground truth</strong><small id="gt-view-subtitle">Evaluation reference</small></div></header>
+            <canvas id="gt-canvas" tabindex="0" aria-label="Interactive ground-truth voxel map. Camera movement is synchronized with the other views."></canvas>
+            <div class="canvas-hint">Geometry is matched by 3D coordinate</div>
+          </article>
+        </div>
+
+        <div id="viewer-message" class="viewer-message" role="status" aria-live="polite"></div>
+
+        <div class="comparison-footer">
+          <div class="stat-strip" aria-label="Voxel comparison statistics">
+            <div><span id="stat-matched">0</span><small>matched voxels</small></div>
+            <div><span id="stat-changed">0</span><small>input/output changes</small></div>
+            <div><span id="stat-corrected">0</span><small>errors corrected</small></div>
+            <div><span id="stat-damaged">0</span><small>correct labels damaged</small></div>
+          </div>
+          <div class="legend" id="comparison-legend" aria-label="Comparison legend"></div>
+        </div>
+
+        <section class="class-legend-section" aria-labelledby="class-legend-title">
+          <header>
+            <div>
+              <span class="viewer-eyebrow">Semantic taxonomy</span>
+              <h3 id="class-legend-title">Available classes and colors</h3>
+              <p>Counts show input / output / ground truth. Select a class to hide it.</p>
+            </div>
+            <button id="show-all-classes" type="button">Show all</button>
+          </header>
+          <div class="class-legend" id="class-legend"></div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <p>Citation details will be added when the preprint is released.</p>
+      <pre><code>@misc{voxelfix,
+  title = {VoxelFix: Post-Hoc Semantic Correction of Completed 3D Voxel Maps},
+  author = {Sunesh Praveen Raja Sundarasami and Taehyoung Kim and Johannes Scherer and Tomaž Cotič and Sivasubiramaniam Subbiah and Andreas Greiner and Paul Spannaus and Sebastian Houben},
+  note  = {Manuscript under review}
+}</code></pre>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            <small>
+              This page was built using the
+              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a>.
+              &nbsp;|&nbsp;
+              <a href="https://GOMTAE.github.io/">Taehyoung Kim</a>
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="voxelfix/voxelfix.js?v=20260904-2" defer></script>
+</body>
+</html>

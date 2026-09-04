@@ -1,0 +1,2396 @@
+{
+  "version": 1,
+  "voxelSize": 0.5,
+  "encoding": {
+    "geometry": "little-endian uint16 xyz grid offsets",
+    "gt": "uint8 labels",
+    "model": "uint8 input labels followed by uint8 output labels",
+    "compression": "gzip"
+  },
+  "defaultScene": "occufly-donaukurier",
+  "defaultModel": "segformer",
+  "classes": [
+    {
+      "id": 0,
+      "name": "Unlabeled",
+      "color": "#000000"
+    },
+    {
+      "id": 1,
+      "name": "Road",
+      "color": "#800080"
+    },
+    {
+      "id": 2,
+      "name": "Dirt",
+      "color": "#800000"
+    },
+    {
+      "id": 3,
+      "name": "Gravel",
+      "color": "#c0c0c0"
+    },
+    {
+      "id": 4,
+      "name": "Rock",
+      "color": "#f67828"
+    },
+    {
+      "id": 5,
+      "name": "Grass",
+      "color": "#00ff00"
+    },
+    {
+      "id": 7,
+      "name": "Tree",
+      "color": "#404000"
+    },
+    {
+      "id": 8,
+      "name": "Obstacle",
+      "color": "#ffff00"
+    },
+    {
+      "id": 9,
+      "name": "Animal",
+      "color": "#ff99cc"
+    },
+    {
+      "id": 10,
+      "name": "Person",
+      "color": "#ff10ff"
+    },
+    {
+      "id": 11,
+      "name": "Bicycle",
+      "color": "#ffcc99"
+    },
+    {
+      "id": 12,
+      "name": "Vehicle",
+      "color": "#008080"
+    },
+    {
+      "id": 13,
+      "name": "Water",
+      "color": "#0000ff"
+    },
+    {
+      "id": 14,
+      "name": "Boat",
+      "color": "#6d7896"
+    },
+    {
+      "id": 15,
+      "name": "Wall / Building",
+      "color": "#ff0000"
+    },
+    {
+      "id": 16,
+      "name": "Roof",
+      "color": "#40a078"
+    },
+    {
+      "id": 17,
+      "name": "Sky",
+      "color": "#00ffff"
+    },
+    {
+      "id": 18,
+      "name": "Drone",
+      "color": "#c08080"
+    },
+    {
+      "id": 19,
+      "name": "Train track",
+      "color": "#383e42"
+    },
+    {
+      "id": 20,
+      "name": "Cable",
+      "color": "#ffa000"
+    },
+    {
+      "id": 21,
+      "name": "Cable tower",
+      "color": "#6a00ff"
+    },
+    {
+      "id": 25,
+      "name": "Bridge",
+      "color": "#abc7f5"
+    },
+    {
+      "id": 26,
+      "name": "Airplane",
+      "color": "#f5e376"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "occufly-buxheim",
+      "dataset": "occufly",
+      "name": "Buxheim",
+      "voxelCount": 856518,
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry": {
+        "path": "scenes/occufly-buxheim/geometry.u16.gz",
+        "compressedBytes": 1733436,
+        "rawBytes": 5139108,
+        "sha256": "07dfe45295a58ff5d67c813ed7a5755a700c4445d57d9f8824044df4c0a2f4e3"
+      },
+      "gt": {
+        "path": "scenes/occufly-buxheim/gt.u8.gz",
+        "compressedBytes": 37318,
+        "rawBytes": 856518,
+        "sha256": "ce7430fbdf2ca516b65d49a0a020867990d08c2082127134df99eaa00ba9b2da"
+      },
+      "gtCounts": {
+        "1": 15056,
+        "2": 392241,
+        "5": 137029,
+        "7": 102854,
+        "8": 145,
+        "12": 5725,
+        "13": 202993,
+        "15": 393,
+        "16": 82
+      },
+      "presentLabels": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        15,
+        16,
+        17,
+        18,
+        19,
+        25
+      ],
+      "models": [
+        {
+          "id": "mask2former",
+          "name": "Mask2Former Swin-T",
+          "labels": {
+            "path": "scenes/occufly-buxheim/mask2former.u8.gz",
+            "compressedBytes": 148542,
+            "rawBytes": 1713036,
+            "sha256": "423d4d7f2cf178597af2b14fdf044acad28a04d74bd3f6048dc33c577497762a"
+          },
+          "metrics": {
+            "inputMiou": 19.8208,
+            "outputMiou": 24.4458,
+            "miouGain": 4.625
+          },
+          "inputCounts": {
+            "1": 28439,
+            "2": 146712,
+            "3": 10675,
+            "5": 379665,
+            "7": 35199,
+            "8": 1285,
+            "9": 1,
+            "10": 22,
+            "12": 1087,
+            "13": 240723,
+            "15": 1832,
+            "16": 10866,
+            "19": 10,
+            "25": 2
+          },
+          "outputCounts": {
+            "1": 16150,
+            "2": 154174,
+            "3": 2700,
+            "5": 369893,
+            "7": 90935,
+            "8": 1220,
+            "9": 1,
+            "12": 733,
+            "13": 195835,
+            "15": 9291,
+            "16": 15586
+          }
+        },
+        {
+          "id": "segformer",
+          "name": "SegFormer MiT-B3",
+          "labels": {
+            "path": "scenes/occufly-buxheim/segformer.u8.gz",
+            "compressedBytes": 125094,
+            "rawBytes": 1713036,
+            "sha256": "4c20dfa8837b3d7bb92dc22a47f445aa3325b56594a4d4bcae0abe30895edaa9"
+          },
+          "metrics": {
+            "inputMiou": 28.7411,
+            "outputMiou": 27.3912,
+            "miouGain": -1.3499
+          },
+          "inputCounts": {
+            "1": 19076,
+            "2": 209212,
+            "3": 3162,
+            "5": 322972,
+            "7": 100974,
+            "8": 452,
+            "10": 10,
+            "12": 808,
+            "13": 198878,
+            "15": 634,
+            "16": 240,
+            "18": 4,
+            "19": 94,
+            "25": 2
+          },
+          "outputCounts": {
+            "1": 12596,
+            "2": 210051,
+            "3": 483,
+            "5": 284799,
+            "7": 154202,
+            "8": 412,
+            "12": 454,
+            "13": 187311,
+            "15": 2517,
+            "16": 3693
+          }
+        },
+        {
+          "id": "upernet_conv2_t",
+          "name": "UPerNet ConvNeXt-v2-T",
+          "labels": {
+            "path": "scenes/occufly-buxheim/upernet_conv2_t.u8.gz",
+            "compressedBytes": 131699,
+            "rawBytes": 1713036,
+            "sha256": "7530940ccbc015e67f865001b02f2c657e7642052589d1f1d439c158285dcad1"
+          },
+          "metrics": {
+            "inputMiou": 31.5459,
+            "outputMiou": 31.5738,
+            "miouGain": 0.0278
+          },
+          "inputCounts": {
+            "0": 1,
+            "1": 18229,
+            "2": 325891,
+            "3": 11678,
+            "5": 184010,
+            "7": 82136,
+            "8": 1010,
+            "10": 28,
+            "12": 518,
+            "13": 217377,
+            "15": 937,
+            "16": 178,
+            "17": 14462,
+            "19": 59,
+            "25": 4
+          },
+          "outputCounts": {
+            "1": 15392,
+            "2": 344899,
+            "3": 2029,
+            "5": 152162,
+            "7": 134698,
+            "8": 1070,
+            "12": 309,
+            "13": 192601,
+            "15": 7386,
+            "16": 5972
+          }
+        },
+        {
+          "id": "upernet_swinv2_t",
+          "name": "UPerNet Swin-v2-T",
+          "labels": {
+            "path": "scenes/occufly-buxheim/upernet_swinv2_t.u8.gz",
+            "compressedBytes": 125741,
+            "rawBytes": 1713036,
+            "sha256": "a1ce9c6fdd3a6ca3869b65e37f1cc0474013fdc20f4bcbd4fc014fd359610020"
+          },
+          "metrics": {
+            "inputMiou": 27.6567,
+            "outputMiou": 28.5494,
+            "miouGain": 0.8926
+          },
+          "inputCounts": {
+            "0": 23,
+            "1": 20855,
+            "2": 199285,
+            "3": 4963,
+            "5": 346541,
+            "7": 62108,
+            "8": 623,
+            "9": 1,
+            "10": 11,
+            "11": 4,
+            "12": 791,
+            "13": 220457,
+            "15": 622,
+            "16": 227,
+            "17": 1,
+            "19": 6
+          },
+          "outputCounts": {
+            "1": 15940,
+            "2": 203651,
+            "3": 984,
+            "5": 316792,
+            "7": 117994,
+            "8": 725,
+            "9": 1,
+            "12": 539,
+            "13": 191961,
+            "15": 4411,
+            "16": 3520
+          }
+        }
+      ]
+    },
+    {
+      "id": "occufly-car",
+      "dataset": "occufly",
+      "name": "CAR",
+      "voxelCount": 1132905,
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry": {
+        "path": "scenes/occufly-car/geometry.u16.gz",
+        "compressedBytes": 2440318,
+        "rawBytes": 6797430,
+        "sha256": "879b671710bc866f6651e593a4b52add6853fa575cc997778a8931c03b9f472c"
+      },
+      "gt": {
+        "path": "scenes/occufly-car/gt.u8.gz",
+        "compressedBytes": 94149,
+        "rawBytes": 1132905,
+        "sha256": "0a31483d73b2ab35843c43d6a2c892b7dbe36fe5624c4f9478f4dd3ef08d4311"
+      },
+      "gtCounts": {
+        "1": 258149,
+        "2": 30940,
+        "3": 51821,
+        "5": 206994,
+        "7": 23619,
+        "8": 70427,
+        "10": 16,
+        "11": 402,
+        "12": 11962,
+        "15": 336637,
+        "16": 141938
+      },
+      "presentLabels": [
+        1,
+        2,
+        3,
+        5,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        15,
+        16,
+        17,
+        19,
+        20,
+        21,
+        25,
+        26
+      ],
+      "models": [
+        {
+          "id": "mask2former",
+          "name": "Mask2Former Swin-T",
+          "labels": {
+            "path": "scenes/occufly-car/mask2former.u8.gz",
+            "compressedBytes": 218772,
+            "rawBytes": 2265810,
+            "sha256": "0b434c61351320035fa725c5785a9db96463bfb127d75222b704233345aad162"
+          },
+          "metrics": {
+            "inputMiou": 26.9063,
+            "outputMiou": 29.4974,
+            "miouGain": 2.5912
+          },
+          "inputCounts": {
+            "1": 253834,
+            "2": 37799,
+            "3": 8185,
+            "5": 252746,
+            "7": 17817,
+            "8": 24826,
+            "10": 88,
+            "11": 9,
+            "12": 20118,
+            "13": 796,
+            "15": 418525,
+            "16": 97861,
+            "19": 264,
+            "25": 37
+          },
+          "outputCounts": {
+            "1": 275821,
+            "2": 48130,
+            "3": 38,
+            "5": 279976,
+            "7": 30892,
+            "8": 13527,
+            "12": 3079,
+            "13": 763,
+            "15": 334361,
+            "16": 146302,
+            "21": 16
+          }
+        },
+        {
+          "id": "segformer",
+          "name": "SegFormer MiT-B3",
+          "labels": {
+            "path": "scenes/occufly-car/segformer.u8.gz",
+            "compressedBytes": 220343,
+            "rawBytes": 2265810,
+            "sha256": "ca7622a09da60d2fa472f53169b81fc42294a54b3376dc44f94234fd2492534a"
+          },
+          "metrics": {
+            "inputMiou": 26.5279,
+            "outputMiou": 28.0869,
+            "miouGain": 1.5591
+          },
+          "inputCounts": {
+            "1": 253330,
+            "2": 77152,
+            "3": 5623,
+            "5": 223138,
+            "7": 15665,
+            "8": 9447,
+            "10": 67,
+            "11": 2,
+            "12": 22969,
+            "13": 248,
+            "15": 339605,
+            "16": 184397,
+            "17": 128,
+            "19": 1113,
+            "25": 14,
+            "26": 7
+          },
+          "outputCounts": {
+            "1": 272474,
+            "2": 86902,
+            "3": 118,
+            "5": 248117,
+            "7": 25858,
+            "8": 3791,
+            "12": 3919,
+            "13": 187,
+            "15": 307403,
+            "16": 184133,
+            "21": 3
+          }
+        },
+        {
+          "id": "upernet_conv2_t",
+          "name": "UPerNet ConvNeXt-v2-T",
+          "labels": {
+            "path": "scenes/occufly-car/upernet_conv2_t.u8.gz",
+            "compressedBytes": 210968,
+            "rawBytes": 2265810,
+            "sha256": "267a1c2d8899cf0182bad57a2f56d3149e9f7eca5374a6c095bedbcf49ba4a1b"
+          },
+          "metrics": {
+            "inputMiou": 25.404,
+            "outputMiou": 26.8384,
+            "miouGain": 1.4344
+          },
+          "inputCounts": {
+            "1": 255561,
+            "2": 73206,
+            "3": 2220,
+            "5": 214079,
+            "7": 23591,
+            "8": 10646,
+            "10": 31,
+            "11": 2,
+            "12": 21263,
+            "13": 802,
+            "15": 364558,
+            "16": 166243,
+            "17": 10,
+            "19": 693
+          },
+          "outputCounts": {
+            "1": 276341,
+            "2": 81277,
+            "3": 40,
+            "5": 236252,
+            "7": 36800,
+            "8": 3320,
+            "12": 3269,
+            "13": 701,
+            "15": 310125,
+            "16": 184779,
+            "20": 1
+          }
+        },
+        {
+          "id": "upernet_swinv2_t",
+          "name": "UPerNet Swin-v2-T",
+          "labels": {
+            "path": "scenes/occufly-car/upernet_swinv2_t.u8.gz",
+            "compressedBytes": 207867,
+            "rawBytes": 2265810,
+            "sha256": "05e1fa2c79475883badf2e436b21ba4f10167c73e11867943c2bc7e6a4eb35c1"
+          },
+          "metrics": {
+            "inputMiou": 26.2582,
+            "outputMiou": 28.8607,
+            "miouGain": 2.6025
+          },
+          "inputCounts": {
+            "1": 262535,
+            "2": 64646,
+            "3": 4516,
+            "5": 246270,
+            "7": 10098,
+            "8": 11215,
+            "10": 45,
+            "11": 2,
+            "12": 22836,
+            "13": 512,
+            "15": 359034,
+            "16": 150475,
+            "19": 709,
+            "25": 11,
+            "26": 1
+          },
+          "outputCounts": {
+            "1": 277134,
+            "2": 74600,
+            "3": 48,
+            "5": 270317,
+            "7": 17447,
+            "8": 4287,
+            "12": 4384,
+            "13": 355,
+            "15": 314391,
+            "16": 169942
+          }
+        }
+      ]
+    },
+    {
+      "id": "occufly-donaukurier",
+      "dataset": "occufly",
+      "name": "Donaukurier",
+      "voxelCount": 420828,
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry": {
+        "path": "scenes/occufly-donaukurier/geometry.u16.gz",
+        "compressedBytes": 902348,
+        "rawBytes": 2524968,
+        "sha256": "165ae920d4379b6601ff7322014e29904f0305b81e5e7452263e1106221d3295"
+      },
+      "gt": {
+        "path": "scenes/occufly-donaukurier/gt.u8.gz",
+        "compressedBytes": 25573,
+        "rawBytes": 420828,
+        "sha256": "0cc628bf7cab970d91929a975739a79704cbde2d479de308b22a2a720aa3e7f4"
+      },
+      "gtCounts": {
+        "1": 101323,
+        "2": 2658,
+        "3": 3164,
+        "5": 84443,
+        "7": 86475,
+        "8": 10596,
+        "10": 5,
+        "11": 6,
+        "12": 13065,
+        "15": 72204,
+        "16": 46889
+      },
+      "presentLabels": [
+        1,
+        2,
+        3,
+        5,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        15,
+        16,
+        17,
+        19,
+        20
+      ],
+      "models": [
+        {
+          "id": "mask2former",
+          "name": "Mask2Former Swin-T",
+          "labels": {
+            "path": "scenes/occufly-donaukurier/mask2former.u8.gz",
+            "compressedBytes": 85111,
+            "rawBytes": 841656,
+            "sha256": "4c7c7bc94eae0048a2e5e8878488359f9aecfca5154b31937e52fa960b036dc6"
+          },
+          "metrics": {
+            "inputMiou": 23.6974,
+            "outputMiou": 29.2569,
+            "miouGain": 5.5596
+          },
+          "inputCounts": {
+            "1": 112118,
+            "2": 2273,
+            "3": 2309,
+            "5": 149846,
+            "7": 27610,
+            "8": 13926,
+            "10": 60,
+            "11": 8,
+            "12": 16744,
+            "13": 172,
+            "15": 32798,
+            "16": 62947,
+            "20": 17
+          },
+          "outputCounts": {
+            "1": 113061,
+            "2": 4525,
+            "3": 582,
+            "5": 127051,
+            "7": 61135,
+            "8": 10611,
+            "12": 9977,
+            "13": 71,
+            "15": 34390,
+            "16": 59425
+          }
+        },
+        {
+          "id": "segformer",
+          "name": "SegFormer MiT-B3",
+          "labels": {
+            "path": "scenes/occufly-donaukurier/segformer.u8.gz",
+            "compressedBytes": 84092,
+            "rawBytes": 841656,
+            "sha256": "97c07e2cf8e9856fa7522c06bb38000afe72e9a0bf4381808e1ef4b7aa34d6c8"
+          },
+          "metrics": {
+            "inputMiou": 25.8024,
+            "outputMiou": 31.3988,
+            "miouGain": 5.5964
+          },
+          "inputCounts": {
+            "1": 104421,
+            "2": 4670,
+            "3": 10693,
+            "5": 123008,
+            "7": 57252,
+            "8": 9124,
+            "10": 8,
+            "11": 1,
+            "12": 16403,
+            "13": 80,
+            "15": 19224,
+            "16": 75878,
+            "19": 66
+          },
+          "outputCounts": {
+            "1": 107747,
+            "2": 8430,
+            "3": 4513,
+            "5": 99533,
+            "7": 88969,
+            "8": 6966,
+            "12": 13143,
+            "13": 28,
+            "15": 28424,
+            "16": 63075
+          }
+        },
+        {
+          "id": "upernet_conv2_t",
+          "name": "UPerNet ConvNeXt-v2-T",
+          "labels": {
+            "path": "scenes/occufly-donaukurier/upernet_conv2_t.u8.gz",
+            "compressedBytes": 81200,
+            "rawBytes": 841656,
+            "sha256": "8a62b346427aaadd061e53a04a2adc151f88824bf3c2dfeda003519766fd3ff3"
+          },
+          "metrics": {
+            "inputMiou": 24.8815,
+            "outputMiou": 29.8154,
+            "miouGain": 4.9339
+          },
+          "inputCounts": {
+            "1": 108032,
+            "2": 7276,
+            "3": 4985,
+            "5": 139225,
+            "7": 42610,
+            "8": 6569,
+            "10": 47,
+            "11": 2,
+            "12": 17233,
+            "13": 5,
+            "15": 18647,
+            "16": 76003,
+            "17": 160,
+            "19": 34
+          },
+          "outputCounts": {
+            "1": 108837,
+            "2": 11484,
+            "3": 1486,
+            "5": 119702,
+            "7": 68249,
+            "8": 5249,
+            "12": 13768,
+            "15": 29047,
+            "16": 63006
+          }
+        },
+        {
+          "id": "upernet_swinv2_t",
+          "name": "UPerNet Swin-v2-T",
+          "labels": {
+            "path": "scenes/occufly-donaukurier/upernet_swinv2_t.u8.gz",
+            "compressedBytes": 76857,
+            "rawBytes": 841656,
+            "sha256": "aeed454c0904ca6c84bacbc6c8984bb2478b6aecb7a86a0185397ee7bbb20bf0"
+          },
+          "metrics": {
+            "inputMiou": 22.638,
+            "outputMiou": 27.9927,
+            "miouGain": 5.3547
+          },
+          "inputCounts": {
+            "1": 114405,
+            "2": 3157,
+            "3": 7285,
+            "5": 155138,
+            "7": 27011,
+            "8": 11360,
+            "10": 19,
+            "11": 3,
+            "12": 16866,
+            "13": 22,
+            "15": 17375,
+            "16": 68143,
+            "19": 44
+          },
+          "outputCounts": {
+            "1": 113584,
+            "2": 5330,
+            "3": 2488,
+            "5": 141735,
+            "7": 47524,
+            "8": 9440,
+            "12": 13494,
+            "13": 13,
+            "15": 28064,
+            "16": 59156
+          }
+        }
+      ]
+    },
+    {
+      "id": "occufly-inc-west",
+      "dataset": "occufly",
+      "name": "INC-west",
+      "voxelCount": 1491786,
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry": {
+        "path": "scenes/occufly-inc-west/geometry.u16.gz",
+        "compressedBytes": 3135858,
+        "rawBytes": 8950716,
+        "sha256": "8f892f0e4ddbddbb049a79d79ff51acc4bce444908ce911b8ad7a07e88599d66"
+      },
+      "gt": {
+        "path": "scenes/occufly-inc-west/gt.u8.gz",
+        "compressedBytes": 107674,
+        "rawBytes": 1491786,
+        "sha256": "9ba719982d5675ee3acc9c24539c2496d14aa9ab677f7fa38591356481b6f2b5"
+      },
+      "gtCounts": {
+        "1": 545464,
+        "2": 15774,
+        "3": 285560,
+        "5": 348457,
+        "7": 12184,
+        "8": 89463,
+        "10": 1,
+        "11": 809,
+        "12": 12363,
+        "15": 71887,
+        "16": 109824
+      },
+      "presentLabels": [
+        1,
+        2,
+        3,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        15,
+        16,
+        17,
+        19,
+        20,
+        21,
+        25,
+        26
+      ],
+      "models": [
+        {
+          "id": "mask2former",
+          "name": "Mask2Former Swin-T",
+          "labels": {
+            "path": "scenes/occufly-inc-west/mask2former.u8.gz",
+            "compressedBytes": 295887,
+            "rawBytes": 2983572,
+            "sha256": "f1a2eec8d56f26f36902d0caf29ead8b73d3c4e5e0060e4a15f209d492a001a9"
+          },
+          "metrics": {
+            "inputMiou": 22.1165,
+            "outputMiou": 26.5241,
+            "miouGain": 4.4076
+          },
+          "inputCounts": {
+            "1": 566624,
+            "2": 210203,
+            "3": 35174,
+            "5": 313973,
+            "7": 16283,
+            "8": 43143,
+            "10": 34,
+            "11": 2,
+            "12": 27224,
+            "13": 6542,
+            "15": 76406,
+            "16": 196133,
+            "19": 38,
+            "20": 4,
+            "25": 3
+          },
+          "outputCounts": {
+            "1": 575776,
+            "2": 255504,
+            "3": 13020,
+            "5": 339570,
+            "7": 24242,
+            "8": 13184,
+            "12": 19241,
+            "13": 3646,
+            "15": 52525,
+            "16": 195078
+          }
+        },
+        {
+          "id": "segformer",
+          "name": "SegFormer MiT-B3",
+          "labels": {
+            "path": "scenes/occufly-inc-west/segformer.u8.gz",
+            "compressedBytes": 265846,
+            "rawBytes": 2983572,
+            "sha256": "a7eeb536a3647b70b0ccd4130f1da0e338c1d0fd323b2e1f45bf68fb6f9773a1"
+          },
+          "metrics": {
+            "inputMiou": 21.7692,
+            "outputMiou": 25.4136,
+            "miouGain": 3.6444
+          },
+          "inputCounts": {
+            "1": 513268,
+            "2": 335685,
+            "3": 28019,
+            "5": 316506,
+            "7": 19644,
+            "8": 26804,
+            "10": 16,
+            "11": 1,
+            "12": 29629,
+            "13": 2828,
+            "15": 50106,
+            "16": 168700,
+            "17": 295,
+            "19": 274,
+            "21": 2,
+            "25": 4,
+            "26": 5
+          },
+          "outputCounts": {
+            "1": 518851,
+            "2": 352769,
+            "3": 11671,
+            "5": 327866,
+            "7": 28184,
+            "8": 10738,
+            "12": 20330,
+            "13": 1134,
+            "15": 47414,
+            "16": 172829
+          }
+        },
+        {
+          "id": "upernet_conv2_t",
+          "name": "UPerNet ConvNeXt-v2-T",
+          "labels": {
+            "path": "scenes/occufly-inc-west/upernet_conv2_t.u8.gz",
+            "compressedBytes": 246504,
+            "rawBytes": 2983572,
+            "sha256": "1b0eef4773428be29d36509113f3d8114bd17510e357b9b5f6db16601aca8ea9"
+          },
+          "metrics": {
+            "inputMiou": 22.2062,
+            "outputMiou": 25.6621,
+            "miouGain": 3.4558
+          },
+          "inputCounts": {
+            "1": 518291,
+            "2": 324920,
+            "3": 15971,
+            "5": 314682,
+            "7": 20806,
+            "8": 16359,
+            "9": 1,
+            "10": 44,
+            "12": 28770,
+            "13": 1039,
+            "15": 50834,
+            "16": 198225,
+            "17": 467,
+            "19": 1349,
+            "20": 25,
+            "25": 3
+          },
+          "outputCounts": {
+            "1": 519450,
+            "2": 346615,
+            "3": 6094,
+            "5": 322994,
+            "7": 29244,
+            "8": 5557,
+            "12": 20447,
+            "13": 370,
+            "15": 46075,
+            "16": 194940
+          }
+        },
+        {
+          "id": "upernet_swinv2_t",
+          "name": "UPerNet Swin-v2-T",
+          "labels": {
+            "path": "scenes/occufly-inc-west/upernet_swinv2_t.u8.gz",
+            "compressedBytes": 243147,
+            "rawBytes": 2983572,
+            "sha256": "aec6adf2fcb4e2b2f661fa59da574cd9ed469a12ce29820f6b831529688b0edb"
+          },
+          "metrics": {
+            "inputMiou": 22.4943,
+            "outputMiou": 26.3397,
+            "miouGain": 3.8454
+          },
+          "inputCounts": {
+            "1": 518512,
+            "2": 313829,
+            "3": 16483,
+            "5": 339795,
+            "7": 13335,
+            "8": 17269,
+            "9": 1,
+            "10": 11,
+            "11": 1,
+            "12": 28098,
+            "13": 2564,
+            "15": 34257,
+            "16": 206525,
+            "17": 4,
+            "19": 1056,
+            "20": 24,
+            "25": 22
+          },
+          "outputCounts": {
+            "1": 521336,
+            "2": 332741,
+            "3": 5388,
+            "5": 349578,
+            "7": 20104,
+            "8": 6661,
+            "12": 19710,
+            "13": 1146,
+            "15": 38969,
+            "16": 196153
+          }
+        }
+      ]
+    },
+    {
+      "id": "occufly-kiesplatz",
+      "dataset": "occufly",
+      "name": "Kiesplatz",
+      "voxelCount": 821215,
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry": {
+        "path": "scenes/occufly-kiesplatz/geometry.u16.gz",
+        "compressedBytes": 1712987,
+        "rawBytes": 4927290,
+        "sha256": "723c238aa161774cd6317772e53d94f7f98764ca623039edf149941503d8c04b"
+      },
+      "gt": {
+        "path": "scenes/occufly-kiesplatz/gt.u8.gz",
+        "compressedBytes": 12116,
+        "rawBytes": 821215,
+        "sha256": "c1401803de9bbbbd3739336833e7b6615c58f59ded817e4942ca94d2883b9505"
+      },
+      "gtCounts": {
+        "2": 45944,
+        "3": 700,
+        "5": 552949,
+        "7": 221118,
+        "8": 5,
+        "12": 181,
+        "13": 96,
+        "15": 201,
+        "16": 21
+      },
+      "presentLabels": [
+        1,
+        2,
+        3,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        15,
+        16,
+        17,
+        19,
+        21
+      ],
+      "models": [
+        {
+          "id": "mask2former",
+          "name": "Mask2Former Swin-T",
+          "labels": {
+            "path": "scenes/occufly-kiesplatz/mask2former.u8.gz",
+            "compressedBytes": 74047,
+            "rawBytes": 1642430,
+            "sha256": "911cfedea900b2f112159b4c307f2f38e9ad8ad051a34936766179ccaee11f3b"
+          },
+          "metrics": {
+            "inputMiou": 29.2278,
+            "outputMiou": 33.7023,
+            "miouGain": 4.4745
+          },
+          "inputCounts": {
+            "1": 929,
+            "2": 51576,
+            "3": 857,
+            "5": 556610,
+            "7": 201490,
+            "8": 321,
+            "9": 1,
+            "12": 361,
+            "13": 8670,
+            "15": 157,
+            "16": 243
+          },
+          "outputCounts": {
+            "1": 64,
+            "2": 56115,
+            "3": 159,
+            "5": 505556,
+            "7": 249666,
+            "8": 91,
+            "12": 286,
+            "13": 9129,
+            "15": 132,
+            "16": 17
+          }
+        },
+        {
+          "id": "segformer",
+          "name": "SegFormer MiT-B3",
+          "labels": {
+            "path": "scenes/occufly-kiesplatz/segformer.u8.gz",
+            "compressedBytes": 56279,
+            "rawBytes": 1642430,
+            "sha256": "9d07523a60291730ef4291960fc62acacdf147c51f1fefe359091c70005bc34a"
+          },
+          "metrics": {
+            "inputMiou": 32.6692,
+            "outputMiou": 33.6787,
+            "miouGain": 1.0095
+          },
+          "inputCounts": {
+            "1": 171,
+            "2": 52434,
+            "3": 2990,
+            "5": 538034,
+            "7": 224606,
+            "8": 260,
+            "9": 5,
+            "11": 1,
+            "12": 249,
+            "13": 2068,
+            "15": 10,
+            "17": 387
+          },
+          "outputCounts": {
+            "1": 20,
+            "2": 55054,
+            "3": 559,
+            "5": 511712,
+            "7": 250396,
+            "8": 125,
+            "12": 237,
+            "13": 3103,
+            "15": 9
+          }
+        },
+        {
+          "id": "upernet_conv2_t",
+          "name": "UPerNet ConvNeXt-v2-T",
+          "labels": {
+            "path": "scenes/occufly-kiesplatz/upernet_conv2_t.u8.gz",
+            "compressedBytes": 65026,
+            "rawBytes": 1642430,
+            "sha256": "967400e479ab4ef344e1de4e6449f593ff374edcb9c2e419ba9be7cfd8457e72"
+          },
+          "metrics": {
+            "inputMiou": 31.5535,
+            "outputMiou": 35.2715,
+            "miouGain": 3.7179
+          },
+          "inputCounts": {
+            "1": 431,
+            "2": 62852,
+            "3": 2407,
+            "5": 519370,
+            "7": 232952,
+            "8": 119,
+            "10": 154,
+            "12": 289,
+            "13": 1059,
+            "15": 19,
+            "16": 69,
+            "17": 441,
+            "19": 1052,
+            "21": 1
+          },
+          "outputCounts": {
+            "1": 166,
+            "2": 66245,
+            "3": 1088,
+            "5": 491176,
+            "7": 261202,
+            "8": 70,
+            "12": 249,
+            "13": 948,
+            "15": 32,
+            "16": 39
+          }
+        },
+        {
+          "id": "upernet_swinv2_t",
+          "name": "UPerNet Swin-v2-T",
+          "labels": {
+            "path": "scenes/occufly-kiesplatz/upernet_swinv2_t.u8.gz",
+            "compressedBytes": 40789,
+            "rawBytes": 1642430,
+            "sha256": "cb9f919478fa533e7e2bd3728f3595e557a36e3eedc7b09ae7c95edd07eac079"
+          },
+          "metrics": {
+            "inputMiou": 34.6143,
+            "outputMiou": 34.2174,
+            "miouGain": -0.3969
+          },
+          "inputCounts": {
+            "1": 267,
+            "2": 45112,
+            "3": 2026,
+            "5": 530140,
+            "7": 242052,
+            "8": 154,
+            "10": 13,
+            "12": 269,
+            "13": 147,
+            "15": 10,
+            "19": 1025
+          },
+          "outputCounts": {
+            "1": 24,
+            "2": 47363,
+            "3": 255,
+            "5": 523752,
+            "7": 249331,
+            "8": 137,
+            "12": 247,
+            "13": 96,
+            "15": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "occufly-koesching",
+      "dataset": "occufly",
+      "name": "Koesching",
+      "voxelCount": 368530,
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry": {
+        "path": "scenes/occufly-koesching/geometry.u16.gz",
+        "compressedBytes": 768722,
+        "rawBytes": 2211180,
+        "sha256": "edf22f821451f5147f3f275ced0ff6a5b1fd9e9b75d21759f43b5320adb2274f"
+      },
+      "gt": {
+        "path": "scenes/occufly-koesching/gt.u8.gz",
+        "compressedBytes": 30827,
+        "rawBytes": 368530,
+        "sha256": "ef2e53cb5a1c3d00b0b745f24139884cc5b1ff2394a422fbb59741d4e99faf35"
+      },
+      "gtCounts": {
+        "0": 263,
+        "1": 97410,
+        "2": 10096,
+        "3": 4771,
+        "5": 127637,
+        "7": 11427,
+        "8": 20304,
+        "9": 5,
+        "10": 12,
+        "12": 13473,
+        "13": 6562,
+        "15": 47244,
+        "16": 29326
+      },
+      "presentLabels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        19,
+        20,
+        26
+      ],
+      "models": [
+        {
+          "id": "mask2former",
+          "name": "Mask2Former Swin-T",
+          "labels": {
+            "path": "scenes/occufly-koesching/mask2former.u8.gz",
+            "compressedBytes": 84641,
+            "rawBytes": 737060,
+            "sha256": "8f850bcdd980bec82646bdcfc93a35c1d73c39ad53aec2b32ab1420df5b7563f"
+          },
+          "metrics": {
+            "inputMiou": 23.0049,
+            "outputMiou": 25.1177,
+            "miouGain": 2.1128
+          },
+          "inputCounts": {
+            "1": 85201,
+            "2": 4468,
+            "3": 798,
+            "5": 121811,
+            "7": 15648,
+            "8": 25708,
+            "10": 61,
+            "11": 4,
+            "12": 26651,
+            "13": 1655,
+            "14": 11,
+            "15": 42870,
+            "16": 43628,
+            "20": 10,
+            "26": 6
+          },
+          "outputCounts": {
+            "1": 90869,
+            "2": 6010,
+            "3": 241,
+            "4": 1,
+            "5": 111782,
+            "7": 28046,
+            "8": 19658,
+            "10": 4,
+            "12": 27519,
+            "13": 677,
+            "15": 41534,
+            "16": 42183,
+            "20": 6
+          }
+        },
+        {
+          "id": "segformer",
+          "name": "SegFormer MiT-B3",
+          "labels": {
+            "path": "scenes/occufly-koesching/segformer.u8.gz",
+            "compressedBytes": 87714,
+            "rawBytes": 737060,
+            "sha256": "f3ea181f198ae7c787462c6cdd1ddfbf676a6f4c0afc28f6a36d8f12883cda66"
+          },
+          "metrics": {
+            "inputMiou": 23.8035,
+            "outputMiou": 26.3688,
+            "miouGain": 2.5653
+          },
+          "inputCounts": {
+            "1": 82985,
+            "2": 18004,
+            "3": 555,
+            "5": 116657,
+            "7": 7339,
+            "8": 20815,
+            "10": 20,
+            "11": 2,
+            "12": 28951,
+            "13": 3039,
+            "15": 37407,
+            "16": 52670,
+            "19": 85,
+            "20": 1
+          },
+          "outputCounts": {
+            "1": 88444,
+            "2": 25124,
+            "3": 116,
+            "5": 108516,
+            "7": 13780,
+            "8": 15806,
+            "10": 2,
+            "12": 29519,
+            "13": 677,
+            "15": 40054,
+            "16": 46492
+          }
+        },
+        {
+          "id": "upernet_conv2_t",
+          "name": "UPerNet ConvNeXt-v2-T",
+          "labels": {
+            "path": "scenes/occufly-koesching/upernet_conv2_t.u8.gz",
+            "compressedBytes": 77466,
+            "rawBytes": 737060,
+            "sha256": "c11b67ce60765f64c8929cf4d027dc75e40dedf973656ceb51ca2aba1a03981e"
+          },
+          "metrics": {
+            "inputMiou": 23.1449,
+            "outputMiou": 26.7461,
+            "miouGain": 3.6012
+          },
+          "inputCounts": {
+            "1": 90414,
+            "2": 5477,
+            "3": 245,
+            "5": 131681,
+            "7": 7831,
+            "8": 18026,
+            "10": 24,
+            "11": 4,
+            "12": 27779,
+            "13": 1051,
+            "15": 32572,
+            "16": 53424,
+            "19": 2
+          },
+          "outputCounts": {
+            "1": 94017,
+            "2": 6705,
+            "3": 77,
+            "5": 127813,
+            "7": 13632,
+            "8": 14383,
+            "12": 27751,
+            "13": 677,
+            "15": 36330,
+            "16": 47145
+          }
+        },
+        {
+          "id": "upernet_swinv2_t",
+          "name": "UPerNet Swin-v2-T",
+          "labels": {
+            "path": "scenes/occufly-koesching/upernet_swinv2_t.u8.gz",
+            "compressedBytes": 79275,
+            "rawBytes": 737060,
+            "sha256": "4d3771d2d6c55d8da098433556a38415e326c920fa5e7e97c6bfefbad49036c1"
+          },
+          "metrics": {
+            "inputMiou": 24.6033,
+            "outputMiou": 27.6209,
+            "miouGain": 3.0176
+          },
+          "inputCounts": {
+            "1": 86878,
+            "2": 6877,
+            "3": 432,
+            "5": 132388,
+            "7": 8523,
+            "8": 17552,
+            "10": 33,
+            "12": 26782,
+            "13": 736,
+            "14": 1,
+            "15": 42067,
+            "16": 46261
+          },
+          "outputCounts": {
+            "1": 90485,
+            "2": 8016,
+            "3": 143,
+            "5": 128058,
+            "7": 14755,
+            "8": 13648,
+            "12": 27468,
+            "13": 677,
+            "15": 41760,
+            "16": 43520
+          }
+        }
+      ]
+    },
+    {
+      "id": "occufly-lenting",
+      "dataset": "occufly",
+      "name": "Lenting",
+      "voxelCount": 624469,
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry": {
+        "path": "scenes/occufly-lenting/geometry.u16.gz",
+        "compressedBytes": 1315726,
+        "rawBytes": 3746814,
+        "sha256": "5f8e6f8cfdddcd4ef327051fddfd27a913fb6dc89f0dcb15079f19254a40bbae"
+      },
+      "gt": {
+        "path": "scenes/occufly-lenting/gt.u8.gz",
+        "compressedBytes": 50444,
+        "rawBytes": 624469,
+        "sha256": "93a9cd5430218bf786fbfc635cbd90f2f2d50fd5dac1123e5b89e2abc22b3a5e"
+      },
+      "gtCounts": {
+        "1": 157001,
+        "2": 23975,
+        "3": 3025,
+        "5": 167325,
+        "7": 88438,
+        "8": 47288,
+        "11": 40,
+        "12": 18673,
+        "15": 58270,
+        "16": 60434
+      },
+      "presentLabels": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        19,
+        25
+      ],
+      "models": [
+        {
+          "id": "mask2former",
+          "name": "Mask2Former Swin-T",
+          "labels": {
+            "path": "scenes/occufly-lenting/mask2former.u8.gz",
+            "compressedBytes": 141256,
+            "rawBytes": 1248938,
+            "sha256": "fb136405302de2c4d813dc654e417fd246b0fb1e57d862085778808d2a0bbe16"
+          },
+          "metrics": {
+            "inputMiou": 28.6888,
+            "outputMiou": 34.857,
+            "miouGain": 6.1682
+          },
+          "inputCounts": {
+            "1": 123956,
+            "2": 5333,
+            "3": 4782,
+            "5": 213098,
+            "7": 40296,
+            "8": 47982,
+            "10": 73,
+            "11": 97,
+            "12": 24641,
+            "13": 17,
+            "14": 4,
+            "15": 93123,
+            "16": 70514,
+            "19": 473,
+            "25": 80
+          },
+          "outputCounts": {
+            "1": 152531,
+            "2": 9950,
+            "3": 929,
+            "5": 189535,
+            "7": 85717,
+            "8": 15626,
+            "12": 13707,
+            "13": 291,
+            "15": 63923,
+            "16": 92260
+          }
+        },
+        {
+          "id": "segformer",
+          "name": "SegFormer MiT-B3",
+          "labels": {
+            "path": "scenes/occufly-lenting/segformer.u8.gz",
+            "compressedBytes": 142485,
+            "rawBytes": 1248938,
+            "sha256": "a449728c95469a2a37ee76514c4b483d1f24509b9c748e371e28ee65b327f308"
+          },
+          "metrics": {
+            "inputMiou": 29.859,
+            "outputMiou": 35.7784,
+            "miouGain": 5.9193
+          },
+          "inputCounts": {
+            "1": 130897,
+            "2": 28589,
+            "3": 1618,
+            "5": 192506,
+            "7": 37464,
+            "8": 36190,
+            "10": 16,
+            "11": 40,
+            "12": 33184,
+            "13": 374,
+            "15": 83281,
+            "16": 80285,
+            "19": 25
+          },
+          "outputCounts": {
+            "1": 160387,
+            "2": 45910,
+            "3": 259,
+            "5": 166697,
+            "7": 69246,
+            "8": 10093,
+            "12": 16181,
+            "13": 299,
+            "15": 62944,
+            "16": 92453
+          }
+        },
+        {
+          "id": "upernet_conv2_t",
+          "name": "UPerNet ConvNeXt-v2-T",
+          "labels": {
+            "path": "scenes/occufly-lenting/upernet_conv2_t.u8.gz",
+            "compressedBytes": 140221,
+            "rawBytes": 1248938,
+            "sha256": "d18bdd0f294931613203f20779bcc942fa71f7f51c265ab8a9990aaf0ed3901d"
+          },
+          "metrics": {
+            "inputMiou": 28.2503,
+            "outputMiou": 33.7769,
+            "miouGain": 5.5265
+          },
+          "inputCounts": {
+            "1": 130194,
+            "2": 17890,
+            "3": 1734,
+            "5": 204185,
+            "7": 40264,
+            "8": 31999,
+            "10": 34,
+            "11": 79,
+            "12": 30336,
+            "13": 660,
+            "14": 5,
+            "15": 86124,
+            "16": 80882,
+            "17": 11,
+            "19": 67,
+            "25": 5
+          },
+          "outputCounts": {
+            "1": 159883,
+            "2": 27596,
+            "3": 268,
+            "5": 171854,
+            "7": 85095,
+            "8": 8392,
+            "12": 14204,
+            "13": 883,
+            "15": 62968,
+            "16": 93326
+          }
+        },
+        {
+          "id": "upernet_swinv2_t",
+          "name": "UPerNet Swin-v2-T",
+          "labels": {
+            "path": "scenes/occufly-lenting/upernet_swinv2_t.u8.gz",
+            "compressedBytes": 141527,
+            "rawBytes": 1248938,
+            "sha256": "200afd9507319783b7df3a993a762fd29eee67498f4464043d816d63afba696b"
+          },
+          "metrics": {
+            "inputMiou": 29.1913,
+            "outputMiou": 35.0756,
+            "miouGain": 5.8842
+          },
+          "inputCounts": {
+            "0": 2,
+            "1": 123878,
+            "2": 19948,
+            "3": 1742,
+            "5": 208445,
+            "7": 36228,
+            "8": 44297,
+            "10": 16,
+            "11": 45,
+            "12": 32671,
+            "13": 726,
+            "14": 85,
+            "15": 76786,
+            "16": 79576,
+            "17": 6,
+            "19": 13,
+            "25": 5
+          },
+          "outputCounts": {
+            "1": 157052,
+            "2": 33181,
+            "3": 154,
+            "5": 171965,
+            "7": 78919,
+            "8": 14265,
+            "12": 17034,
+            "13": 684,
+            "15": 59051,
+            "16": 92164
+          }
+        }
+      ]
+    },
+    {
+      "id": "occufly-schanz",
+      "dataset": "occufly",
+      "name": "Schanz",
+      "voxelCount": 600924,
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry": {
+        "path": "scenes/occufly-schanz/geometry.u16.gz",
+        "compressedBytes": 1295757,
+        "rawBytes": 3605544,
+        "sha256": "522c061db21652626d376de5f91ec659656d26edd7a15c44b4c0728d3d2ffa44"
+      },
+      "gt": {
+        "path": "scenes/occufly-schanz/gt.u8.gz",
+        "compressedBytes": 64754,
+        "rawBytes": 600924,
+        "sha256": "d33adc94c04b6b02f041255c96109b2c47b8bb7ec8303d97751ed46c3b0a326e"
+      },
+      "gtCounts": {
+        "1": 144669,
+        "2": 12959,
+        "3": 6625,
+        "5": 101365,
+        "7": 93835,
+        "8": 14690,
+        "10": 26,
+        "11": 281,
+        "12": 19667,
+        "15": 89421,
+        "16": 117386
+      },
+      "presentLabels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        15,
+        16,
+        17,
+        19,
+        21,
+        25,
+        26
+      ],
+      "models": [
+        {
+          "id": "mask2former",
+          "name": "Mask2Former Swin-T",
+          "labels": {
+            "path": "scenes/occufly-schanz/mask2former.u8.gz",
+            "compressedBytes": 145149,
+            "rawBytes": 1201848,
+            "sha256": "85c89dae8ea062be66accde2d094a8b241f14d65db3fba1247f81e286f0f1829"
+          },
+          "metrics": {
+            "inputMiou": 16.9522,
+            "outputMiou": 23.2699,
+            "miouGain": 6.3177
+          },
+          "inputCounts": {
+            "1": 222256,
+            "2": 202,
+            "3": 12,
+            "5": 23771,
+            "7": 30003,
+            "8": 6001,
+            "10": 43,
+            "12": 15175,
+            "13": 2602,
+            "15": 165315,
+            "16": 135543,
+            "19": 1
+          },
+          "outputCounts": {
+            "1": 242302,
+            "2": 1220,
+            "5": 32041,
+            "7": 64157,
+            "8": 2030,
+            "12": 7113,
+            "13": 1694,
+            "15": 126440,
+            "16": 123927
+          }
+        },
+        {
+          "id": "segformer",
+          "name": "SegFormer MiT-B3",
+          "labels": {
+            "path": "scenes/occufly-schanz/segformer.u8.gz",
+            "compressedBytes": 165811,
+            "rawBytes": 1201848,
+            "sha256": "356ebd473422459ce2a5eb2ee3c6769b54c0880f2e152ca5795b91b76dc0982d"
+          },
+          "metrics": {
+            "inputMiou": 24.8002,
+            "outputMiou": 29.0483,
+            "miouGain": 4.2481
+          },
+          "inputCounts": {
+            "1": 138679,
+            "2": 17125,
+            "3": 1041,
+            "5": 80985,
+            "7": 68269,
+            "8": 13776,
+            "10": 23,
+            "11": 4,
+            "12": 16041,
+            "13": 11020,
+            "15": 123746,
+            "16": 130109,
+            "17": 2,
+            "19": 97,
+            "25": 2,
+            "26": 5
+          },
+          "outputCounts": {
+            "1": 158920,
+            "2": 23368,
+            "3": 354,
+            "5": 78286,
+            "7": 87719,
+            "8": 5950,
+            "12": 8014,
+            "13": 9512,
+            "15": 108555,
+            "16": 120246
+          }
+        },
+        {
+          "id": "upernet_conv2_t",
+          "name": "UPerNet ConvNeXt-v2-T",
+          "labels": {
+            "path": "scenes/occufly-schanz/upernet_conv2_t.u8.gz",
+            "compressedBytes": 169742,
+            "rawBytes": 1201848,
+            "sha256": "7455d545c94d55effc7d717df5713426f112d4f1db71eea4cad2f7bff1e41d5a"
+          },
+          "metrics": {
+            "inputMiou": 23.2281,
+            "outputMiou": 27.6687,
+            "miouGain": 4.4406
+          },
+          "inputCounts": {
+            "1": 146113,
+            "2": 20075,
+            "3": 572,
+            "5": 98995,
+            "7": 48571,
+            "8": 14634,
+            "10": 61,
+            "11": 378,
+            "12": 14840,
+            "13": 4295,
+            "15": 107115,
+            "16": 132971,
+            "17": 12237,
+            "19": 67
+          },
+          "outputCounts": {
+            "1": 167433,
+            "2": 25926,
+            "3": 74,
+            "4": 1,
+            "5": 96849,
+            "7": 67300,
+            "8": 7572,
+            "12": 7773,
+            "13": 8292,
+            "15": 101072,
+            "16": 118631,
+            "21": 1
+          }
+        },
+        {
+          "id": "upernet_swinv2_t",
+          "name": "UPerNet Swin-v2-T",
+          "labels": {
+            "path": "scenes/occufly-schanz/upernet_swinv2_t.u8.gz",
+            "compressedBytes": 163552,
+            "rawBytes": 1201848,
+            "sha256": "83285f19cb8903352885368e785ef3fe1ef392da7c4a25e7552afc088708fbe0"
+          },
+          "metrics": {
+            "inputMiou": 23.4653,
+            "outputMiou": 27.7513,
+            "miouGain": 4.286
+          },
+          "inputCounts": {
+            "1": 154407,
+            "2": 19902,
+            "3": 217,
+            "5": 93230,
+            "7": 53352,
+            "8": 12253,
+            "10": 62,
+            "11": 13,
+            "12": 14661,
+            "13": 12498,
+            "15": 117039,
+            "16": 123268,
+            "19": 22
+          },
+          "outputCounts": {
+            "1": 165752,
+            "2": 25213,
+            "3": 37,
+            "5": 88184,
+            "7": 75471,
+            "8": 6300,
+            "12": 7053,
+            "13": 10880,
+            "15": 103856,
+            "16": 118178
+          }
+        }
+      ]
+    },
+    {
+      "id": "occufly-treffler",
+      "dataset": "occufly",
+      "name": "Treffler",
+      "voxelCount": 777334,
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry": {
+        "path": "scenes/occufly-treffler/geometry.u16.gz",
+        "compressedBytes": 1630448,
+        "rawBytes": 4664004,
+        "sha256": "b3deceebd42d3a21efc7dfc5053dd8a00def13012a186a7fa4795127341f944d"
+      },
+      "gt": {
+        "path": "scenes/occufly-treffler/gt.u8.gz",
+        "compressedBytes": 43843,
+        "rawBytes": 777334,
+        "sha256": "e0fe70771090e7075100c6f1b3ebb7da72dea71c3233902db5b16344fece573c"
+      },
+      "gtCounts": {
+        "1": 161285,
+        "2": 25545,
+        "3": 1390,
+        "5": 209455,
+        "7": 207678,
+        "8": 8638,
+        "11": 22,
+        "12": 12008,
+        "13": 75431,
+        "15": 30522,
+        "16": 45360
+      },
+      "presentLabels": [
+        1,
+        2,
+        3,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        19,
+        20,
+        21,
+        26
+      ],
+      "models": [
+        {
+          "id": "mask2former",
+          "name": "Mask2Former Swin-T",
+          "labels": {
+            "path": "scenes/occufly-treffler/mask2former.u8.gz",
+            "compressedBytes": 167054,
+            "rawBytes": 1554668,
+            "sha256": "0c2819fee5f16bc9ac5e8813b4d57725037476d28e96b1bb08a392d4a74be8cf"
+          },
+          "metrics": {
+            "inputMiou": 35.0931,
+            "outputMiou": 40.5272,
+            "miouGain": 5.4341
+          },
+          "inputCounts": {
+            "1": 157617,
+            "2": 10275,
+            "3": 5361,
+            "5": 217027,
+            "7": 143367,
+            "8": 12013,
+            "9": 2,
+            "10": 49,
+            "11": 10,
+            "12": 22512,
+            "13": 117237,
+            "15": 45334,
+            "16": 46437,
+            "17": 90,
+            "19": 1,
+            "20": 1,
+            "26": 1
+          },
+          "outputCounts": {
+            "1": 157010,
+            "2": 37357,
+            "3": 3186,
+            "5": 200983,
+            "7": 186308,
+            "8": 15742,
+            "9": 2,
+            "11": 2,
+            "12": 9450,
+            "13": 83033,
+            "15": 32599,
+            "16": 51662
+          }
+        },
+        {
+          "id": "segformer",
+          "name": "SegFormer MiT-B3",
+          "labels": {
+            "path": "scenes/occufly-treffler/segformer.u8.gz",
+            "compressedBytes": 140394,
+            "rawBytes": 1554668,
+            "sha256": "0314f48716cfcc2d6e3d6e5fdfba0882b4b7ebdd52f11b5d888645105a15f88a"
+          },
+          "metrics": {
+            "inputMiou": 38.8846,
+            "outputMiou": 42.7459,
+            "miouGain": 3.8613
+          },
+          "inputCounts": {
+            "1": 140776,
+            "2": 13714,
+            "3": 5648,
+            "5": 245587,
+            "7": 166189,
+            "8": 11769,
+            "10": 11,
+            "11": 31,
+            "12": 22495,
+            "13": 84195,
+            "15": 33129,
+            "16": 53724,
+            "17": 47,
+            "21": 19
+          },
+          "outputCounts": {
+            "1": 152991,
+            "2": 26492,
+            "3": 3401,
+            "5": 217264,
+            "7": 201942,
+            "8": 13806,
+            "11": 15,
+            "12": 8712,
+            "13": 69988,
+            "15": 27728,
+            "16": 54995
+          }
+        },
+        {
+          "id": "upernet_conv2_t",
+          "name": "UPerNet ConvNeXt-v2-T",
+          "labels": {
+            "path": "scenes/occufly-treffler/upernet_conv2_t.u8.gz",
+            "compressedBytes": 131709,
+            "rawBytes": 1554668,
+            "sha256": "2f8b3c0b94084dbc6c6d6cc738e790eaa8704076c6049da4381fa19e4f9f6e4d"
+          },
+          "metrics": {
+            "inputMiou": 39.6804,
+            "outputMiou": 43.2365,
+            "miouGain": 3.5561
+          },
+          "inputCounts": {
+            "1": 146334,
+            "2": 8742,
+            "3": 4354,
+            "5": 242556,
+            "7": 174017,
+            "8": 8127,
+            "10": 123,
+            "11": 17,
+            "12": 21597,
+            "13": 86987,
+            "15": 28853,
+            "16": 54794,
+            "17": 199,
+            "19": 634
+          },
+          "outputCounts": {
+            "1": 154769,
+            "2": 22023,
+            "3": 3116,
+            "5": 213946,
+            "7": 208624,
+            "8": 12478,
+            "11": 7,
+            "12": 8706,
+            "13": 71789,
+            "15": 27125,
+            "16": 54751
+          }
+        },
+        {
+          "id": "upernet_swinv2_t",
+          "name": "UPerNet Swin-v2-T",
+          "labels": {
+            "path": "scenes/occufly-treffler/upernet_swinv2_t.u8.gz",
+            "compressedBytes": 145459,
+            "rawBytes": 1554668,
+            "sha256": "22700efb11a446e94522375cb642633056c21f833d5b5a576d5eea3bd564d031"
+          },
+          "metrics": {
+            "inputMiou": 38.9021,
+            "outputMiou": 42.6148,
+            "miouGain": 3.7127
+          },
+          "inputCounts": {
+            "1": 147721,
+            "2": 15926,
+            "3": 3799,
+            "5": 257407,
+            "7": 151987,
+            "8": 9505,
+            "10": 1,
+            "11": 2,
+            "12": 22822,
+            "13": 85984,
+            "14": 2,
+            "15": 29951,
+            "16": 51663,
+            "17": 8,
+            "19": 556
+          },
+          "outputCounts": {
+            "1": 155204,
+            "2": 30596,
+            "3": 2466,
+            "5": 220151,
+            "7": 195609,
+            "8": 12612,
+            "12": 9165,
+            "13": 70582,
+            "15": 27580,
+            "16": 53369
+          }
+        }
+      ]
+    },
+    {
+      "id": "ood-poernbach-patch",
+      "dataset": "ood",
+      "name": "Pörnbach OOD patch",
+      "voxelCount": 40935,
+      "origin": [
+        35.0,
+        60.0,
+        0.0
+      ],
+      "geometry": {
+        "path": "scenes/ood-poernbach-patch/geometry.u16.gz",
+        "compressedBytes": 87149,
+        "rawBytes": 245610,
+        "sha256": "4d3ed8e83aa9a97bd819266bea2c5ccad6b78208846547380bcfdd720ca026bd"
+      },
+      "gt": {
+        "path": "scenes/ood-poernbach-patch/gt.u8.gz",
+        "compressedBytes": 2793,
+        "rawBytes": 40935,
+        "sha256": "1f6e91bcfa6c2c90ad9ebae040aa4c2c3efd852412c2806b9ef9962341a32297"
+      },
+      "gtCounts": {
+        "1": 9875,
+        "2": 237,
+        "3": 66,
+        "5": 21293,
+        "7": 150,
+        "8": 2059,
+        "10": 10,
+        "12": 431,
+        "15": 1943,
+        "16": 4871
+      },
+      "presentLabels": [
+        1,
+        2,
+        3,
+        5,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        15,
+        16
+      ],
+      "models": [
+        {
+          "id": "mask2former",
+          "name": "Mask2Former Swin-T",
+          "labels": {
+            "path": "scenes/ood-poernbach-patch/mask2former.u8.gz",
+            "compressedBytes": 7798,
+            "rawBytes": 81870,
+            "sha256": "15aad11f10dd43412abeaad6c84c49a226aebd63cac01a2744fa0fc9d1d1881c"
+          },
+          "metrics": null,
+          "inputCounts": {
+            "1": 10347,
+            "2": 113,
+            "3": 147,
+            "5": 19159,
+            "7": 610,
+            "8": 1836,
+            "10": 44,
+            "11": 5,
+            "12": 891,
+            "13": 1314,
+            "15": 1994,
+            "16": 4475
+          },
+          "outputCounts": {
+            "1": 10855,
+            "2": 113,
+            "3": 72,
+            "5": 20237,
+            "7": 823,
+            "8": 1492,
+            "10": 39,
+            "11": 5,
+            "12": 533,
+            "13": 117,
+            "15": 1789,
+            "16": 4860
+          }
+        }
+      ]
+    },
+    {
+      "id": "ood-poernbach-full",
+      "dataset": "ood",
+      "name": "Pörnbach OOD full scene",
+      "voxelCount": 74433,
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry": {
+        "path": "scenes/ood-poernbach-full/geometry.u16.gz",
+        "compressedBytes": 163871,
+        "rawBytes": 446598,
+        "sha256": "fcd40e76cf0c7710f57db125bf3494e759672ffdb60270fb54aa81da44a1ba00"
+      },
+      "gt": {
+        "path": "scenes/ood-poernbach-full/gt.u8.gz",
+        "compressedBytes": 5827,
+        "rawBytes": 74433,
+        "sha256": "9b4ac30fad7260d99f0bfb78d83783f2a7a5e7083674fc56d2e88fb41d31bde2"
+      },
+      "gtCounts": {
+        "1": 17762,
+        "2": 928,
+        "3": 159,
+        "5": 34460,
+        "7": 381,
+        "8": 6457,
+        "10": 31,
+        "12": 1001,
+        "15": 5221,
+        "16": 8033
+      },
+      "presentLabels": [
+        1,
+        2,
+        3,
+        5,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        15,
+        16
+      ],
+      "models": [
+        {
+          "id": "mask2former",
+          "name": "Mask2Former Swin-T",
+          "labels": {
+            "path": "scenes/ood-poernbach-full/mask2former.u8.gz",
+            "compressedBytes": 14727,
+            "rawBytes": 148866,
+            "sha256": "29c2c66a369025563f254740c41c99e5ad604c056c679a4eebc8b4e833c7d633"
+          },
+          "metrics": null,
+          "inputCounts": {
+            "1": 18301,
+            "2": 165,
+            "3": 153,
+            "5": 32924,
+            "7": 704,
+            "8": 3726,
+            "10": 74,
+            "11": 12,
+            "12": 1880,
+            "13": 1384,
+            "15": 8048,
+            "16": 7062
+          },
+          "outputCounts": {
+            "1": 19103,
+            "2": 163,
+            "3": 78,
+            "5": 33970,
+            "7": 1104,
+            "8": 3169,
+            "10": 57,
+            "11": 12,
+            "12": 1264,
+            "13": 143,
+            "15": 7130,
+            "16": 8240
+          }
+        }
+      ]
+    }
+  ]
+}
