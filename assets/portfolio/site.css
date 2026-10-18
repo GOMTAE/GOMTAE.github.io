@@ -2127,3 +2127,53 @@ main:focus {
     max-width: 180px;
   }
 }
+
+.bio-timeline {
+  list-style: none;
+  margin: 38px 0 0;
+  padding: 0;
+}
+.bio-milestone {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 36px;
+  padding-block: 32px;
+}
+.bio-milestone + .bio-milestone {
+  border-top: 1px solid var(--line);
+}
+.bio-milestone:first-child {
+  padding-top: 0;
+}
+.bio-dates {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--accent);
+}
+.bio-milestone h3 {
+  font-size: 23px;
+  line-height: 1.3;
+}
+.bio-organization {
+  margin-top: 8px;
+  font-size: 16px;
+  color: var(--ink);
+}
+.bio-story {
+  margin-top: 18px;
+  max-width: 730px;
+  font-size: 17px;
+  line-height: 1.85;
+}
+.bio-detail,
+.bio-milestone .text-link {
+  margin-top: 16px;
+  font-size: 15px;
+}
+@media (max-width: 600px) {
+  .bio-milestone {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding-block: 28px;
+  }
+}

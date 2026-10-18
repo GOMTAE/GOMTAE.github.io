@@ -2,7 +2,7 @@
 layout: base.njk
 permalink: /bio/index.html
 title: Bio
-description: Short and extended professional biographies of Taehyoung Kim, research engineer at Fraunhofer IVI working on robotic perception and aerial autonomy.
+description: A short biography and career and education timeline of Taehyoung Kim, working on robotic perception and aerial autonomy.
 ---
 <section class="container bio-page" aria-labelledby="bio-title">
   <header class="bio-header">
@@ -10,6 +10,22 @@ description: Short and extended professional biographies of Taehyoung Kim, resea
     <img class="bio-portrait" src="/assets/portfolio/media/taehyoung-480.webp" alt="Taehyoung Kim on a cobbled lane beside ivy and street art." width="480" height="600" decoding="async">
   </header>
   <section class="bio-block" aria-labelledby="short-bio-title"><div class="bio-block-heading"><h2 id="short-bio-title">Short bio.</h2><button class="text-link bio-copy" type="button" data-copy-bio="short-bio" hidden>Copy short bio <span aria-hidden="true">↗</span></button></div><div id="short-bio" class="bio-text"><p>{{ bio.short }}</p></div><p class="bio-copy-status" data-bio-status="short-bio" role="status"></p></section>
-  <section class="bio-block" aria-labelledby="long-bio-title"><div class="bio-block-heading"><h2 id="long-bio-title">Longer bio.</h2><button class="text-link bio-copy" type="button" data-copy-bio="long-bio" hidden>Copy longer bio <span aria-hidden="true">↗</span></button></div><div id="long-bio" class="bio-text">{% for paragraph in bio.long %}<p>{{ paragraph }}</p>{% endfor %}</div><p class="bio-copy-status" data-bio-status="long-bio" role="status"></p></section>
+  <section class="bio-block" aria-labelledby="journey-title">
+    <div class="bio-block-heading"><h2 id="journey-title">My journey.</h2></div>
+    <ol class="bio-timeline">
+      {% for entry in bio.journey %}
+      <li class="bio-milestone">
+        <p class="bio-dates">{{ entry.dates }}</p>
+        <div class="bio-milestone-content">
+          <h3>{{ entry.title }}</h3>
+          <p class="bio-organization">{{ entry.organization }}</p>
+          <p class="bio-story">{{ entry.text }}</p>
+          {% if entry.detail %}<p class="bio-detail">{{ entry.detail }}</p>{% endif %}
+          {% if entry.link %}<a class="text-link" href="{{ entry.link }}">{{ entry.linkLabel }} <span aria-hidden="true">↗</span></a>{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
   <div class="bio-end"><a class="text-link" href="/publications.html">Publications <span aria-hidden="true">↗</span></a><a class="text-link" href="/">Back to my homepage <span aria-hidden="true">↗</span></a></div>
 </section>

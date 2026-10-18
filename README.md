@@ -135,4 +135,4 @@ MultiFly uses seconds 8-23 with title/legend bands and excess side space cropped
 
 ## Professional bio
 
-`/bio/` provides a short and longer third-person biography with optional copy buttons. Edit `src/_data/bio.json` to update the wording. The homepage and footer link to this page; it uses the existing optimized portrait and is included in the sitemap.
+`/bio/` provides a short third-person biography with a copy button and a first-person career and education timeline. Edit `src/_data/bio.json` to update the biography or dated milestones. The homepage and footer link to this page; it uses the existing optimized portrait and is included in the sitemap.
