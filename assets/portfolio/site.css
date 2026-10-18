@@ -529,13 +529,21 @@ main:focus {
 }
 .activity-list li {
   display: grid;
-  grid-template-columns: 130px minmax(0, 1fr);
-  gap: 38px;
+  grid-template-columns: 130px minmax(0, 1fr) 120px;
+  gap: 30px;
+  align-items: center;
   border-top: 1px solid var(--line);
   padding-block: 26px;
 }
 .activity-list li:last-child {
   border-bottom: 1px solid var(--line);
+}
+.activity-image {
+  display: block;
+  width: 120px;
+  height: 76px;
+  object-fit: cover;
+  border-radius: 3px;
 }
 .activity-list time {
   font-family: var(--mono);
@@ -1916,9 +1924,23 @@ main:focus {
 }
 @media (max-width: 600px) {
   .activity-list li {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) 88px;
     gap: 12px;
     padding-block: 24px;
+  }
+  .activity-list time {
+    grid-column: 1 / -1;
+  }
+  .activity-list li > div {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .activity-image {
+    grid-column: 2;
+    grid-row: 2;
+    width: 88px;
+    height: 64px;
+    align-self: start;
   }
   .activity-list h3 {
     font-size: 24px;
