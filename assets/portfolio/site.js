@@ -30,55 +30,6 @@ if (header && toggle) {
   matchMedia("(min-width: 601px)").addEventListener("change", closeMenu);
 }
 
-document.querySelectorAll("[data-video]").forEach((link) => {
-  link.addEventListener(
-    "click",
-    (event) => {
-      event.preventDefault();
-      const shell = link.closest("[data-video-shell]");
-      const loopPreview = shell.querySelector("[data-loop-shell]");
-      loopPreview?.dispatchEvent(new Event("preview:pause"));
-      const video = document.createElement("video");
-      video.controls = true;
-      video.playsInline = true;
-      video.muted = true;
-      video.setAttribute(
-        "aria-label",
-        "Silent SSP comparison: Image Model, KD-SSP, NetWarp, and TCB-OCR. See the figure caption for context.",
-      );
-      video.src = link.dataset.video;
-      // Retain the static image as a fallback until a frame can be decoded.
-      video.addEventListener(
-        "loadeddata",
-        () => {
-          if (loopPreview) loopPreview.hidden = true;
-          else shell.querySelector("picture").hidden = true;
-          link.hidden = true;
-          video.focus();
-        },
-        { once: true },
-      );
-      video.addEventListener(
-        "error",
-        () => {
-          video.remove();
-          link.hidden = false;
-          link.textContent = "Open the original comparison video ↗";
-          link.removeAttribute("data-video");
-          shell.querySelector("picture").hidden = false;
-          if (loopPreview) loopPreview.hidden = false;
-        },
-        { once: true },
-      );
-      shell.append(video);
-      video.play().catch(() => {
-        /* Native controls remain available. */
-      });
-    },
-    { once: true },
-  );
-});
-
 // Authentic inline demos. Load only visible loops, and preserve user pauses.
 const motionPreference = matchMedia("(prefers-reduced-motion: reduce)");
 const connection = navigator.connection;

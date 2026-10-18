@@ -104,11 +104,13 @@ test("save-data preference prevents automatic animation downloads", async ({
       value: { saveData: true, addEventListener() {} },
     }),
   );
-  await page.goto("/");
-  const video = page.locator(".hero [data-loop-src]");
+  await page.goto("/projects.html#archive");
+  const video = page.locator(".archive-card").first().locator("video");
   await expect(video).not.toHaveAttribute("src");
   await page
-    .getByRole("button", { name: "Play animation: KD-SSP aerial perception" })
+    .getByRole("button", {
+      name: "Play animation: Fault-tolerant quadrotor control",
+    })
     .click();
   await expect
     .poll(() => video.evaluate((v) => !v.paused && v.currentTime > 0))

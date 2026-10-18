@@ -4,10 +4,6 @@ import { mkdir, stat, writeFile } from "node:fs/promises";
 const directory = "assets/portfolio/media";
 await mkdir(directory, { recursive: true });
 const sources = {
-  hero: {
-    source: "publications/static/videos/ssp_banner_video.mp4",
-    filter: "crop=640:368:640:0",
-  },
   "archive-control": { source: "images/Fault-Tolerant UAV Controller.gif" },
   "archive-planning": { source: "images/UAV Path Planning with DL.gif" },
   "archive-driving": { source: "images/Autonomous Driving.gif" },

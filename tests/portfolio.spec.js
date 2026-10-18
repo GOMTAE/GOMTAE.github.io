@@ -147,32 +147,30 @@ test("publications filter accurately and citations are usable", async ({
   );
 });
 
-test("homepage loads its visible loop but delays the full comparison and 3D assets", async ({
+test("homepage introduces the person with a priority portrait and defers research media", async ({
   page,
 }) => {
   const requests = [];
   page.on("request", (request) => requests.push(request.url()));
   await page.goto("/");
+  const photo = page.locator(".hero-portrait img");
+  await expect(photo).toBeVisible();
+  await expect(photo).toHaveAttribute("fetchpriority", "high");
   await expect
-    .poll(() => requests.some((url) => url.endsWith("hero-loop.mp4")))
+    .poll(() => photo.evaluate((img) => img.complete && img.naturalWidth > 0))
     .toBe(true);
+  await expect(page.locator(".hero video")).toHaveCount(0);
+  await expect(
+    page.locator(".hero").getByRole("link", { name: /Explore my work/ }),
+  ).toHaveAttribute("href", "#research");
+  await expect(
+    page.locator(".hero").getByRole("link", { name: /About me/ }),
+  ).toHaveAttribute("href", "#about");
   expect(
-    requests.some((url) => /ssp_banner_video|\.gif|\.gz|three/i.test(url)),
+    requests.some((url) =>
+      /hero-loop|ssp_banner_video|\.gif|\.gz|three/i.test(url),
+    ),
   ).toBe(false);
-  await page
-    .getByRole("link", {
-      name: "View full comparison: play SSP segmentation comparison video",
-    })
-    .click();
-  await expect(page.locator(".hero-media > video")).toBeVisible();
-  await expect
-    .poll(() =>
-      page.locator(".hero-media > video").evaluate((video) => video.readyState),
-    )
-    .toBeGreaterThanOrEqual(2);
-  expect(requests.some((url) => url.endsWith("ssp_banner_video.mp4"))).toBe(
-    true,
-  );
 });
 
 test("content and navigation remain usable without JavaScript", async ({
@@ -186,10 +184,8 @@ test("content and navigation remain usable without JavaScript", async ({
   await page.goto("/");
   await expect(page.getByRole("navigation")).toBeVisible();
   await expect(
-    page.getByRole("link", {
-      name: "View full comparison: play SSP segmentation comparison video",
-    }),
-  ).toHaveAttribute("href", /\.mp4$/);
+    page.locator(".hero").getByRole("link", { name: /About me/ }),
+  ).toHaveAttribute("href", "#about");
   await page.goto("/publications.html");
   await expect(page.locator("[data-publication]")).toHaveCount(5);
   await page.locator("#cite-multifly summary").click();

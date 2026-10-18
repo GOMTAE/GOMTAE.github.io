@@ -380,48 +380,6 @@ main:focus {
   color: #a1aca4;
   font-family: var(--mono);
 }
-.hero-experiment {
-  align-self: center;
-  margin-top: 24px;
-}
-.experiment-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 14px;
-}
-.pill {
-  font-family: var(--mono);
-  font-size: var(--text-label);
-  color: var(--accent);
-  border: 1px solid #b8cbbb;
-  border-radius: 3px;
-  padding: 3px 7px;
-}
-.hero-media {
-  position: relative;
-  background: var(--dark);
-  border-radius: 5px;
-  overflow: hidden;
-  aspect-ratio: 640/400;
-}
-.hero-media picture {
-  height: 100%;
-}
-.hero-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.hero-media video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background: #102321;
-}
 .motion-media {
   position: relative;
   width: 100%;
@@ -466,88 +424,6 @@ main:focus {
 }
 .motion-toggle span {
   font-size: 11px;
-}
-.hero-media > video {
-  z-index: 3;
-}
-.hero-media .play-video {
-  z-index: 2;
-  max-width: calc(100% - 128px);
-}
-.play-video {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  width: max-content;
-  max-width: calc(100% - 40px);
-  padding: 9px 14px 9px 9px;
-  background: #f6f7f3;
-  color: var(--ink);
-  border-radius: 40px;
-  font-size: var(--text-label);
-  box-shadow: 0 3px 10px #0002;
-}
-.play-video:hover {
-  text-decoration: none;
-  background: #fff;
-}
-.play-icon {
-  flex: none;
-  width: 28px;
-  height: 28px;
-  display: grid;
-  place-items: center;
-  border: 1px solid #c5d2c4;
-  border-radius: 50%;
-  font-size: var(--text-label);
-  padding-left: 2px;
-}
-.hero-experiment figcaption {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  margin-top: 22px;
-}
-.hero-experiment figcaption .eyebrow {
-  font-size: var(--text-label);
-}
-.hero-experiment figcaption p {
-  font-size: 27px;
-  line-height: 1.15;
-  letter-spacing: -0.035em;
-  color: var(--ink);
-  margin-top: 10px;
-}
-.hero-experiment figcaption > a {
-  font-size: 27px;
-}
-.experiment-note {
-  font-size: var(--text-label);
-  line-height: 1.7;
-  margin-top: 13px;
-  max-width: 400px;
-}
-.experiment-note a {
-  text-decoration: underline;
-}
-.research-strip {
-  padding-block: 23px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  border-top: 1px solid var(--line);
-  font-family: var(--mono);
-  font-size: var(--text-label);
-  text-transform: uppercase;
-  letter-spacing: 0.065em;
-  color: var(--muted);
-}
-.research-strip > span:nth-child(even) {
-  color: var(--accent);
 }
 /* Research gallery */
 .dark-section {
@@ -875,30 +751,15 @@ main:focus {
 }
 .about-grid {
   display: grid;
-  grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
   gap: 9%;
-  align-items: center;
+  align-items: start;
 }
 .about-grid .eyebrow {
   margin-bottom: 25px;
 }
 .about-grid h2 {
   font-size: clamp(35px, 3.4vw, 49px);
-}
-.about-portrait {
-  margin: 0;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 4px;
-}
-.about-portrait img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 5;
-}
-.about-copy h2 {
-  margin-bottom: 28px;
 }
 .about-copy p {
   font-size: 16px;
@@ -1409,9 +1270,6 @@ main:focus {
     padding-top: 105px;
     padding-bottom: 95px;
   }
-  .hero-experiment {
-    margin-top: 30px;
-  }
 }
 @media (max-width: 1100px) {
   .header-inner {
@@ -1445,9 +1303,6 @@ main:focus {
   }
   .hero-socials {
     gap: 12px;
-  }
-  .hero-experiment figcaption p {
-    font-size: 24px;
   }
   .research-meta {
     flex-direction: column;
@@ -1521,53 +1376,6 @@ main:focus {
     font-size: var(--text-label);
     gap: 9px;
     margin-top: 26px;
-  }
-  .hero-experiment {
-    margin-top: 0;
-  }
-  .experiment-heading {
-    gap: 10px;
-    align-items: flex-start;
-  }
-  .experiment-heading .eyebrow {
-    font-size: var(--text-label);
-  }
-  .pill {
-    font-size: var(--text-label);
-    white-space: nowrap;
-  }
-  .hero-media {
-    aspect-ratio: 1/1;
-  }
-  .hero-media img {
-    object-fit: cover;
-  }
-  .play-video {
-    left: 12px;
-    right: 12px;
-    bottom: 12px;
-    max-width: calc(100% - 24px);
-    font-size: var(--text-label);
-    padding: 6px 10px 6px 6px;
-    gap: 7px;
-  }
-  .play-icon {
-    width: 24px;
-    height: 24px;
-  }
-  .hero-experiment figcaption p {
-    font-size: 24px;
-  }
-  .hero-experiment figcaption .eyebrow {
-    font-size: var(--text-label);
-  }
-  .experiment-note {
-    font-size: var(--text-label);
-  }
-  .research-strip {
-    font-size: var(--text-label);
-    gap: 12px;
-    line-height: 1.8;
   }
   .section {
     padding-block: 75px;
@@ -1780,57 +1588,6 @@ main:focus {
     margin-top: 27px;
     gap: 13px;
   }
-  .hero-experiment {
-    margin-top: 0;
-    max-width: 520px;
-    width: 100%;
-    justify-self: center;
-  }
-  .experiment-heading {
-    align-items: center;
-    margin-bottom: 12px;
-  }
-  .experiment-heading .eyebrow {
-    font-size: var(--text-label);
-  }
-  .hero-media {
-    aspect-ratio: 16/10;
-  }
-  .hero-media img {
-    object-fit: cover;
-  }
-  .play-video {
-    font-size: var(--text-label);
-    bottom: 15px;
-    left: 15px;
-    padding: 7px 12px 7px 7px;
-  }
-  .hero-experiment figcaption {
-    margin-top: 18px;
-  }
-  .hero-experiment figcaption p {
-    font-size: 25px;
-  }
-  .hero-experiment figcaption .eyebrow {
-    font-size: var(--text-label);
-  }
-  .experiment-note {
-    font-size: var(--text-label);
-    margin-top: 12px;
-  }
-  .research-strip {
-    font-size: var(--text-label);
-    gap: 9px;
-    padding-block: 18px;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-  .research-strip > span:nth-child(4) {
-    display: none;
-  }
-  .research-strip > span:last-child {
-    flex-basis: 100%;
-  }
   .section,
   .selected-research {
     padding-block: 60px;
@@ -1978,9 +1735,6 @@ main:focus {
   }
   .about-grid h2 {
     font-size: 36px;
-  }
-  .about-portrait {
-    max-width: 400px;
   }
   .about-copy p {
     font-size: 1rem;
@@ -2228,5 +1982,51 @@ main:focus {
   .about-grid {
     grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
     gap: 6%;
+  }
+}
+
+/* Personal opening: portrait, introduction and a quiet current-focus line. */
+.hero {
+  row-gap: 32px;
+}
+.hero-portrait {
+  width: 100%;
+  max-width: 420px;
+  margin: 0;
+  justify-self: end;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.hero-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+}
+.hero-welcome {
+  max-width: 430px;
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.75;
+}
+.hero-current {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 24px;
+  align-items: baseline;
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+  font-size: 15px;
+  color: var(--muted);
+}
+@media (max-width: 600px) {
+  .hero-portrait {
+    justify-self: start;
+    max-width: 400px;
+  }
+  .hero-current {
+    flex-direction: column;
+    gap: 8px;
   }
 }
