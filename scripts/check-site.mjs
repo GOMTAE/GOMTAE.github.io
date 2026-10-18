@@ -40,6 +40,8 @@ for (const path of manifest.filter((path) => path.endsWith(".html"))) {
     }
     const destinations = [
       attributes.href,
+      attributes.poster,
+      attributes["data-loop-src"],
       attributes.src,
       ...(attributes.srcset
         ?.split(",")

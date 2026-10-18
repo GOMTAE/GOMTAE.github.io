@@ -1,0 +1,42 @@
+{
+  "hero": {
+    "src": "/assets/portfolio/media/hero-loop.mp4",
+    "width": 640,
+    "height": 368,
+    "duration": 45,
+    "source": "publications/static/videos/ssp_banner_video.mp4",
+    "bytes": 2337540
+  },
+  "archive-control": {
+    "src": "/assets/portfolio/media/archive-control-loop.mp4",
+    "width": 450,
+    "height": 252,
+    "duration": 15,
+    "source": "images/Fault-Tolerant UAV Controller.gif",
+    "bytes": 42478
+  },
+  "archive-planning": {
+    "src": "/assets/portfolio/media/archive-planning-loop.mp4",
+    "width": 262,
+    "height": 148,
+    "duration": 33.5,
+    "source": "images/UAV Path Planning with DL.gif",
+    "bytes": 2633586
+  },
+  "archive-driving": {
+    "src": "/assets/portfolio/media/archive-driving-loop.mp4",
+    "width": 360,
+    "height": 202,
+    "duration": 39.68,
+    "source": "images/Autonomous Driving.gif",
+    "bytes": 1137126
+  },
+  "archive-mesh": {
+    "src": "/assets/portfolio/media/archive-mesh-loop.mp4",
+    "width": 334,
+    "height": 188,
+    "duration": 46.32,
+    "source": "images/Area Mesh Generation.gif",
+    "bytes": 494588
+  }
+}

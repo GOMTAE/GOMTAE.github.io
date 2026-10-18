@@ -1,0 +1,12 @@
+{% from 'media.njk' import media %}
+{% macro motionMedia(image, alt, clip, label, eager=false, controls=true) %}
+<div class="motion-media" data-loop-shell>
+  {% if clip.poster %}
+  <picture><img src="{{ clip.poster }}" alt="{{ alt }}" width="{{ clip.width }}" height="{{ clip.height }}" loading="{% if eager %}eager{% else %}lazy{% endif %}" decoding="async"></picture>
+  {% else %}
+  {{ media(image, alt, eager) }}
+  {% endif %}
+  <video class="motion-video" data-loop-src="{{ clip.src }}" width="{{ clip.width }}" height="{{ clip.height }}" loop muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+  {% if controls %}<button class="motion-toggle" type="button" data-loop-toggle data-label="{{ label }}" hidden aria-label="Play animation: {{ label }}">Play <span aria-hidden="true">▶</span></button>{% endif %}
+</div>
+{% endmacro %}

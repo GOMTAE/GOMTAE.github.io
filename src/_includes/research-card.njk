@@ -1,11 +1,18 @@
 {% from 'media.njk' import media %}
+{% from 'motion-media.njk' import motionMedia %}
 {% macro researchCard(p, large=false) %}
 <article class="research-card{% if large %} research-card--large{% endif %}">
+  {% if p.loop %}
+  <div class="research-visual visual-{{ p.id }} research-visual--motion">
+    {{ motionMedia(p.image, p.loop.alt, p.loop, p.shortTitle, false, false) }}
+  </div>
+  {% else %}
   <a class="research-visual visual-{{ p.id }}" href="{{ p.project or p.paper }}" aria-label="Explore {{ p.shortTitle }}">
     {{ media(p.image, p.alt) }}
     <span class="visual-arrow" aria-hidden="true">↗</span>
   </a>
-  <div class="research-meta"><span>{{ p.theme }}</span><span>{{ p.status }}{% if p.type != 'conference' %} · {{ p.year }}{% endif %}</span></div>
+  {% endif %}
+  <div class="research-meta"><span>{{ p.theme }}</span><span{% if p.venue %} class="venue-badge"{% endif %}>{{ p.status }}{% if p.type != 'conference' %} · {{ p.year }}{% endif %}</span></div>
   <h3><a href="{{ p.project or p.paper }}">{{ p.shortTitle }}<span class="card-subtitle">{{ p.summary }}</span></a></h3>
   <p>{{ p.description }}</p>
   {% if p.imageCredit %}<p class="image-credit">Figure: {{ p.imageCredit }} · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">License</a></p>{% endif %}

@@ -1,3 +1,7 @@
+import { readFileSync } from "node:fs";
+const publicationLoops = JSON.parse(
+  readFileSync("assets/portfolio/media/publication-loops.json", "utf8"),
+);
 const author = (name, equal = false, corresponding = false) => ({
   name,
   equal,
@@ -41,7 +45,6 @@ const records = [
     code: null,
     codeStatus: "pending_confirmation",
     featured: true,
-    imageCredit: "MultiFly authors · CC BY-NC-SA 4.0",
   },
   {
     id: "voxelfix",
@@ -136,6 +139,7 @@ const records = [
     date: "2025-06-11",
     year: 2025,
     type: "conference",
+    venue: "CVPR",
     status: "CVPR 2025",
     title:
       "High Temporal Consistency through Semantic Similarity Propagation in Semi-Supervised Video Semantic Segmentation for Autonomous Flight",
@@ -158,7 +162,27 @@ const records = [
   },
 ];
 
-export default records.map((record) => ({
-  ...record,
-  bibtex: `@misc{${record.id}${record.year},\n  title={${record.title}},\n  author={${record.authors.map((item) => item.name).join(" and ")}},\n  year={${record.year}},\n  eprint={${record.arxiv}},\n  archivePrefix={arXiv},\n  url={${record.paper}}\n}`,
-}));
+export default records.map((record) => {
+  if (record.preview) {
+    const preview = record.preview;
+    if (
+      !["image", "video"].includes(preview.type) ||
+      !preview.src ||
+      !preview.alt ||
+      !Number.isInteger(preview.width) ||
+      preview.width <= 0 ||
+      !Number.isInteger(preview.height) ||
+      preview.height <= 0 ||
+      (preview.type === "video" && !preview.poster)
+    ) {
+      throw new Error(
+        `Invalid publication preview: ${record.id}. Supply type, src, alt, positive width/height and a poster for video.`,
+      );
+    }
+  }
+  return {
+    ...record,
+    loop: publicationLoops[record.id],
+    bibtex: `@misc{${record.id}${record.year},\n  title={${record.title}},\n  author={${record.authors.map((item) => item.name).join(" and ")}},\n  year={${record.year}},\n  eprint={${record.arxiv}},\n  archivePrefix={arXiv},\n  url={${record.paper}}\n}`,
+  };
+});

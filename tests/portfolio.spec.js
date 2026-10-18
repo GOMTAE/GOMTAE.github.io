@@ -9,6 +9,36 @@ const routes = [
   "/work.html",
   "/404.html",
 ];
+
+test("Orbit home link supports keyboard focus and reduced motion, with visible publication previews", async ({
+  page,
+}, testInfo) => {
+  await page.goto("/publications.html");
+  const brand = page.locator(".site-header .orbit-brand");
+  await expect(brand).toHaveAccessibleName("Taehyoung Kim");
+  await expect(brand.locator("svg")).toHaveAttribute("aria-hidden", "true");
+  await brand.focus();
+  expect(
+    await brand
+      .locator(".orbit-agent")
+      .evaluate((node) => getComputedStyle(node).animationName),
+  ).toBe("orbit-observe");
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  expect(
+    await brand
+      .locator(".orbit-agent")
+      .evaluate((node) => getComputedStyle(node).animationName),
+  ).toBe("none");
+  const previews = page.locator(".publication-thumbnail");
+  await expect(previews).toHaveCount(5);
+  for (const preview of await previews.all())
+    await expect(preview).toBeVisible();
+  expect((await previews.first().boundingBox()).width).toBeGreaterThan(
+    testInfo.project.name === "desktop" ? 400 : 300,
+  );
+  await brand.press("Enter");
+  await expect(page).toHaveURL("http://127.0.0.1:4173/");
+});
 for (const route of routes) {
   test(`${route} is accessible, complete and responsive`, async ({
     page,
@@ -117,23 +147,28 @@ test("publications filter accurately and citations are usable", async ({
   );
 });
 
-test("homepage delays heavy media until explicitly requested", async ({
+test("homepage loads its visible loop but delays the full comparison and 3D assets", async ({
   page,
 }) => {
   const requests = [];
   page.on("request", (request) => requests.push(request.url()));
   await page.goto("/");
-  expect(requests.some((url) => /\.mp4|\.gif|\.gz|three/i.test(url))).toBe(
-    false,
-  );
+  await expect
+    .poll(() => requests.some((url) => url.endsWith("hero-loop.mp4")))
+    .toBe(true);
+  expect(
+    requests.some((url) => /ssp_banner_video|\.gif|\.gz|three/i.test(url)),
+  ).toBe(false);
   await page
     .getByRole("link", {
-      name: "See perception in motion: play SSP segmentation comparison video",
+      name: "View full comparison: play SSP segmentation comparison video",
     })
     .click();
-  await expect(page.locator("video")).toBeVisible();
+  await expect(page.locator(".hero-media > video")).toBeVisible();
   await expect
-    .poll(() => page.locator("video").evaluate((video) => video.readyState))
+    .poll(() =>
+      page.locator(".hero-media > video").evaluate((video) => video.readyState),
+    )
     .toBeGreaterThanOrEqual(2);
   expect(requests.some((url) => url.endsWith("ssp_banner_video.mp4"))).toBe(
     true,
@@ -152,7 +187,7 @@ test("content and navigation remain usable without JavaScript", async ({
   await expect(page.getByRole("navigation")).toBeVisible();
   await expect(
     page.getByRole("link", {
-      name: "See perception in motion: play SSP segmentation comparison video",
+      name: "View full comparison: play SSP segmentation comparison video",
     }),
   ).toHaveAttribute("href", /\.mp4$/);
   await page.goto("/publications.html");

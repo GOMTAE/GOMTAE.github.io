@@ -33,7 +33,15 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="wordmark" href="/" title="Home"><span class="monogram" aria-hidden="true">tk<span>.</span></span><span>Taehyoung Kim</span></a>
+      <a class="wordmark orbit-brand" href="/" title="Home"><svg class="orbit-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="32" height="32" aria-hidden="true" focusable="false">
+  <g class="orbit-ring" fill="none" stroke="#102128" stroke-width="11" stroke-linecap="butt">
+    <path d="M 33 83 A 39 39 0 1 1 91 36"/>
+    <path d="M 98 51 A 39 39 0 0 1 44 94"/>
+  </g>
+  <path class="orbit-vector" d="M 25 101 L 99 37" stroke="#169D9E" stroke-width="5.8" stroke-linecap="round"/>
+  <g class="orbit-agent"><circle cx="106.5" cy="29.0" r="6.4" fill="#169D9E"/></g>
+</svg>
+<span>Taehyoung Kim</span></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" hidden>Menu <span aria-hidden="true">+</span></button>
       <nav id="primary-nav" aria-label="Main navigation">
         <a href="/">Home</a>
@@ -46,23 +54,27 @@
     </div>
   </header>
   <main id="main" tabindex="-1">
+
 <section class="page-heading container"><p class="eyebrow">Research / Engineering / Experiments</p><h1>Ideas into<br>working systems<span class="accent">.</span></h1><div class="page-heading-bottom"><p>A collection of collaborative research and personal explorations, from perception to autonomy.</p><a class="text-link" href="/publications.html">Publication record ↗</a></div></section>
 <section class="dark-section section" aria-labelledby="current-title"><div class="container"><div class="section-heading"><div><p class="eyebrow">Recent research</p><h2 id="current-title">A closer look at the work.</h2></div></div><div class="research-grid">
 <article class="research-card research-card--large">
-  <a class="research-visual visual-multifly" href="https://arxiv.org/abs/2610.10359" aria-label="Explore MultiFly">
 
+  <div class="research-visual visual-multifly research-visual--motion">
 
-<picture class="">
-  <source type="image/avif" srcset="/assets/portfolio/media/multifly-640.avif 640w, /assets/portfolio/media/multifly-1280.avif 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px">
-  <img src="/assets/portfolio/media/multifly-1280.webp" srcset="/assets/portfolio/media/multifly-640.webp 640w, /assets/portfolio/media/multifly-1280.webp 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px" alt="MultiFly overview: aerial sensing platform, RGB, thermal, LiDAR and radar observations, and cross-modal semantic labels." width="1280" height="567" loading="lazy" decoding="async">
-</picture>
+<div class="motion-media" data-loop-shell>
 
-    <span class="visual-arrow" aria-hidden="true">↗</span>
-  </a>
+  <picture><img src="/assets/portfolio/media/multifly-preview.webp" alt="MultiFly animated comparison of registered semantic point clouds across RGB, infrared, LiDAR and radar." width="800" height="500" loading="lazy" decoding="async"></picture>
+
+  <video class="motion-video" data-loop-src="/assets/portfolio/media/multifly-preview.mp4" width="800" height="500" loop muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+
+</div>
+
+  </div>
+
   <div class="research-meta"><span>Multimodal perception</span><span>arXiv preprint · 2026</span></div>
   <h3><a href="https://arxiv.org/abs/2610.10359">MultiFly<span class="card-subtitle">Four sensing modalities. One shared semantic view of the world.</span></a></h3>
   <p>A real-world aerial dataset connecting RGB, thermal, LiDAR, and radar through geometry-driven semantic label transfer.</p>
-  <p class="image-credit">Figure: MultiFly authors · CC BY-NC-SA 4.0 · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">License</a></p>
+
   <div class="resource-links">
 
     <a href="https://arxiv.org/abs/2610.10359">Paper <span aria-hidden="true">↗</span></a>
@@ -71,16 +83,19 @@
 </article>
 
 <article class="research-card research-card--large">
-  <a class="research-visual visual-voxelfix" href="/publications/voxelfix.html" aria-label="Explore VoxelFix">
 
+  <div class="research-visual visual-voxelfix research-visual--motion">
 
-<picture class="">
-  <source type="image/avif" srcset="/assets/portfolio/media/voxelfix-640.avif 640w, /assets/portfolio/media/voxelfix-1280.avif 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px">
-  <img src="/assets/portfolio/media/voxelfix-1280.webp" srcset="/assets/portfolio/media/voxelfix-640.webp 640w, /assets/portfolio/media/voxelfix-1280.webp 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px" alt="VoxelFix pipeline showing a completed semantic voxel map before and after graph-based label correction." width="1280" height="545" loading="lazy" decoding="async">
-</picture>
+<div class="motion-media" data-loop-shell>
 
-    <span class="visual-arrow" aria-hidden="true">↗</span>
-  </a>
+  <picture><img src="/assets/portfolio/media/voxelfix-preview.webp" alt="VoxelFix before/after wipe showing semantic label correction in Scene 2 with fixed geometry." width="800" height="504" loading="lazy" decoding="async"></picture>
+
+  <video class="motion-video" data-loop-src="/assets/portfolio/media/voxelfix-preview.mp4" width="800" height="504" loop muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+
+</div>
+
+  </div>
+
   <div class="research-meta"><span>3D scene understanding</span><span>arXiv preprint · 2026</span></div>
   <h3><a href="/publications/voxelfix.html">VoxelFix<span class="card-subtitle">Better semantic maps. Same geometry.</span></a></h3>
   <p>Graph-based correction of semantic labels in completed voxel maps, keeping geometry and occupancy fixed.</p>
@@ -93,16 +108,19 @@
 </article>
 
 <article class="research-card">
-  <a class="research-visual visual-missionbench" href="/publications/missionbench.html" aria-label="Explore MissionBench">
 
+  <div class="research-visual visual-missionbench research-visual--motion">
 
-<picture class="">
-  <source type="image/avif" srcset="/assets/portfolio/media/missionbench-640.avif 640w, /assets/portfolio/media/missionbench-1280.avif 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px">
-  <img src="/assets/portfolio/media/missionbench-1280.webp" srcset="/assets/portfolio/media/missionbench-640.webp 640w, /assets/portfolio/media/missionbench-1280.webp 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px" alt="MissionBench overview illustrating aerial agent perception, action, and mission-level evaluation." width="1280" height="758" loading="lazy" decoding="async">
-</picture>
+<div class="motion-media" data-loop-shell>
 
-    <span class="visual-arrow" aria-hidden="true">↗</span>
-  </a>
+  <picture><img src="/assets/portfolio/media/missionbench-preview.webp" alt="MissionBench aerial visual-inspection mission approaching an isolated house rooftop." width="512" height="288" loading="lazy" decoding="async"></picture>
+
+  <video class="motion-video" data-loop-src="/assets/portfolio/media/missionbench-preview.mp4" width="512" height="288" loop muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+
+</div>
+
+  </div>
+
   <div class="research-meta"><span>Aerial autonomy</span><span>arXiv preprint · 2026</span></div>
   <h3><a href="/publications/missionbench.html">MissionBench<span class="card-subtitle">From individual actions to complete missions.</span></a></h3>
   <p>Mission-level evaluation of multimodal language-model agents for aerial tasks, including qualitative failure analysis.</p>
@@ -115,16 +133,19 @@
 </article>
 
 <article class="research-card">
-  <a class="research-visual visual-flexpath" href="/publications/flexpath.html" aria-label="Explore FlexPath">
 
+  <div class="research-visual visual-flexpath research-visual--motion">
 
-<picture class="">
-  <source type="image/avif" srcset="/assets/portfolio/media/flexpath-640.avif 640w, /assets/portfolio/media/flexpath-1280.avif 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px">
-  <img src="/assets/portfolio/media/flexpath-1280.webp" srcset="/assets/portfolio/media/flexpath-640.webp 640w, /assets/portfolio/media/flexpath-1280.webp 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px" alt="FlexPath method overview showing how semantic scene inputs produce learned path priors for planning." width="1280" height="674" loading="lazy" decoding="async">
-</picture>
+<div class="motion-media" data-loop-shell>
 
-    <span class="visual-arrow" aria-hidden="true">↗</span>
-  </a>
+  <picture><img src="/assets/portfolio/media/flexpath-preview.webp" alt="Four-panel FlexPath animation comparing optimal, obstacle-avoidance, semantic-avoidance and waypoint-guided search." width="800" height="500" loading="lazy" decoding="async"></picture>
+
+  <video class="motion-video" data-loop-src="/assets/portfolio/media/flexpath-preview.mp4" width="800" height="500" loop muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+
+</div>
+
+  </div>
+
   <div class="research-meta"><span>Perception for planning</span><span>arXiv preprint · 2026</span></div>
   <h3><a href="/publications/flexpath.html">FlexPath<span class="card-subtitle">Learning where a path could go.</span></a></h3>
   <p>Learned semantic path priors connect image understanding with image-based planning.</p>
@@ -137,17 +158,20 @@
 </article>
 
 <article class="research-card">
-  <a class="research-visual visual-ssp" href="/publications/ssp.html" aria-label="Explore SSP">
 
+  <div class="research-visual visual-ssp research-visual--motion">
 
-<picture class="">
-  <source type="image/avif" srcset="/assets/portfolio/media/ssp-640.avif 640w, /assets/portfolio/media/ssp-1280.avif 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px">
-  <img src="/assets/portfolio/media/ssp-1280.webp" srcset="/assets/portfolio/media/ssp-640.webp 640w, /assets/portfolio/media/ssp-1280.webp 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px" alt="SSP aerial video preview comparing input frames and semantic segmentation predictions over time." width="1280" height="736" loading="lazy" decoding="async">
-</picture>
+<div class="motion-media" data-loop-shell>
 
-    <span class="visual-arrow" aria-hidden="true">↗</span>
-  </a>
-  <div class="research-meta"><span>Video perception</span><span>CVPR 2025</span></div>
+  <picture><img src="/assets/portfolio/media/ssp-preview.webp" alt="KD-SSP semantic segmentation of aerial video, cropped to the method output panel." width="640" height="368" loading="lazy" decoding="async"></picture>
+
+  <video class="motion-video" data-loop-src="/assets/portfolio/media/ssp-preview.mp4" width="640" height="368" loop muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+
+</div>
+
+  </div>
+
+  <div class="research-meta"><span>Video perception</span><span class="venue-badge">CVPR 2025</span></div>
   <h3><a href="/publications/ssp.html">SSP<span class="card-subtitle">Seeing consistently, frame after frame.</span></a></h3>
   <p>Semantic similarity propagation improves temporal consistency in video semantic segmentation for autonomous flight.</p>
 
@@ -160,7 +184,63 @@
 </div></div></section>
 
 <section class="section container" id="archive" aria-labelledby="archive-title"><div class="section-heading"><div><p class="eyebrow">Earlier projects / Archive</p><h2 id="archive-title">Where some of it started.</h2></div><p class="section-intro">Thesis work and personal experiments in learning, control, perception, and geometry.</p></div><div class="archive-grid">
-<article class="archive-card"><a href="/images/Fault-Tolerant%20UAV%20Controller.gif" aria-label="View original Fault-tolerant quadrotor control animation"><img src="/assets/portfolio/media/archive-control-1280.webp" alt="Simulation of a quadrotor recovering under a learned fault-tolerant controller." width="1280" height="736" loading="lazy"></a><p class="eyebrow">Master’s thesis</p><h3>Fault-tolerant quadrotor control</h3><p>Exploring learned recovery strategies and their practical limits with a deep reinforcement learning controller.</p><a class="text-link" href="/images/Fault-Tolerant%20UAV%20Controller.gif">View original demo ↗</a></article><article class="archive-card"><a href="/images/UAV%20Path%20Planning%20with%20DL.gif" aria-label="View original One-shot UAV path planning animation"><img src="/assets/portfolio/media/archive-planning-1280.webp" alt="Image-based UAV planning experiment illustrating predicted paths." width="1280" height="736" loading="lazy"></a><p class="eyebrow">Master’s thesis</p><h3>One-shot UAV path planning</h3><p>An image-to-image planning framework combining supervised learning and reinforcement learning.</p><a class="text-link" href="/images/UAV%20Path%20Planning%20with%20DL.gif">View original demo ↗</a></article><article class="archive-card"><a href="/images/Autonomous%20Driving.gif" aria-label="View original Autonomous driving animation"><img src="/assets/portfolio/media/archive-driving-1280.webp" alt="Autonomous driving prototype navigating a simulated road." width="1280" height="736" loading="lazy"></a><p class="eyebrow">Personal experiment</p><h3>Autonomous driving</h3><p>A prototype combining mapping, track following, collision avoidance, and responses to traffic signals.</p><a class="text-link" href="/images/Autonomous%20Driving.gif">View original demo ↗</a></article><article class="archive-card"><a href="/images/Area%20Mesh%20Generation.gif" aria-label="View original Area mesh generation animation"><img src="/assets/portfolio/media/archive-mesh-1280.webp" alt="Reconstructed geometry and a surface mesh from disparity imagery." width="1280" height="736" loading="lazy"></a><p class="eyebrow">Personal experiment</p><h3>Area mesh generation</h3><p>Reconstructing point clouds from disparity images and turning them into 3D surface meshes.</p><a class="text-link" href="/images/Area%20Mesh%20Generation.gif">View original demo ↗</a></article>
+<article class="archive-card"><div class="archive-preview">
+<div class="motion-media" data-loop-shell>
+
+
+
+<picture class="">
+  <source type="image/avif" srcset="/assets/portfolio/media/archive-control-640.avif 640w, /assets/portfolio/media/archive-control-1280.avif 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px">
+  <img src="/assets/portfolio/media/archive-control-1280.webp" srcset="/assets/portfolio/media/archive-control-640.webp 640w, /assets/portfolio/media/archive-control-1280.webp 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px" alt="Simulation of a quadrotor recovering under a learned fault-tolerant controller." width="1280" height="717" loading="lazy" decoding="async">
+</picture>
+
+
+  <video class="motion-video" data-loop-src="/assets/portfolio/media/archive-control-loop.mp4" width="450" height="252" loop muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+  <button class="motion-toggle" type="button" data-loop-toggle data-label="Fault-tolerant quadrotor control" hidden aria-label="Play animation: Fault-tolerant quadrotor control">Play <span aria-hidden="true">▶</span></button>
+</div>
+</div><p class="eyebrow">Master’s thesis</p><h3>Fault-tolerant quadrotor control</h3><p>Exploring learned recovery strategies and their practical limits with a deep reinforcement learning controller.</p></article><article class="archive-card"><div class="archive-preview">
+<div class="motion-media" data-loop-shell>
+
+
+
+<picture class="">
+  <source type="image/avif" srcset="/assets/portfolio/media/archive-planning-640.avif 640w, /assets/portfolio/media/archive-planning-1280.avif 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px">
+  <img src="/assets/portfolio/media/archive-planning-1280.webp" srcset="/assets/portfolio/media/archive-planning-640.webp 640w, /assets/portfolio/media/archive-planning-1280.webp 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px" alt="Image-based UAV planning experiment illustrating predicted paths." width="1280" height="723" loading="lazy" decoding="async">
+</picture>
+
+
+  <video class="motion-video" data-loop-src="/assets/portfolio/media/archive-planning-loop.mp4" width="262" height="148" loop muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+  <button class="motion-toggle" type="button" data-loop-toggle data-label="One-shot UAV path planning" hidden aria-label="Play animation: One-shot UAV path planning">Play <span aria-hidden="true">▶</span></button>
+</div>
+</div><p class="eyebrow">Master’s thesis</p><h3>One-shot UAV path planning</h3><p>An image-to-image planning framework combining supervised learning and reinforcement learning.</p></article><article class="archive-card"><div class="archive-preview">
+<div class="motion-media" data-loop-shell>
+
+
+
+<picture class="">
+  <source type="image/avif" srcset="/assets/portfolio/media/archive-driving-640.avif 640w, /assets/portfolio/media/archive-driving-1280.avif 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px">
+  <img src="/assets/portfolio/media/archive-driving-1280.webp" srcset="/assets/portfolio/media/archive-driving-640.webp 640w, /assets/portfolio/media/archive-driving-1280.webp 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px" alt="Autonomous driving prototype navigating a simulated road." width="1280" height="718" loading="lazy" decoding="async">
+</picture>
+
+
+  <video class="motion-video" data-loop-src="/assets/portfolio/media/archive-driving-loop.mp4" width="360" height="202" loop muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+  <button class="motion-toggle" type="button" data-loop-toggle data-label="Autonomous driving" hidden aria-label="Play animation: Autonomous driving">Play <span aria-hidden="true">▶</span></button>
+</div>
+</div><p class="eyebrow">Personal experiment</p><h3>Autonomous driving</h3><p>A prototype combining mapping, track following, collision avoidance, and responses to traffic signals.</p></article><article class="archive-card"><div class="archive-preview">
+<div class="motion-media" data-loop-shell>
+
+
+
+<picture class="">
+  <source type="image/avif" srcset="/assets/portfolio/media/archive-mesh-640.avif 640w, /assets/portfolio/media/archive-mesh-1280.avif 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px">
+  <img src="/assets/portfolio/media/archive-mesh-1280.webp" srcset="/assets/portfolio/media/archive-mesh-640.webp 640w, /assets/portfolio/media/archive-mesh-1280.webp 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px" alt="Reconstructed geometry and a surface mesh from disparity imagery." width="1280" height="720" loading="lazy" decoding="async">
+</picture>
+
+
+  <video class="motion-video" data-loop-src="/assets/portfolio/media/archive-mesh-loop.mp4" width="334" height="188" loop muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+  <button class="motion-toggle" type="button" data-loop-toggle data-label="Area mesh generation" hidden aria-label="Play animation: Area mesh generation">Play <span aria-hidden="true">▶</span></button>
+</div>
+</div><p class="eyebrow">Personal experiment</p><h3>Area mesh generation</h3><p>Reconstructing point clouds from disparity images and turning them into 3D surface meshes.</p></article>
 </div></section>
 </main>
   <footer class="site-footer">

@@ -1,0 +1,67 @@
+{
+  "multifly": {
+    "alt": "MultiFly animated comparison of registered semantic point clouds across RGB, infrared, LiDAR and radar.",
+    "src": "/assets/portfolio/media/multifly-preview.mp4",
+    "poster": "/assets/portfolio/media/multifly-preview.webp",
+    "width": 800,
+    "height": 500,
+    "duration": 15,
+    "source": "/Users/tae/dev/personal/multifly_vis/outputs/revised/showcase/multifly_semantic_clouds.mp4",
+    "start": 8,
+    "crop": "crop=1312:820:400:90",
+    "bytes": 2480183
+  },
+  "voxelfix": {
+    "alt": "VoxelFix before/after wipe showing semantic label correction in Scene 2 with fixed geometry.",
+    "src": "/assets/portfolio/media/voxelfix-preview.mp4",
+    "poster": "/assets/portfolio/media/voxelfix-preview.webp",
+    "width": 800,
+    "height": 504,
+    "duration": 4.5,
+    "source": "/Users/tae/dev/personal/blender_vid/deliverables/voxelfix-web.mp4",
+    "start": 16,
+    "crop": "crop=854:538:40:118",
+    "bytes": 235268
+  },
+  "missionbench": {
+    "alt": "MissionBench aerial visual-inspection mission approaching an isolated house rooftop.",
+    "src": "/assets/portfolio/media/missionbench-preview.mp4",
+    "poster": "/assets/portfolio/media/missionbench-preview.webp",
+    "width": 512,
+    "height": 288,
+    "duration": 15,
+    "source": "images/MissionBench/mission_webps/CityEnv_isolated_house_rooftop_mission25_TPV.webp",
+    "start": 0,
+    "crop": null,
+    "bytes": 1540457
+  },
+  "ssp": {
+    "alt": "KD-SSP semantic segmentation of aerial video, cropped to the method output panel.",
+    "src": "/assets/portfolio/media/ssp-preview.mp4",
+    "poster": "/assets/portfolio/media/ssp-preview.webp",
+    "width": 640,
+    "height": 368,
+    "duration": 15,
+    "source": "publications/static/videos/ssp_banner_video.mp4",
+    "start": 5,
+    "crop": "crop=640:368:640:0",
+    "bytes": 967129
+  },
+  "flexpath": {
+    "alt": "Four-panel FlexPath animation comparing optimal, obstacle-avoidance, semantic-avoidance and waypoint-guided search.",
+    "src": "/assets/portfolio/media/flexpath-preview.mp4",
+    "poster": "/assets/portfolio/media/flexpath-preview.webp",
+    "width": 800,
+    "height": 500,
+    "duration": 15,
+    "source": [
+      "https://raw.githubusercontent.com/FraunhoferIVI/FlexPath/main/resources/optimal.gif",
+      "https://raw.githubusercontent.com/FraunhoferIVI/FlexPath/main/resources/obstavoidance.gif",
+      "https://raw.githubusercontent.com/FraunhoferIVI/FlexPath/main/resources/semavoidance.gif",
+      "https://raw.githubusercontent.com/FraunhoferIVI/FlexPath/main/resources/waypoint.gif"
+    ],
+    "start": 0,
+    "crop": null,
+    "bytes": 84414
+  }
+}

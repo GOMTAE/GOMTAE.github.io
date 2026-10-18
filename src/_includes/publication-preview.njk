@@ -1,0 +1,28 @@
+{% from 'media.njk' import media %}
+{% from 'motion-media.njk' import motionMedia %}
+{% macro publicationPreview(p) %}
+{% if p.loop and not p.preview %}
+<div class="publication-thumbnail publication-thumbnail--motion visual-{{ p.id }}">
+  {{ motionMedia(p.image, p.loop.alt, p.loop, p.shortTitle, false, false) }}
+</div>
+{% elif p.preview and p.preview.type == 'video' %}
+<figure class="publication-thumbnail publication-thumbnail--video">
+  <video controls playsinline muted preload="none" poster="{{ p.preview.poster }}" width="{{ p.preview.width }}" height="{{ p.preview.height }}" aria-label="{{ p.preview.alt }}">
+    <source src="{{ p.preview.src }}" type="{{ p.preview.mime or 'video/mp4' }}">
+    <a href="{{ p.preview.src }}">Open the {{ p.shortTitle }} preview video</a>
+  </video>
+  <figcaption><a href="{{ p.project or p.paper }}">Explore {{ p.shortTitle }} <span aria-hidden="true">↗</span></a></figcaption>
+</figure>
+{% else %}
+<a class="publication-thumbnail" href="{{ p.project or p.paper }}" aria-label="Explore {{ p.shortTitle }}">
+  {% if p.preview and p.preview.type == 'image' %}
+  <picture>
+    <source media="(prefers-reduced-motion: reduce)" srcset="/assets/portfolio/media/{{ p.image }}-1280.webp">
+    <img src="{{ p.preview.src }}" alt="{{ p.preview.alt }}" width="{{ p.preview.width }}" height="{{ p.preview.height }}" loading="lazy" decoding="async">
+  </picture>
+  {% else %}
+    {{ media(p.image, p.alt, false, '', '(max-width: 600px) calc(100vw - 76px), (max-width: 800px) calc(100vw - 184px), (max-width: 1100px) 36vw, 460px') }}
+  {% endif %}
+</a>
+{% endif %}
+{% endmacro %}

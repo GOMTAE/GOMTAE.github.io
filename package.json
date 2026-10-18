@@ -7,12 +7,14 @@
     "build": "eleventy && node scripts/export-pages.mjs",
     "dev": "node scripts/preview.mjs",
     "check": "node scripts/check-site.mjs && node --check assets/portfolio/site.js",
-    "test": "node --test tests/publishing.test.mjs && playwright test",
+    "test": "node --test tests/*.test.mjs && playwright test",
     "test:e2e": "playwright test",
     "test:publishing": "node --test tests/publishing.test.mjs",
     "assets": "node scripts/prepare-assets.mjs",
     "lint": "prettier --check 'assets/portfolio/*.{css,js}' 'scripts/*.mjs' 'src/_data/*.{js,json}' 'src/posts/*.js' 'tests/*.{js,mjs}' eleventy.config.js playwright.config.js package.json 'docs/*.md'",
-    "format": "prettier --write 'assets/portfolio/*.{css,js}' 'scripts/*.mjs' 'src/_data/*.{js,json}' 'src/posts/*.js' 'tests/*.{js,mjs}' eleventy.config.js playwright.config.js package.json 'docs/*.md'"
+    "format": "prettier --write 'assets/portfolio/*.{css,js}' 'scripts/*.mjs' 'src/_data/*.{js,json}' 'src/posts/*.js' 'tests/*.{js,mjs}' eleventy.config.js playwright.config.js package.json 'docs/*.md'",
+    "assets:motion": "node scripts/prepare-motion.mjs",
+    "assets:publications": "node scripts/prepare-publication-motion.mjs"
   },
   "engines": {
     "node": ">=22"

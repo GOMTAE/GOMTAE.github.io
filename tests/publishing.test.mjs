@@ -37,6 +37,14 @@ test("publishing Markdown generates readable HTML, feed and sitemap; drafts and 
       join(root, "assets/portfolio/media/dimensions.json"),
       join(fixture, "assets/portfolio/media/dimensions.json"),
     );
+    await cp(
+      join(root, "assets/portfolio/media/loops.json"),
+      join(fixture, "assets/portfolio/media/loops.json"),
+    );
+    await cp(
+      join(root, "assets/portfolio/media/publication-loops.json"),
+      join(fixture, "assets/portfolio/media/publication-loops.json"),
+    );
     await symlink(join(root, "node_modules"), join(fixture, "node_modules"));
     await writeFile(
       join(fixture, "src/posts/published.md"),

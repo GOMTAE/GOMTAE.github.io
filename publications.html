@@ -33,7 +33,15 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="wordmark" href="/" title="Home"><span class="monogram" aria-hidden="true">tk<span>.</span></span><span>Taehyoung Kim</span></a>
+      <a class="wordmark orbit-brand" href="/" title="Home"><svg class="orbit-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="32" height="32" aria-hidden="true" focusable="false">
+  <g class="orbit-ring" fill="none" stroke="#102128" stroke-width="11" stroke-linecap="butt">
+    <path d="M 33 83 A 39 39 0 1 1 91 36"/>
+    <path d="M 98 51 A 39 39 0 0 1 44 94"/>
+  </g>
+  <path class="orbit-vector" d="M 25 101 L 99 37" stroke="#169D9E" stroke-width="5.8" stroke-linecap="round"/>
+  <g class="orbit-agent"><circle cx="106.5" cy="29.0" r="6.4" fill="#169D9E"/></g>
+</svg>
+<span>Taehyoung Kim</span></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" hidden>Menu <span aria-hidden="true">+</span></button>
       <nav id="primary-nav" aria-label="Main navigation">
         <a href="/">Home</a>
@@ -53,7 +61,7 @@
 
   <article class="publication" id="multifly" data-publication data-type="preprint">
     <div class="publication-year">2026<span>arXiv preprint</span></div>
-    <div class="publication-body"><p class="eyebrow">Multimodal perception</p><h2><a href="https://arxiv.org/abs/2610.10359">MultiFly: A Real-World Multimodal Aerial Dataset with Annotation-Efficient Label Transfer and Cross-Modal Semantic Consistency</a></h2><p class="authors">Markus Gross<sup>*</sup>, Andreas Greiner<sup>*</sup>, <strong>Taehyoung Kim</strong><sup>*</sup>, Sivasubiramaniam Subbiah, Tomaž Cotič, Conrad Christoph, Oussema Dhaouadi, Simon Zieher, Surya Vijaya Kumar, Gordon Elger, Henri Meeß, Olaf Wysocki, Paul Spannaus<sup>†</sup>, Daniel Cremers</p><p>A real-world aerial dataset connecting RGB, thermal, LiDAR, and radar through geometry-driven semantic label transfer.</p><p class="contribution-note">* Equal contribution · † Corresponding author</p><div class="resource-links"><a href="https://arxiv.org/abs/2610.10359">Paper ↗</a><a href="#cite-multifly" data-open-citation="cite-multifly">BibTeX ↓</a></div><p class="image-credit">Figure: MultiFly authors · CC BY-NC-SA 4.0 · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">License</a></p><details class="citation" id="cite-multifly"><summary>BibTeX citation</summary><pre><code>@misc{multifly2026,
+    <div class="publication-body"><p class="eyebrow">Multimodal perception</p><h2><a href="https://arxiv.org/abs/2610.10359">MultiFly: A Real-World Multimodal Aerial Dataset with Annotation-Efficient Label Transfer and Cross-Modal Semantic Consistency</a></h2><p class="authors">Markus Gross<sup>*</sup>, Andreas Greiner<sup>*</sup>, <strong>Taehyoung Kim</strong><sup>*</sup>, Sivasubiramaniam Subbiah, Tomaž Cotič, Conrad Christoph, Oussema Dhaouadi, Simon Zieher, Surya Vijaya Kumar, Gordon Elger, Henri Meeß, Olaf Wysocki, Paul Spannaus<sup>†</sup>, Daniel Cremers</p><p>A real-world aerial dataset connecting RGB, thermal, LiDAR, and radar through geometry-driven semantic label transfer.</p><p class="contribution-note">* Equal contribution · † Corresponding author</p><div class="resource-links"><a href="https://arxiv.org/abs/2610.10359">Paper ↗</a><a href="#cite-multifly" data-open-citation="cite-multifly">BibTeX ↓</a></div><details class="citation" id="cite-multifly"><summary>BibTeX citation</summary><pre><code>@misc{multifly2026,
   title={MultiFly: A Real-World Multimodal Aerial Dataset with Annotation-Efficient Label Transfer and Cross-Modal Semantic Consistency},
   author={Markus Gross and Andreas Greiner and Taehyoung Kim and Sivasubiramaniam Subbiah and Tomaž Cotič and Conrad Christoph and Oussema Dhaouadi and Simon Zieher and Surya Vijaya Kumar and Gordon Elger and Henri Meeß and Olaf Wysocki and Paul Spannaus and Daniel Cremers},
   year={2026},
@@ -61,13 +69,21 @@
   archivePrefix={arXiv},
   url={https://arxiv.org/abs/2610.10359}
 }</code></pre><button type="button" data-copy-citation hidden>Copy citation</button><span class="copy-status" role="status" aria-live="polite"></span></details></div>
-    <a class="publication-thumbnail" href="https://arxiv.org/abs/2610.10359" aria-label="Explore MultiFly">
 
-<picture class="">
-  <source type="image/avif" srcset="/assets/portfolio/media/multifly-640.avif 640w, /assets/portfolio/media/multifly-1280.avif 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px">
-  <img src="/assets/portfolio/media/multifly-1280.webp" srcset="/assets/portfolio/media/multifly-640.webp 640w, /assets/portfolio/media/multifly-1280.webp 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px" alt="MultiFly overview: aerial sensing platform, RGB, thermal, LiDAR and radar observations, and cross-modal semantic labels." width="1280" height="567" loading="lazy" decoding="async">
-</picture>
-</a>
+
+<div class="publication-thumbnail publication-thumbnail--motion visual-multifly">
+
+<div class="motion-media" data-loop-shell>
+
+  <picture><img src="/assets/portfolio/media/multifly-preview.webp" alt="MultiFly animated comparison of registered semantic point clouds across RGB, infrared, LiDAR and radar." width="800" height="500" loading="lazy" decoding="async"></picture>
+
+  <video class="motion-video" data-loop-src="/assets/portfolio/media/multifly-preview.mp4" width="800" height="500" loop muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+
+</div>
+
+</div>
+
+
   </article>
 
   <article class="publication" id="voxelfix" data-publication data-type="preprint">
@@ -80,13 +96,21 @@
   archivePrefix={arXiv},
   url={https://arxiv.org/abs/2609.05114}
 }</code></pre><button type="button" data-copy-citation hidden>Copy citation</button><span class="copy-status" role="status" aria-live="polite"></span></details></div>
-    <a class="publication-thumbnail" href="/publications/voxelfix.html" aria-label="Explore VoxelFix">
 
-<picture class="">
-  <source type="image/avif" srcset="/assets/portfolio/media/voxelfix-640.avif 640w, /assets/portfolio/media/voxelfix-1280.avif 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px">
-  <img src="/assets/portfolio/media/voxelfix-1280.webp" srcset="/assets/portfolio/media/voxelfix-640.webp 640w, /assets/portfolio/media/voxelfix-1280.webp 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px" alt="VoxelFix pipeline showing a completed semantic voxel map before and after graph-based label correction." width="1280" height="545" loading="lazy" decoding="async">
-</picture>
-</a>
+
+<div class="publication-thumbnail publication-thumbnail--motion visual-voxelfix">
+
+<div class="motion-media" data-loop-shell>
+
+  <picture><img src="/assets/portfolio/media/voxelfix-preview.webp" alt="VoxelFix before/after wipe showing semantic label correction in Scene 2 with fixed geometry." width="800" height="504" loading="lazy" decoding="async"></picture>
+
+  <video class="motion-video" data-loop-src="/assets/portfolio/media/voxelfix-preview.mp4" width="800" height="504" loop muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+
+</div>
+
+</div>
+
+
   </article>
 
   <article class="publication" id="missionbench" data-publication data-type="preprint">
@@ -99,13 +123,21 @@
   archivePrefix={arXiv},
   url={https://arxiv.org/abs/2607.22014}
 }</code></pre><button type="button" data-copy-citation hidden>Copy citation</button><span class="copy-status" role="status" aria-live="polite"></span></details></div>
-    <a class="publication-thumbnail" href="/publications/missionbench.html" aria-label="Explore MissionBench">
 
-<picture class="">
-  <source type="image/avif" srcset="/assets/portfolio/media/missionbench-640.avif 640w, /assets/portfolio/media/missionbench-1280.avif 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px">
-  <img src="/assets/portfolio/media/missionbench-1280.webp" srcset="/assets/portfolio/media/missionbench-640.webp 640w, /assets/portfolio/media/missionbench-1280.webp 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px" alt="MissionBench overview illustrating aerial agent perception, action, and mission-level evaluation." width="1280" height="758" loading="lazy" decoding="async">
-</picture>
-</a>
+
+<div class="publication-thumbnail publication-thumbnail--motion visual-missionbench">
+
+<div class="motion-media" data-loop-shell>
+
+  <picture><img src="/assets/portfolio/media/missionbench-preview.webp" alt="MissionBench aerial visual-inspection mission approaching an isolated house rooftop." width="512" height="288" loading="lazy" decoding="async"></picture>
+
+  <video class="motion-video" data-loop-src="/assets/portfolio/media/missionbench-preview.mp4" width="512" height="288" loop muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+
+</div>
+
+</div>
+
+
   </article>
 
   <article class="publication" id="flexpath" data-publication data-type="preprint">
@@ -118,13 +150,21 @@
   archivePrefix={arXiv},
   url={https://arxiv.org/abs/2606.10167}
 }</code></pre><button type="button" data-copy-citation hidden>Copy citation</button><span class="copy-status" role="status" aria-live="polite"></span></details></div>
-    <a class="publication-thumbnail" href="/publications/flexpath.html" aria-label="Explore FlexPath">
 
-<picture class="">
-  <source type="image/avif" srcset="/assets/portfolio/media/flexpath-640.avif 640w, /assets/portfolio/media/flexpath-1280.avif 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px">
-  <img src="/assets/portfolio/media/flexpath-1280.webp" srcset="/assets/portfolio/media/flexpath-640.webp 640w, /assets/portfolio/media/flexpath-1280.webp 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px" alt="FlexPath method overview showing how semantic scene inputs produce learned path priors for planning." width="1280" height="674" loading="lazy" decoding="async">
-</picture>
-</a>
+
+<div class="publication-thumbnail publication-thumbnail--motion visual-flexpath">
+
+<div class="motion-media" data-loop-shell>
+
+  <picture><img src="/assets/portfolio/media/flexpath-preview.webp" alt="Four-panel FlexPath animation comparing optimal, obstacle-avoidance, semantic-avoidance and waypoint-guided search." width="800" height="500" loading="lazy" decoding="async"></picture>
+
+  <video class="motion-video" data-loop-src="/assets/portfolio/media/flexpath-preview.mp4" width="800" height="500" loop muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+
+</div>
+
+</div>
+
+
   </article>
 
   <article class="publication" id="ssp" data-publication data-type="conference">
@@ -137,13 +177,21 @@
   archivePrefix={arXiv},
   url={https://arxiv.org/abs/2503.15676}
 }</code></pre><button type="button" data-copy-citation hidden>Copy citation</button><span class="copy-status" role="status" aria-live="polite"></span></details></div>
-    <a class="publication-thumbnail" href="/publications/ssp.html" aria-label="Explore SSP">
 
-<picture class="">
-  <source type="image/avif" srcset="/assets/portfolio/media/ssp-640.avif 640w, /assets/portfolio/media/ssp-1280.avif 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px">
-  <img src="/assets/portfolio/media/ssp-1280.webp" srcset="/assets/portfolio/media/ssp-640.webp 640w, /assets/portfolio/media/ssp-1280.webp 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px" alt="SSP aerial video preview comparing input frames and semantic segmentation predictions over time." width="1280" height="736" loading="lazy" decoding="async">
-</picture>
-</a>
+
+<div class="publication-thumbnail publication-thumbnail--motion visual-ssp">
+
+<div class="motion-media" data-loop-shell>
+
+  <picture><img src="/assets/portfolio/media/ssp-preview.webp" alt="KD-SSP semantic segmentation of aerial video, cropped to the method output panel." width="640" height="368" loading="lazy" decoding="async"></picture>
+
+  <video class="motion-video" data-loop-src="/assets/portfolio/media/ssp-preview.mp4" width="640" height="368" loop muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+
+</div>
+
+</div>
+
+
   </article>
 
 </section>

@@ -5,7 +5,7 @@ title: Publications
 description: Selected and complete publications by Taehyoung Kim in robotic perception, semantic mapping, multimodal aerial sensing, and autonomy.
 nav: publications
 ---
-{% from 'media.njk' import media %}
+{% from 'publication-preview.njk' import publicationPreview %}
 <section class="page-heading container"><p class="eyebrow">The scholarly record</p><h1>Publications<span class="accent">.</span></h1><div class="page-heading-bottom"><p>Methods, datasets, and benchmarks for understanding the world and acting within it.</p><a class="text-link" href="{{ site.scholar }}">Google Scholar <span aria-hidden="true">↗</span></a></div></section>
 <section class="container publications-list section-bottom" aria-label="Publication list">
   <div class="filter-bar" data-filters hidden aria-label="Filter publications"><button type="button" data-filter="all" aria-pressed="true">All <span>{{ publications.length }}</span></button><button type="button" data-filter="conference" aria-pressed="false">Conference <span>{{ publications | publicationType('conference') | length }}</span></button><button type="button" data-filter="preprint" aria-pressed="false">Preprints <span>{{ publications | publicationType('preprint') | length }}</span></button></div>
@@ -14,7 +14,7 @@ nav: publications
   <article class="publication" id="{{ p.id }}" data-publication data-type="{{ p.type }}">
     <div class="publication-year">{{ p.year }}<span>{{ p.status }}</span></div>
     <div class="publication-body"><p class="eyebrow">{{ p.theme }}</p><h2><a href="{{ p.project or p.paper }}">{{ p.title }}</a></h2><p class="authors">{% for a in p.authors %}{% if a.name == site.name %}<strong>{{ a.name }}</strong>{% else %}{{ a.name }}{% endif %}{% if a.equal %}<sup>*</sup>{% endif %}{% if a.corresponding %}<sup>†</sup>{% endif %}{% if not loop.last %}, {% endif %}{% endfor %}</p><p>{{ p.description }}</p><p class="contribution-note">* Equal contribution{% if p.id == 'voxelfix' or p.id == 'multifly' %} · † Corresponding author{% endif %}</p><div class="resource-links"><a href="{{ p.paper }}">Paper ↗</a>{% if p.project %}<a href="{{ p.project }}">Project ↗</a>{% endif %}{% if p.code %}<a href="{{ p.code }}">Code ↗</a>{% endif %}<a href="#cite-{{ p.id }}" data-open-citation="cite-{{ p.id }}">BibTeX ↓</a></div>{% if p.imageCredit %}<p class="image-credit">Figure: {{ p.imageCredit }} · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">License</a></p>{% endif %}<details class="citation" id="cite-{{ p.id }}"><summary>BibTeX citation</summary><pre><code>{{ p.bibtex }}</code></pre><button type="button" data-copy-citation hidden>Copy citation</button><span class="copy-status" role="status" aria-live="polite"></span></details></div>
-    <a class="publication-thumbnail" href="{{ p.project or p.paper }}" aria-label="Explore {{ p.shortTitle }}">{{ media(p.image, p.alt) }}</a>
+    {{ publicationPreview(p) }}
   </article>
   {% endfor %}
 </section>

@@ -36,6 +36,8 @@ document.querySelectorAll("[data-video]").forEach((link) => {
     (event) => {
       event.preventDefault();
       const shell = link.closest("[data-video-shell]");
+      const loopPreview = shell.querySelector("[data-loop-shell]");
+      loopPreview?.dispatchEvent(new Event("preview:pause"));
       const video = document.createElement("video");
       video.controls = true;
       video.playsInline = true;
@@ -49,7 +51,8 @@ document.querySelectorAll("[data-video]").forEach((link) => {
       video.addEventListener(
         "loadeddata",
         () => {
-          shell.querySelector("picture").hidden = true;
+          if (loopPreview) loopPreview.hidden = true;
+          else shell.querySelector("picture").hidden = true;
           link.hidden = true;
           video.focus();
         },
@@ -63,6 +66,7 @@ document.querySelectorAll("[data-video]").forEach((link) => {
           link.textContent = "Open the original comparison video ↗";
           link.removeAttribute("data-video");
           shell.querySelector("picture").hidden = false;
+          if (loopPreview) loopPreview.hidden = false;
         },
         { once: true },
       );
@@ -74,6 +78,125 @@ document.querySelectorAll("[data-video]").forEach((link) => {
     { once: true },
   );
 });
+
+// Authentic inline demos. Load only visible loops, and preserve user pauses.
+const motionPreference = matchMedia("(prefers-reduced-motion: reduce)");
+const connection = navigator.connection;
+const loopControllers = [];
+document.querySelectorAll("[data-loop-shell]").forEach((shell) => {
+  const video = shell.querySelector("[data-loop-src]");
+  const button = shell.querySelector("[data-loop-toggle]");
+  const state = {
+    inView: false,
+    userPaused: false,
+    explicit: false,
+    starting: false,
+    failed: false,
+  };
+  if (button) button.hidden = false;
+  const updateButton = () => {
+    if (!button) return;
+    const action = video.paused ? "Play" : "Pause";
+    button.setAttribute(
+      "aria-label",
+      `${action} animation: ${button.dataset.label}`,
+    );
+    button.replaceChildren(document.createTextNode(`${action} `));
+    const symbol = document.createElement("span");
+    symbol.setAttribute("aria-hidden", "true");
+    symbol.textContent = video.paused ? "▶" : "Ⅱ";
+    button.append(symbol);
+  };
+  const canPlay = () =>
+    state.inView &&
+    !document.hidden &&
+    !state.userPaused &&
+    !state.failed &&
+    (state.explicit || (!motionPreference.matches && !connection?.saveData));
+  const sync = () => {
+    if (!canPlay()) {
+      video.pause();
+      updateButton();
+      return;
+    }
+    if (state.starting || !video.paused) return;
+    if (!video.getAttribute("src")) {
+      video.muted = true;
+      video.src = video.dataset.loopSrc;
+    }
+    state.starting = true;
+    video
+      .play()
+      .then(() => {
+        if (!canPlay()) video.pause();
+        updateButton();
+      })
+      .catch((error) => {
+        // Scrolling or hiding a tab can intentionally interrupt a pending play.
+        // Only an actual playback refusal should require an explicit retry.
+        if (error.name !== "AbortError" && canPlay()) state.userPaused = true;
+        updateButton();
+      })
+      .finally(() => {
+        state.starting = false;
+        if (canPlay() && video.paused) sync();
+      });
+  };
+  video.addEventListener("loadeddata", () =>
+    shell.classList.add("motion-ready"),
+  );
+  video.addEventListener("play", updateButton);
+  video.addEventListener("pause", updateButton);
+  video.addEventListener("error", () => {
+    state.failed = true;
+    shell.classList.remove("motion-ready");
+    if (button) button.hidden = true;
+  });
+  button?.addEventListener("click", () => {
+    if (!video.paused || state.starting) {
+      state.userPaused = true;
+      state.explicit = false;
+    } else {
+      state.userPaused = false;
+      state.explicit = true;
+    }
+    sync();
+  });
+  shell.addEventListener("preview:pause", () => {
+    state.userPaused = true;
+    state.explicit = false;
+    sync();
+  });
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(
+      (entries) => {
+        state.inView = entries[0].isIntersecting;
+        sync();
+      },
+      { threshold: 0.1 },
+    ).observe(shell);
+  } else {
+    // Older browsers retain an explicit play button instead of loading every loop.
+    state.inView = true;
+    state.userPaused = true;
+  }
+  loopControllers.push({
+    sync,
+    resetPolicy: () => {
+      state.explicit = false;
+      sync();
+    },
+  });
+});
+document.addEventListener("visibilitychange", () =>
+  loopControllers.forEach((controller) => controller.sync()),
+);
+motionPreference.addEventListener("change", () =>
+  loopControllers.forEach((controller) => controller.resetPolicy()),
+);
+connection?.addEventListener("change", () =>
+  loopControllers.forEach((controller) => controller.resetPolicy()),
+);
 
 const filters = document.querySelector("[data-filters]");
 if (filters) {

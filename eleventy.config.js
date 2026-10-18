@@ -3,6 +3,13 @@ import { readFileSync } from "node:fs";
 
 export default function (config) {
   config.addPlugin(syntaxHighlight);
+  config.addFilter("activityMonth", (value) =>
+    new Intl.DateTimeFormat("en-GB", {
+      month: "short",
+      year: "numeric",
+      timeZone: "UTC",
+    }).format(new Date(value)),
+  );
   config.addTransform("cleanBlankLines", (content) =>
     content.replace(/^[\t ]+$/gm, ""),
   );
