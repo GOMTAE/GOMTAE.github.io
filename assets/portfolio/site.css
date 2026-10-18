@@ -2217,3 +2217,58 @@ main:focus {
     padding-block: 28px;
   }
 }
+
+/* Chronological rail for the career and education milestones. */
+.bio-timeline {
+  position: relative;
+}
+.bio-timeline::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 208px;
+  width: 1px;
+  background: var(--line);
+}
+.bio-milestone {
+  position: relative;
+}
+.bio-milestone::before {
+  content: "";
+  position: absolute;
+  left: 202px;
+  top: 42px;
+  width: 13px;
+  height: 13px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  background: var(--surface);
+}
+.bio-milestone:first-child::before {
+  top: 10px;
+}
+.bio-dates {
+  text-align: right;
+}
+@media (max-width: 600px) {
+  .bio-timeline::before {
+    left: 6px;
+  }
+  .bio-milestone::before,
+  .bio-milestone:first-child::before {
+    left: 0;
+    top: 31px;
+    width: 13px;
+    height: 13px;
+  }
+  .bio-milestone {
+    grid-template-columns: 20px minmax(0, 1fr);
+    gap: 10px;
+  }
+  .bio-dates,
+  .bio-milestone-content {
+    grid-column: 2;
+    text-align: left;
+  }
+}
