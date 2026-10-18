@@ -136,3 +136,5 @@ MultiFly uses seconds 8-23 with title/legend bands and excess side space cropped
 ## Professional bio
 
 `/bio/` provides a short third-person biography with a copy button and a first-person career and education timeline. Edit `src/_data/bio.json` to update the biography or dated milestones. The homepage and footer link to this page; it uses the existing optimized portrait and is included in the sitemap.
+
+Organization marks on the biography timeline are stored in `assets/portfolio/brand/organizations/`. Sources: [TUM](https://commons.wikimedia.org/wiki/File:Logo_of_the_Technical_University_of_Munich.svg), [Fraunhofer](https://commons.wikimedia.org/wiki/File:Fraunhofer-logo.svg), [Pusan National University](https://commons.wikimedia.org/wiki/File:Pusan_national_university_logotype.svg), and [Azena via PR Newswire](https://www.prnewswire.com/de/pressemitteilungen/security-amp-safety-things-wird-zu-azena-unterstreicht-fortschritte-in-entwicklung-von-plattform-fur-smarte-kameras-809268416.html). The TUM, Fraunhofer, and PNU wordmarks are marked public domain on Wikimedia Commons; all names and marks remain trademarks of their respective organizations.
