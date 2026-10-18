@@ -3,8 +3,6 @@
     "date": "2026-10-08",
     "title": "ADAM project demonstration",
     "text": "Joined the ADAM project demo flights and presented our work on high-definition 3D semantic mapping.",
-    "credit": "Paul Spannaus",
-    "creditUrl": "https://www.linkedin.com/in/paulspannaus/?isSelfProfile=false",
     "kind": "Project update",
     "images": [
       {
@@ -14,6 +12,17 @@
       {
         "src": "/assets/portfolio/media/adam-drone-480.webp",
         "alt": "Taehyoung and a colleague inspecting the ADAM project quadrotor."
+      }
+    ],
+    "credits": [
+      {
+        "name": "Paul Spannaus",
+        "url": "https://www.linkedin.com/in/paulspannaus/?isSelfProfile=false"
+      },
+      {
+        "name": "Markus Gross",
+        "url": "https://www.linkedin.com/in/markusgross42/?isSelfProfile=false",
+        "note": "for coordinating the project and working with me on the technical side"
       }
     ]
   }
