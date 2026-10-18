@@ -349,7 +349,7 @@ main:focus {
   background: var(--accent);
 }
 .hero h1 {
-  font-size: clamp(56px, 6.45vw, 93px);
+  font-size: clamp(48px, 5vw, 72px);
   line-height: 1.02;
   letter-spacing: -0.065em;
 }
@@ -875,9 +875,9 @@ main:focus {
 }
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10%;
-  align-items: start;
+  grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
+  gap: 9%;
+  align-items: center;
 }
 .about-grid .eyebrow {
   margin-bottom: 25px;
@@ -885,14 +885,20 @@ main:focus {
 .about-grid h2 {
   font-size: clamp(35px, 3.4vw, 49px);
 }
-.about-signature {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-top: 40px;
-  letter-spacing: -0.025em;
+.about-portrait {
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
 }
-.about-signature span {
-  color: var(--accent);
+.about-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+}
+.about-copy h2 {
+  margin-bottom: 28px;
 }
 .about-copy p {
   font-size: 16px;
@@ -1422,7 +1428,7 @@ main:focus {
     padding-top: 65px;
   }
   .hero h1 {
-    font-size: clamp(52px, 6.4vw, 76px);
+    font-size: clamp(46px, 5vw, 64px);
   }
   .hero-description {
     font-size: 1rem;
@@ -1493,7 +1499,7 @@ main:focus {
     grid-template-columns: 1fr 1fr;
   }
   .hero h1 {
-    font-size: 51px;
+    font-size: 46px;
   }
   .hero-copy .eyebrow {
     font-size: var(--text-label);
@@ -1744,7 +1750,7 @@ main:focus {
     margin-bottom: 24px;
   }
   .hero h1 {
-    font-size: clamp(54px, 13vw, 76px);
+    font-size: clamp(46px, 11vw, 60px);
     line-height: 1.01;
   }
   .hero-description {
@@ -1973,8 +1979,8 @@ main:focus {
   .about-grid h2 {
     font-size: 36px;
   }
-  .about-signature {
-    margin-top: 25px;
+  .about-portrait {
+    max-width: 400px;
   }
   .about-copy p {
     font-size: 1rem;
@@ -2216,4 +2222,11 @@ main:focus {
 .research-visual--motion.visual-missionbench,
 .publication-thumbnail--motion.visual-missionbench {
   background: #102321;
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+  .about-grid {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 6%;
+  }
 }
