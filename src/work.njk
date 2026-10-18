@@ -1,0 +1,10 @@
+---
+layout: base.njk
+permalink: /work.html
+title: Applied Research
+description: Applied research context for Taehyoung Kim’s work at Fraunhofer IVI, connecting robotic perception, semantic mapping, and aerial autonomy.
+---
+<section class="page-heading container"><p class="eyebrow">Applied research at Fraunhofer IVI</p><h1>Beyond the<br>benchmark<span class="accent">.</span></h1><div class="page-heading-bottom"><p>Connecting research questions with the realities of autonomous aerial systems.</p><a class="text-link" href="mailto:{{ site.email }}">Get in touch ↗</a></div></section>
+<section class="container section-bottom work-context"><p class="eyebrow">Professional context</p><div class="applied-grid"><h2>Perception is part<br>of a bigger system.</h2><div><p class="large-copy">I’m a Research Engineer at Fraunhofer IVI, working on robotic perception and aerial autonomy.</p><p>Fraunhofer IVI’s public autonomous-flight research covers environment perception, autonomous navigation, and safe landing. This institutional context is distinct from the specific contributions documented in my publications.</p><p>My publicly available collaborative research includes video segmentation, multimodal aerial sensing, semantic map correction, and mission-level agent evaluation.</p><div class="resource-links"><a href="https://www.ivi.fraunhofer.de/en/research-fields/advanced-air-mobility/autonomous-flying.html">IVI’s autonomous flight research ↗</a><a href="/publications.html">Published work ↗</a></div></div></div>
+{% for project in work.projects %}{% if project.review_state == 'approved_for_personal_website' %}<article class="work-card"><p class="eyebrow">{{ project.organization }} · {{ project.status }}</p><h2>{{ project.project_name }}</h2><h3>Project objective</h3><p>{{ project.public_summary }}</p><h3>My responsibility</h3><p>{{ project.my_role }}</p><ul>{% for contribution in project.my_contributions %}<li>{{ contribution }}</li>{% endfor %}</ul><h3>Collaborative context</h3><p>{{ project.collaboration_note }}</p><a href="{{ project.public_project_url }}">Official project page ↗</a></article>{% endif %}{% endfor %}
+</section>

@@ -1,0 +1,6 @@
+---
+layout: base.njk
+nav: writing
+article: true
+---
+<article class="article container"><header class="article-header"><a class="text-link" href="/writing.html">← All writing</a><p class="eyebrow"><time datetime="{{ page.date | isoDate }}">{{ page.date | dateLabel }}</time></p><h1>{{ title }}</h1><p class="article-deck">{{ summary }}</p><div class="post-tags">{% for tag in tags %}<span>{{ tag }}</span>{% endfor %}</div></header>{% if image %}<figure class="article-image"><img src="{{ image }}" alt="{{ imageAlt }}" width="1280" height="736"></figure>{% endif %}<div class="prose">{{ content | safe }}</div>{% if relatedProject %}<aside class="article-related"><p class="eyebrow">Related project</p><a href="{{ relatedProject }}">Explore the research ↗</a></aside>{% endif %}<footer class="article-end"><p>Written by Taehyoung Kim</p><a href="mailto:{{ site.email }}">Discuss this post ↗</a></footer></article>

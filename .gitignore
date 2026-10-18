@@ -11,3 +11,13 @@
 
 # reference
 reference/
+
+# Local development and generated staging output
+node_modules/
+.site-build/
+test-results/
+playwright-report/
+.cache/
+
+# Unpublished writing stays local, including with root-based GitHub Pages.
+src/posts/*.draft.md

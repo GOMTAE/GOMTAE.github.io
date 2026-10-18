@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Fault-tolerant quadrotor control",
+    "kind": "Master’s thesis",
+    "description": "Exploring learned recovery strategies and their practical limits with a deep reinforcement learning controller.",
+    "source": "/images/Fault-Tolerant%20UAV%20Controller.gif",
+    "image": "archive-control",
+    "alt": "Simulation of a quadrotor recovering under a learned fault-tolerant controller."
+  },
+  {
+    "title": "One-shot UAV path planning",
+    "kind": "Master’s thesis",
+    "description": "An image-to-image planning framework combining supervised learning and reinforcement learning.",
+    "source": "/images/UAV%20Path%20Planning%20with%20DL.gif",
+    "image": "archive-planning",
+    "alt": "Image-based UAV planning experiment illustrating predicted paths."
+  },
+  {
+    "title": "Autonomous driving",
+    "kind": "Personal experiment",
+    "description": "A prototype combining mapping, track following, collision avoidance, and responses to traffic signals.",
+    "source": "/images/Autonomous%20Driving.gif",
+    "image": "archive-driving",
+    "alt": "Autonomous driving prototype navigating a simulated road."
+  },
+  {
+    "title": "Area mesh generation",
+    "kind": "Personal experiment",
+    "description": "Reconstructing point clouds from disparity images and turning them into 3D surface meshes.",
+    "source": "/images/Area%20Mesh%20Generation.gif",
+    "image": "archive-mesh",
+    "alt": "Reconstructed geometry and a surface mesh from disparity imagery."
+  }
+]

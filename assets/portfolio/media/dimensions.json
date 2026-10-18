@@ -1,0 +1,46 @@
+{
+  "hero": {
+    "width": 1280,
+    "height": 736
+  },
+  "ssp": {
+    "width": 1280,
+    "height": 736
+  },
+  "multifly": {
+    "width": 1280,
+    "height": 567
+  },
+  "voxelfix": {
+    "width": 1280,
+    "height": 545
+  },
+  "voxel-detail": {
+    "width": 1280,
+    "height": 355
+  },
+  "missionbench": {
+    "width": 1280,
+    "height": 758
+  },
+  "flexpath": {
+    "width": 1280,
+    "height": 674
+  },
+  "archive-control": {
+    "width": 1280,
+    "height": 717
+  },
+  "archive-planning": {
+    "width": 1280,
+    "height": 723
+  },
+  "archive-driving": {
+    "width": 1280,
+    "height": 718
+  },
+  "archive-mesh": {
+    "width": 1280,
+    "height": 720
+  }
+}

@@ -1,0 +1,7 @@
+{% macro media(name, alt, eager=false, extraClass='', sizes='(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px') %}
+{% set dimensions = name | mediaSize %}
+<picture class="{{ extraClass }}">
+  <source type="image/avif" srcset="/assets/portfolio/media/{{ name }}-640.avif 640w, /assets/portfolio/media/{{ name }}-1280.avif 1280w" sizes="{{ sizes }}">
+  <img src="/assets/portfolio/media/{{ name }}-1280.webp" srcset="/assets/portfolio/media/{{ name }}-640.webp 640w, /assets/portfolio/media/{{ name }}-1280.webp 1280w" sizes="{{ sizes }}" alt="{{ alt }}" width="{{ dimensions.width }}" height="{{ dimensions.height }}" {% if eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
+</picture>
+{% endmacro %}

@@ -1,0 +1,30 @@
+{
+  "name": "taehyoung-kim-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prebuild": "node scripts/clean-stage.mjs",
+    "build": "eleventy && node scripts/export-pages.mjs",
+    "dev": "node scripts/preview.mjs",
+    "check": "node scripts/check-site.mjs && node --check assets/portfolio/site.js",
+    "test": "node --test tests/publishing.test.mjs && playwright test",
+    "test:e2e": "playwright test",
+    "test:publishing": "node --test tests/publishing.test.mjs",
+    "assets": "node scripts/prepare-assets.mjs",
+    "lint": "prettier --check 'assets/portfolio/*.{css,js}' 'scripts/*.mjs' 'src/_data/*.{js,json}' 'src/posts/*.js' 'tests/*.{js,mjs}' eleventy.config.js playwright.config.js package.json 'docs/*.md'",
+    "format": "prettier --write 'assets/portfolio/*.{css,js}' 'scripts/*.mjs' 'src/_data/*.{js,json}' 'src/posts/*.js' 'tests/*.{js,mjs}' eleventy.config.js playwright.config.js package.json 'docs/*.md'"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.7",
+    "@11ty/eleventy-plugin-syntaxhighlight": "5.0.2",
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.64.1",
+    "lighthouse": "13.5.0",
+    "parse5": "8.0.1",
+    "prettier": "3.9.10",
+    "sharp": "0.35.5"
+  }
+}

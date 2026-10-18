@@ -1,0 +1,9 @@
+---
+layout: base.njk
+permalink: /writing.html
+title: Writing
+description: Technical notes, project stories, and research insights from Taehyoung Kim. A notebook on robotic perception and building useful things.
+nav: writing
+---
+<section class="page-heading container"><p class="eyebrow">Notes from the workbench</p><h1>Thinking out loud<span class="accent">.</span></h1><div class="page-heading-bottom"><p>Research insights, things I’m building, and lessons from the details in between.</p><a class="text-link" href="/feed.xml">Follow via RSS ↗</a></div></section>
+<section class="container section-bottom" aria-label="Articles">{% if collections.posts.length %}{% for post in collections.posts %}<a class="post-row" href="{{ post.url }}"><time datetime="{{ post.date | isoDate }}">{{ post.date | dateLabel }}</time><div><h2>{{ post.data.title }}</h2><p>{{ post.data.summary }}</p><div class="post-tags">{% for tag in post.data.tags %}<span>{{ tag }}</span>{% endfor %}</div></div><span aria-hidden="true">↗</span></a>{% endfor %}{% else %}<div class="writing-empty"><div class="notebook-mark" aria-hidden="true"><span></span><span></span><span></span></div><p class="eyebrow">A notebook in the making</p><h2>Good work comes<br>with a few notes.</h2><p>This is where I’ll share technical insights, project stories, and side explorations. There are no posts yet. In the meantime, take a look at what I’ve been working on.</p><a class="button button-dark" href="/projects.html">Explore the projects ↗</a></div>{% endif %}</section>
