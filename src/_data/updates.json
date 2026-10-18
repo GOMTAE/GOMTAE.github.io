@@ -4,7 +4,15 @@
     "title": "ADAM project demonstration",
     "text": "Joined the ADAM project demo flights and presented our work on high-definition 3D semantic mapping.",
     "kind": "Project update",
-    "image": "/assets/portfolio/media/adam-demo-320.webp",
-    "imageAlt": "Taehyoung discussing the ADAM aerial robotics project with colleagues beside a drone."
+    "images": [
+      {
+        "src": "/assets/portfolio/media/adam-demo-320.webp",
+        "alt": "Taehyoung discussing the ADAM project with colleagues beside a drone."
+      },
+      {
+        "src": "/assets/portfolio/media/adam-drone-480.webp",
+        "alt": "Taehyoung and a colleague inspecting the ADAM project quadrotor."
+      }
+    ]
   }
 ]

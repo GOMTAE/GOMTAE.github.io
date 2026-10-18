@@ -529,7 +529,7 @@ main:focus {
 }
 .activity-list li {
   display: grid;
-  grid-template-columns: 130px minmax(0, 1fr) 120px;
+  grid-template-columns: 130px minmax(0, 1fr) 250px;
   gap: 30px;
   align-items: center;
   border-top: 1px solid var(--line);
@@ -538,10 +538,15 @@ main:focus {
 .activity-list li:last-child {
   border-bottom: 1px solid var(--line);
 }
+.activity-photos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
 .activity-image {
   display: block;
-  width: 120px;
-  height: 76px;
+  width: 100%;
+  height: 90px;
   object-fit: cover;
   border-radius: 3px;
 }
@@ -1935,12 +1940,14 @@ main:focus {
     grid-column: 1;
     grid-row: 2;
   }
+  .activity-list li > .activity-photos {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    width: 100%;
+    max-width: 300px;
+  }
   .activity-image {
-    grid-column: 2;
-    grid-row: 2;
-    width: 88px;
-    height: 64px;
-    align-self: start;
+    height: 88px;
   }
   .activity-list h3 {
     font-size: 24px;
