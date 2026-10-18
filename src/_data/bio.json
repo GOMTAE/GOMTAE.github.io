@@ -1,0 +1,8 @@
+{
+  "short": "Taehyoung Kim is a research engineer at Fraunhofer IVI working on robotic perception and aerial autonomy. His research spans video understanding, multimodal sensing, and semantic 3D mapping, with a focus on connecting research ideas to working robotic systems.",
+  "long": [
+    "Taehyoung Kim is a research engineer at Fraunhofer IVI working on perception systems for autonomous aerial robots. His research brings together computer vision, multimodal sensing, and semantic 3D mapping to help robots understand their surroundings.",
+    "His collaborative research includes temporally consistent video segmentation, multimodal aerial datasets, semantic correction of voxel maps, image-based planning, and mission-level evaluation of aerial agents. He is a co-author of work presented at CVPR 2025, alongside research shared as preprints.",
+    "He is interested in the path from a research idea to a working system. On his personal website, he shares publications, experiments, side projects, and technical notes about what he is building and learning."
+  ]
+}

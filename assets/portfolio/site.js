@@ -194,3 +194,24 @@ if (navigator.clipboard?.writeText) {
     });
   });
 }
+
+if (navigator.clipboard?.writeText) {
+  document.querySelectorAll("[data-copy-bio]").forEach((button) => {
+    button.hidden = false;
+    button.addEventListener("click", async () => {
+      const source = document.getElementById(button.dataset.copyBio);
+      const status = document.querySelector(
+        `[data-bio-status="${button.dataset.copyBio}"]`,
+      );
+      const text = Array.from(source.querySelectorAll("p"), (p) =>
+        p.textContent.trim(),
+      ).join("\n\n");
+      try {
+        await navigator.clipboard.writeText(text);
+        status.textContent = "Bio copied.";
+      } catch {
+        status.textContent = "Select the bio text above to copy it.";
+      }
+    });
+  });
+}
