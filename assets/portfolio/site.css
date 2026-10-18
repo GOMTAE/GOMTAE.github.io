@@ -327,8 +327,8 @@ main:focus {
 /* Opening */
 .hero {
   display: grid;
-  grid-template-columns: 1.06fr 1fr;
-  gap: 7%;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 33%);
+  gap: clamp(40px, 5vw, 80px);
   align-items: center;
   padding-top: 86px;
   padding-bottom: 76px;
@@ -358,8 +358,8 @@ main:focus {
 }
 .hero-description {
   margin-top: 30px;
-  max-width: 430px;
-  font-size: 17px;
+  max-width: none;
+  font-size: 18px;
   line-height: 1.75;
 }
 .hero-actions {
@@ -1351,7 +1351,7 @@ main:focus {
     padding-top: 55px;
     padding-bottom: 55px;
     gap: 30px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
   .hero h1 {
     font-size: 46px;
@@ -1564,7 +1564,7 @@ main:focus {
   .hero-description {
     margin-top: 25px;
     font-size: 1rem;
-    max-width: 440px;
+    max-width: none;
   }
   .hero-actions {
     flex-direction: row;
@@ -2003,8 +2003,13 @@ main:focus {
   height: auto;
   aspect-ratio: 4 / 5;
 }
+.hero-context {
+  margin-top: 18px;
+  font-size: 17px;
+  line-height: 1.8;
+}
 .hero-welcome {
-  max-width: 430px;
+  max-width: none;
   margin-top: 16px;
   color: var(--muted);
   font-size: 16px;
@@ -2020,7 +2025,15 @@ main:focus {
   font-size: 15px;
   color: var(--muted);
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
+  .hero-copy .eyebrow {
+    max-width: none;
+  }
+  .hero-actions {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
   .hero-portrait {
     justify-self: start;
     max-width: 400px;
