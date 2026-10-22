@@ -43,7 +43,7 @@ outputs: [] # optional research links with label and url
 collaborators: [] # optional name, role, and url
 ```
 
-All four projects now include user-confirmed contributions: VERUM covers datasets, semantic/panoptic training, live voxel mapping, and SSP; NiKoLaS covers the infrared perception pipeline and DAV3 depth, with motion forecasting credited to Maximilian Bialdyga; ADAM covers acquisition through training, MultiFly, VoxelFix, and pre-flight map checks; ENGEL covers aerial perception, landing-spot detection, static/live map fusion, on-board mapping, and the map server. SSP, MultiFly, and VoxelFix are linked as research outputs. ADAM also retains the two previously supplied photographs. Do not derive additional personal responsibilities from consortium descriptions.
+All four projects now include user-confirmed contributions: VERUM covers datasets, semantic/panoptic training, end-user feedback on Radix, and SSP; NiKoLaS covers the infrared perception pipeline and DAV3 depth, supporting downstream motion forecasting, with Max included in the linked thanks; ADAM covers acquisition through training, MultiFly, VoxelFix, and pre-flight map checks; ENGEL covers aerial perception, landing-spot detection, static/live map fusion, on-board mapping, and the map server. SSP, MultiFly, and VoxelFix are linked as research outputs. ADAM also retains the two previously supplied photographs. Do not derive additional personal responsibilities from consortium descriptions.
 
 Public status sources, checked 22 October 2026:
 

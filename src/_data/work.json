@@ -18,23 +18,25 @@
       ],
       "contributions": [
         "Curated aerial datasets and trained semantic and panoptic segmentation models.",
-        "Co-developed the live 3D voxel-mapping module, helping lay the foundation for online semantic map building.",
+        "Used Radix for online semantic mapping and provided feedback from an end-user perspective.",
         "Co-developed SSP to improve temporal consistency in aerial semantic segmentation."
       ],
       "sources": [
         {
           "label": "Project overview",
           "url": "https://github.com/ProjectVERUM"
-        },
-        {
-          "label": "Open-source Radix",
-          "url": "https://github.com/ProjectVERUM/radix_ros2_pkg"
         }
       ],
       "outputs": [
         {
           "label": "SSP · CVPR 2025",
           "url": "/publications/ssp.html"
+        }
+      ],
+      "thanks": [
+        {
+          "name": "Johannes",
+          "url": "https://www.linkedin.com/in/johannes-scherer/?skipRedirect=true"
         }
       ]
     },
