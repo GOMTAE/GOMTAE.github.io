@@ -190,7 +190,7 @@
       "contributions": [
         "Developing semantic scene parsing and landing-spot detection for aerial environments.",
         "Fusing static satellite-map information with live Radix maps to support downstream tasks.",
-        "Implementing on-board 3D map building and a map server for the perception and landing pipeline."
+        "Refining the Radix-based mapping and map-serving pipeline for real-time on-board use, and optimizing segmentation models through quantization and deployment with TensorRT and Triton."
       ],
       "sources": [
         {
