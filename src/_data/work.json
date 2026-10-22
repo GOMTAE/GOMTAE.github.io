@@ -18,7 +18,7 @@
       ],
       "contributions": [
         "Curated aerial datasets and trained semantic and panoptic segmentation models.",
-        "Used Radix for online semantic mapping and provided feedback from an end-user perspective.",
+        "Used a custom version of Radix as an end user and shared feedback during its development. This version now serves as a foundation for ENGEL.",
         "Co-developed SSP to improve temporal consistency in aerial semantic segmentation."
       ],
       "sources": [
@@ -35,12 +35,12 @@
       ],
       "thanks": [
         {
-          "name": "Johannes",
-          "url": "https://www.linkedin.com/in/johannes-scherer/?skipRedirect=true"
-        },
-        {
           "name": "Henri",
           "url": "https://www.linkedin.com/in/henri-mee%C3%9F-970ba81b7/"
+        },
+        {
+          "name": "Johannes",
+          "url": "https://www.linkedin.com/in/johannes-scherer/?skipRedirect=true"
         }
       ]
     },
