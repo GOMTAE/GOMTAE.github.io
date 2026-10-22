@@ -65,7 +65,41 @@
           "url": "https://github.com/MaxBial",
           "role": "Motion forecasting"
         }
-      ]
+      ],
+      "photos": [
+        {
+          "src": "/assets/portfolio/media/nikolas-1.webp",
+          "alt": "Taehyoung beside the sensor-equipped drone on its transport platform during NiKoLaS fieldwork."
+        },
+        {
+          "src": "/assets/portfolio/media/nikolas-2.webp",
+          "alt": "A colleague operating the field laptop with Taehyoung nearby during NiKoLaS data collection."
+        }
+      ],
+      "photosCaption": "NiKoLaS data collection and field setup.",
+      "thanks": [
+        {
+          "name": "Paul Spannaus",
+          "url": "https://www.linkedin.com/in/paulspannaus/?isSelfProfile=false"
+        },
+        {
+          "name": "Tomaž Cotič",
+          "url": "https://www.linkedin.com/in/toma%C5%BE-coti%C4%8D-080663333/?isSelfProfile=false"
+        },
+        {
+          "name": "Andreas Greiner",
+          "url": "https://www.linkedin.com/in/andreas--greiner/?isSelfProfile=false"
+        }
+      ],
+      "preview": {
+        "src": "/assets/portfolio/media/nikolas-perception-preview.mp4",
+        "poster": "/assets/portfolio/media/nikolas-perception-preview.webp",
+        "width": 800,
+        "height": 826,
+        "duration": 15,
+        "alt": "Synchronized infrared semantics at top left, metric depth at top right, and semantic voxels across the bottom.",
+        "caption": "IR scene parsing, metric depth, and semantic voxel mapping."
+      }
     },
     {
       "id": "adam",
@@ -121,7 +155,8 @@
         "duration": 14,
         "alt": "Semantic 3D map views from five selected aerial mapping sites.",
         "caption": "Selected semantic 3D maps and class-level inspection."
-      }
+      },
+      "photosCaption": "ADAM final presentation and demonstration flights · October 2026"
     },
     {
       "id": "engel",

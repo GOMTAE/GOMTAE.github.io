@@ -2427,17 +2427,27 @@ main:focus {
   margin-top: 12px;
 }
 .work-outputs {
-  margin-top: 26px;
-  padding-top: 20px;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin-top: 20px;
+  padding-top: 16px;
   border-top: 1px solid #cbd7c8;
 }
 .work-outputs h4 {
+  margin: 0;
   font-size: 14px;
   font-weight: 500;
   color: var(--muted);
+  white-space: nowrap;
 }
 .work-outputs .resource-links {
-  margin-top: 12px;
+  margin-top: 0;
+  gap: 10px 14px;
+}
+.work-outputs .resource-links a {
+  gap: 6px;
 }
 .work-collaborators {
   margin-top: 22px;
@@ -2445,11 +2455,21 @@ main:focus {
   line-height: 1.8;
   color: var(--muted);
 }
-.work-collaborators a {
+.work-collaborators a,
+.work-thanks a {
   color: var(--accent);
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+.work-thanks {
+  margin-top: 18px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.work-thanks a {
+  white-space: nowrap;
 }
 .work-contribution--pending {
   border: 1px dashed #b4c3b6;
@@ -2464,7 +2484,7 @@ main:focus {
 }
 .work-map-preview .motion-media {
   height: auto;
-  aspect-ratio: 2 / 1;
+  aspect-ratio: var(--work-preview-ratio, 2 / 1);
   background: #10191f;
   border-radius: 4px;
 }

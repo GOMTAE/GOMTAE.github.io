@@ -89,6 +89,7 @@
         <div class="work-outputs"><h4>Research outputs</h4><div class="resource-links"><a href="/publications/ssp.html">SSP · CVPR 2025 <span aria-hidden="true">↗</span></a></div></div>
 
 
+
       </div>
     </div>
   </article>
@@ -99,12 +100,21 @@
       <div class="work-project-meta"><span class="work-status work-status--completed">Published term ended</span><p>Oct 2023 - Sep 2026</p></div>
     </header>
     <div class="work-project-body">
-      <div class="work-objective"><h3>About the project</h3><p>NiKoLaS investigates collision avoidance close to the ground, especially during takeoff and landing. Radar and infrared sensing help detect hazards such as cranes, vehicles, and people, including obstacles that do not transmit their position.</p><ul class="work-focus" aria-label="NiKoLaS focus areas"><li>Radar + infrared</li><li>Obstacle detection</li><li>Near-ground flight</li></ul><div class="resource-links"><a href="https://www.fhr.fraunhofer.de/en/projects/03_industrial_applications/nikolas-non-cooperative-collision-avoidance-for-aircraft.html">Official project page <span aria-hidden="true">↗</span></a></div></div>
+      <div class="work-objective"><h3>About the project</h3><p>NiKoLaS investigates collision avoidance close to the ground, especially during takeoff and landing. Radar and infrared sensing help detect hazards such as cranes, vehicles, and people, including obstacles that do not transmit their position.</p><ul class="work-focus" aria-label="NiKoLaS focus areas"><li>Radar + infrared</li><li>Obstacle detection</li><li>Near-ground flight</li></ul><div class="resource-links"><a href="https://www.fhr.fraunhofer.de/en/projects/03_industrial_applications/nikolas-non-cooperative-collision-avoidance-for-aircraft.html">Official project page <span aria-hidden="true">↗</span></a></div><figure class="work-map-preview" style="--work-preview-ratio: 800 / 826;">
+<div class="motion-media" data-loop-shell>
+
+  <picture><img src="/assets/portfolio/media/nikolas-perception-preview.webp" alt="Synchronized infrared semantics at top left, metric depth at top right, and semantic voxels across the bottom." width="800" height="826" loading="lazy" decoding="async"></picture>
+
+  <video class="motion-video" data-loop-src="/assets/portfolio/media/nikolas-perception-preview.mp4" width="800" height="826" loop muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+
+</div>
+<figcaption>IR scene parsing, metric depth, and semantic voxel mapping.</figcaption></figure></div>
       <div class="work-contribution"><h3>My contribution</h3>
         <ul><li>Acquired and processed aerial datasets, and trained segmentation models for an infrared-only scene-parsing pipeline.</li><li>Integrated DAV3 metric depth estimation into the perception pipeline.</li><li>Provided perception outputs that are fused with dynamic obstacle detections in Max’s motion-forecasting module.</li></ul>
 
         <div class="work-collaborators"><p>Motion forecasting: <a href="https://github.com/MaxBial">Maximilian Bialdyga</a></p></div>
-
+        <p class="work-thanks">Special thanks to <a href="https://www.linkedin.com/in/paulspannaus/?isSelfProfile=false">Paul Spannaus</a>, <a href="https://www.linkedin.com/in/toma%C5%BE-coti%C4%8D-080663333/?isSelfProfile=false">Tomaž Cotič</a>, and <a href="https://www.linkedin.com/in/andreas--greiner/?isSelfProfile=false">Andreas Greiner</a> for their great help.</p>
+        <div class="work-gallery"><img src="/assets/portfolio/media/nikolas-1.webp" alt="Taehyoung beside the sensor-equipped drone on its transport platform during NiKoLaS fieldwork." width="480" height="300" loading="lazy" decoding="async"><img src="/assets/portfolio/media/nikolas-2.webp" alt="A colleague operating the field laptop with Taehyoung nearby during NiKoLaS data collection." width="480" height="300" loading="lazy" decoding="async"></div><p class="work-gallery-caption">NiKoLaS data collection and field setup.</p>
       </div>
     </div>
   </article>
@@ -115,7 +125,7 @@
       <div class="work-project-meta"><span class="work-status work-status--ongoing">Final phase</span><p>Sep 2023 - Dec 2026</p></div>
     </header>
     <div class="work-project-body">
-      <div class="work-objective"><h3>About the project</h3><p>ADAM (Advanced Air Space Mapping) develops detailed, semantically annotated 3D maps for safer drone operations. It connects aerial data collection and mapping with localization, flight planning, and airspace services.</p><ul class="work-focus" aria-label="ADAM focus areas"><li>HD semantic 3D maps</li><li>Aerial data</li><li>Flight demonstrations</li></ul><div class="resource-links"><a href="https://www.kamo.one/adam/">Official project page <span aria-hidden="true">↗</span></a><a href="/#activity">Final presentation <span aria-hidden="true">↗</span></a></div><figure class="work-map-preview">
+      <div class="work-objective"><h3>About the project</h3><p>ADAM (Advanced Air Space Mapping) develops detailed, semantically annotated 3D maps for safer drone operations. It connects aerial data collection and mapping with localization, flight planning, and airspace services.</p><ul class="work-focus" aria-label="ADAM focus areas"><li>HD semantic 3D maps</li><li>Aerial data</li><li>Flight demonstrations</li></ul><div class="resource-links"><a href="https://www.kamo.one/adam/">Official project page <span aria-hidden="true">↗</span></a><a href="/#activity">Final presentation <span aria-hidden="true">↗</span></a></div><figure class="work-map-preview" style="--work-preview-ratio: 768 / 384;">
 <div class="motion-media" data-loop-shell>
 
   <picture><img src="/assets/portfolio/media/adam-map-preview.webp" alt="Semantic 3D map views from five selected aerial mapping sites." width="768" height="384" loading="lazy" decoding="async"></picture>
@@ -127,6 +137,7 @@
       <div class="work-contribution"><h3>My contribution</h3>
         <ul><li>Acquired, processed, and annotated aerial datasets, and trained segmentation models for offline and live 3D map building.</li><li>Co-developed MultiFly for efficient multimodal dataset creation through RGB-to-X label propagation across heterogeneous sensors.</li><li>Used VoxelFix to clean up semantic artifacts in the resulting 3D maps.</li><li>Presented our work on high-definition 3D semantic mapping, including map-based pre-flight checks of planned flight paths, and participated in the project’s demo flights.</li></ul>
         <div class="work-outputs"><h4>Research outputs</h4><div class="resource-links"><a href="https://markus-42.github.io/multifly/">MultiFly <span aria-hidden="true">↗</span></a><a href="/publications/voxelfix.html">VoxelFix <span aria-hidden="true">↗</span></a></div></div>
+
 
         <div class="work-gallery"><img src="/assets/portfolio/media/adam-demo-320.webp" alt="Discussing the ADAM project with colleagues at the final presentation." width="480" height="300" loading="lazy" decoding="async"><img src="/assets/portfolio/media/adam-drone-480.webp" alt="Taehyoung and a colleague inspecting the quadrotor used in the ADAM demonstrations." width="480" height="300" loading="lazy" decoding="async"></div><p class="work-gallery-caption">ADAM final presentation and demonstration flights · October 2026</p>
       </div>
@@ -142,6 +153,7 @@
       <div class="work-objective"><h3>About the project</h3><p>ENGEL explores sensing and AI assistance for rescue helicopters. Better awareness of terrain and obstacles supports flight, approach, and landing, with the aim of making demanding missions safer and more efficient.</p><ul class="work-focus" aria-label="ENGEL focus areas"><li>Environment perception</li><li>Sensor fusion</li><li>Landing assistance</li></ul><div class="resource-links"><a href="https://www.asg.ed.tum.de/en/ht/research/ongoing-research-projects/engel-energy-efficient-flight-guidance/">Project overview <span aria-hidden="true">↗</span></a><a href="https://xitaso.com/en/projects/engel/">Consortium perspective <span aria-hidden="true">↗</span></a></div></div>
       <div class="work-contribution"><h3>My contribution</h3>
         <ul><li>Developing semantic scene parsing and landing-spot detection for aerial environments.</li><li>Fusing static satellite-map information with live Radix maps to support downstream tasks.</li><li>Implementing on-board 3D map building and a map server for the perception and landing pipeline.</li></ul>
+
 
 
 

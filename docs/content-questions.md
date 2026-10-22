@@ -36,6 +36,9 @@ sources:
   - label: Official project page
     url: https://official-institution.example/project
 photos: [] # optional src and descriptive alt
+photosCaption: Optional project-specific caption
+thanks: [] # optional names and profile URLs
+preview: {} # optional src, poster, width, height, duration, alt, caption
 outputs: [] # optional research links with label and url
 collaborators: [] # optional name, role, and url
 ```
