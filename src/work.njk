@@ -1,10 +1,40 @@
 ---
 layout: base.njk
 permalink: /work.html
-title: Applied Research
-description: Applied research context for Taehyoung Kim’s work at Fraunhofer IVI, connecting robotic perception, semantic mapping, and aerial autonomy.
+title: Fraunhofer Projects
+nav: research
+description: VERUM, NiKoLaS, ADAM, and ENGEL - collaborative Fraunhofer IVI projects in perception, mapping, and near-ground aerial autonomy, with Taehyoung Kim’s contributions.
 ---
-<section class="page-heading container"><p class="eyebrow">Applied research at Fraunhofer IVI</p><h1>Beyond the<br>benchmark<span class="accent">.</span></h1><div class="page-heading-bottom"><p>Connecting research questions with the realities of autonomous aerial systems.</p><a class="text-link" href="mailto:{{ site.email }}">Get in touch ↗</a></div></section>
-<section class="container section-bottom work-context"><p class="eyebrow">Professional context</p><div class="applied-grid"><h2>Perception is part<br>of a bigger system.</h2><div><p class="large-copy">I’m a Research Engineer at Fraunhofer IVI, working on robotic perception and aerial autonomy.</p><p>Fraunhofer IVI’s public autonomous-flight research covers environment perception, autonomous navigation, and safe landing. This institutional context is distinct from the specific contributions documented in my publications.</p><p>My publicly available collaborative research includes video segmentation, multimodal aerial sensing, semantic map correction, and mission-level agent evaluation.</p><div class="resource-links"><a href="https://www.ivi.fraunhofer.de/en/research-fields/advanced-air-mobility/autonomous-flying.html">IVI’s autonomous flight research ↗</a><a href="/publications.html">Published work ↗</a></div></div></div>
-{% for project in work.projects %}{% if project.review_state == 'approved_for_personal_website' %}<article class="work-card"><p class="eyebrow">{{ project.organization }} · {{ project.status }}</p><h2>{{ project.project_name }}</h2><h3>Project objective</h3><p>{{ project.public_summary }}</p><h3>My responsibility</h3><p>{{ project.my_role }}</p><ul>{% for contribution in project.my_contributions %}<li>{{ contribution }}</li>{% endfor %}</ul><h3>Collaborative context</h3><p>{{ project.collaboration_note }}</p><a href="{{ project.public_project_url }}">Official project page ↗</a></article>{% endif %}{% endfor %}
+<section class="container work-heading" aria-labelledby="work-title">
+  <div class="work-heading-copy">
+    <p class="eyebrow">Applied research / Fraunhofer IVI</p>
+    <h1 id="work-title">From research<br>to flight<span class="accent">.</span></h1>
+    <p class="work-lead">The projects behind my work on perception, mapping, and near-ground aerial autonomy.</p>
+    <p>At Fraunhofer IVI, I work in collaborative research projects that connect algorithms with sensors, robotic systems, and field demonstrations. Here is a closer look at what each project sets out to do and my part in it.</p>
+    <a class="text-link" href="{{ work.overviewUrl }}">IVI’s autonomous flight research <span aria-hidden="true">↗</span></a>
+  </div>
+  <nav class="work-directory" aria-label="Fraunhofer projects">
+    <p class="eyebrow">Explore the projects</p>
+    {% for project in work.projects %}
+    <a href="#{{ project.id }}"><span><strong>{{ project.name }}</strong><span>{{ project.theme }}</span></span><span aria-hidden="true">↘</span></a>
+    {% endfor %}
+  </nav>
+</section>
+<section class="container work-projects" aria-label="Project details">
+  {% for project in work.projects %}
+  <article class="work-project" id="{{ project.id }}" aria-labelledby="{{ project.id }}-title">
+    <header class="work-project-heading">
+      <div><p class="eyebrow">0{{ loop.index }} / {{ project.theme }}</p><h2 id="{{ project.id }}-title">{{ project.name }}<span class="accent">.</span></h2><p class="work-tagline">{{ project.tagline }}</p></div>
+      <div class="work-project-meta"><span class="work-status work-status--{{ project.statusKey }}">{{ project.status }}</span><p>{{ project.period }}</p></div>
+    </header>
+    <div class="work-project-body">
+      <div class="work-objective"><h3>About the project</h3><p>{{ project.summary }}</p><ul class="work-focus" aria-label="{{ project.name }} focus areas">{% for focus in project.focus %}<li>{{ focus }}</li>{% endfor %}</ul><div class="resource-links">{% for source in project.sources %}<a href="{{ source.url }}">{{ source.label }} <span aria-hidden="true">↗</span></a>{% endfor %}</div></div>
+      <div class="work-contribution{% if not project.contributions.length %} work-contribution--pending{% endif %}"><h3>My contribution</h3>
+        {% if project.contributions.length %}<ul>{% for item in project.contributions %}<li>{{ item }}</li>{% endfor %}</ul>{% else %}<p class="work-contribution-placeholder">More on my work here soon.</p>{% endif %}
+        {% if project.photos %}<div class="work-gallery">{% for photo in project.photos %}<img src="{{ photo.src }}" alt="{{ photo.alt }}" width="480" height="300" loading="lazy" decoding="async">{% endfor %}</div><p class="work-gallery-caption">ADAM final presentation and demonstration flights · October 2026</p>{% endif %}
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+  <div class="work-notes"><p>Collaborative projects at Fraunhofer IVI. Project descriptions and periods are drawn from the linked public sources; dates refer to the consortium’s work. Updated {{ work.updated }}.</p><a class="text-link" href="/publications.html">Explore my publications <span aria-hidden="true">↗</span></a></div>
 </section>

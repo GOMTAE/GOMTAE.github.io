@@ -216,3 +216,33 @@ test("reduced motion disables animated navigation and no fake posts are shown", 
     (await page.request.get("/reference/private-report.pdf")).status(),
   ).toBe(404);
 });
+
+test("Selected research opens the Fraunhofer showcase and its ADAM contribution", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page
+    .locator("#research")
+    .getByRole("link", { name: "Explore Fraunhofer projects", exact: true })
+    .click();
+  await expect(page).toHaveURL(/\/work\.html$/);
+  const directory = page.getByRole("navigation", {
+    name: "Fraunhofer projects",
+    exact: true,
+  });
+  await directory.getByRole("link", { name: /^ADAM/ }).click();
+  await expect(page).toHaveURL(/#adam$/);
+  await expect(
+    page
+      .locator("#adam")
+      .getByRole("heading", { name: "My contribution", exact: true }),
+  ).toBeVisible();
+  await expect(page.locator("#adam .work-contribution")).toContainText(
+    "high-definition 3D semantic mapping",
+  );
+  await expect(page.locator("#adam .work-gallery img")).toHaveCount(2);
+  await page
+    .getByRole("link", { name: "Explore my publications", exact: true })
+    .click();
+  await expect(page).toHaveURL(/\/publications\.html$/);
+});

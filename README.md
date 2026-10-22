@@ -31,7 +31,7 @@ For bundled Chromium instead of Chrome, install it with `npx playwright install 
 | Shared header, footer, article layout, research cards         | `src/_includes/`                                        |
 | Publications, authors, bibliography, paper/project/code links | `src/_data/publications.js`                             |
 | Personal projects and side ventures                           | `src/_data/projects.json`                               |
-| Cleared institutional project contributions                   | `src/_data/work.json`                                   |
+| Fraunhofer project overviews and contributions                   | `src/_data/work.json`                                   |
 | Older thesis/experimental projects                            | `src/_data/archive.json`                                |
 | Identity, contact, social links                               | `src/_data/site.json`                                   |
 | Visual system and browser interactions                        | `assets/portfolio/site.css`, `assets/portfolio/site.js` |
@@ -71,7 +71,7 @@ Append an entry to `src/_data/projects.json` with `title`, `kind` (for example `
 
 ## Institutional work
 
-`src/_data/work.json` deliberately starts with no project cards. Each entry follows the schema documented in `docs/content-questions.md`. Only `review_state: approved_for_personal_website` is rendered. The public existence of an institutional project does not establish personal involvement or reuse permission. Never commit confidential reports or internal imagery.
+`src/_data/work.json` supplies the four-project showcase at `/work.html`, linked from Selected research and the Research page. Each entry includes a sourced public summary, the published project period and status, focus areas, sources, and user-confirmed contributions. An empty `contributions` array displays a short placeholder. Add only confirmed personal responsibilities; a project’s public description does not establish an individual contribution. Keep confidential reports and internal imagery outside the repository. See `docs/content-questions.md` for the schema and details still needed.
 
 ## Assets
 

@@ -7,34 +7,45 @@ These inputs enable future improvements. None blocks the implemented public-cont
 - Leave `images/VoxelFix/teaser.svg` untouched and untracked.
 - Include integrated Markdown writing with an initially empty Writing page and no invented articles.
 - Use the current official 14-author MultiFly roster. Both arXiv landing page and v2 PDF checked on 2026-10-18 omit Sai B. Matha. The discrepancy noted in the brief is no longer present in the consulted sources. Markus Gross, Andreas Greiner and Taehyoung Kim retain equal-contribution markers; Paul Spannaus retains the correspondence marker.
-- Do not publish a MultiFly project page or an unsettled code/dataset URL. Only the authoritative paper is linked.
+- The user supplied the MultiFly project website on 22 October 2026: https://markus-42.github.io/multifly/. It is linked alongside the paper; no local MultiFly microsite is created.
 
 ## Specific optional inputs
 
-1. **Applied work:** For each approved project, provide its official public name/link, your specific responsibility, two or three cleared contributions, and team/student credits. Confirm which text and images are approved for this personal website.
-2. **Portrait and CV:** Provide an approved genuine portrait and a current public CV if you want them included. The current template image is not a portrait and is not reused.
+1. **Applied work:** For VERUM, NiKoLaS, ADAM, and ENGEL, provide your specific responsibility, 1-3 contribution bullets, collaborators, and any shareable outcomes. Confirm completion or ongoing status and any extensions.
+2. **Portrait and CV:** A genuine portrait was supplied and is used on the homepage and bio page. A current public CV can be added when available.
 3. **RGB/segmentation comparison:** A matched RGB frame and corresponding prediction, with model, capture/frame identifier, class palette, source, and permission. Current figures contain inset comparisons, so a pixel-aligned before/after slider is deliberately not shipped.
-4. **MultiFly links:** Provide stable project/code/data destinations once settled. A full project page remains a separate content task.
+4. **MultiFly links:** The project URL is linked. Add code/data URLs when confirmed.
 5. **Writing:** The first authentic post or update can be added using the README instructions. Independent ventures can be added to the separate projects registry once you have approved descriptions and links.
 
-## Institutional project schema
+## Fraunhofer project showcase
 
-Only an approved entry is rendered by the Applied Work page. Draft entries are not a safe place for private information in a public Git repository. Keep confidential notes outside the checkout.
+The user requested VERUM, NiKoLaS, ADAM, and ENGEL on the personal site on 22 October 2026. Public project overviews and contribution placeholders are authorized. `/work.html` uses `src/_data/work.json` and is linked from Selected research and the Research page.
 
 ```yaml
-project_name: Official public name
-status: ongoing # or completed / archived
-organization: Fraunhofer IVI
-public_project_url: https://official-institution.example/project
-public_summary: Public objective with source
-my_role: Confirmed responsibility
-my_contributions:
-  - User-confirmed contribution cleared for this website
-collaboration_note: Accurate team and student credit
-assets: [] # approved future assets, with ledger entries
-results_and_constraints: Public, sourced statements only
-source_and_permission: Public source and explicit approval reference/date
-review_state: approved_for_personal_website # draft / withheld are not rendered
+id: project-slug
+name: Official public name
+tagline: A short goal
+theme: Research themes
+status: Published project status
+statusKey: ongoing # or completed, for styling
+period: Published consortium period
+summary: Paraphrased public objective
+focus: [Short topic labels]
+contributions: [] # empty shows "More on my work here soon."
+sources:
+  - label: Official project page
+    url: https://official-institution.example/project
+photos: [] # optional src and descriptive alt
 ```
 
-No ENGEL, VERUM, ADAM, or other institutional program is claimed as personal work merely because it appears in an official overview. The current page includes only public institutional context and the already published research record.
+ADAM includes the user-confirmed demo-flight participation and presentation of HD semantic 3D maps, plus two previously supplied photographs. VERUM, NiKoLaS, and ENGEL need 1-3 user-confirmed contribution bullets each. Do not derive personal responsibilities from consortium descriptions.
+
+Public status sources, checked 22 October 2026:
+
+- VERUM: the project GitHub organization lists 2023-2025 and describes the project in the past tense: https://github.com/ProjectVERUM
+- NiKoLaS: Fraunhofer FHR lists October 2023-September 2026. The label is "Published term ended" pending confirmation of completion or an extension: https://www.fhr.fraunhofer.de/en/projects/03_industrial_applications/nikolas-non-cooperative-collision-avoidance-for-aircraft.html
+- ADAM: KAMO lists September 2023-December 2026. Its final presentation was in October 2026. It is currently labeled "Final phase": https://www.kamo.one/adam/
+- ENGEL: TUM lists it among ongoing research projects. An exact end date is not shown: https://www.asg.ed.tum.de/en/ht/research/ongoing-research-projects/engel-energy-efficient-flight-guidance/
+- Public objectives also come from the supplied IVI overview: https://www.ivi.fraunhofer.de/de/forschungsfelder/advanced-air-mobility/autonomes-fliegen.html
+
+These consortium dates are not personal employment or participation dates. Keep confidential information outside the checkout. Do not commit internal reports or imagery.
