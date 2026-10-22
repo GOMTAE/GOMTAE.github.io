@@ -1,20 +1,20 @@
 ---
 layout: base.njk
 permalink: /work.html
-title: Fraunhofer Projects
+title: Collaborative Projects
 nav: research
 description: VERUM, NiKoLaS, ADAM, and ENGEL - collaborative Fraunhofer IVI projects in perception, mapping, and near-ground aerial autonomy, with Taehyoung Kim’s contributions.
 ---
 {% from 'motion-media.njk' import motionMedia %}
 <section class="container work-heading" aria-labelledby="work-title">
   <div class="work-heading-copy">
-    <p class="eyebrow">Applied research / Fraunhofer IVI</p>
+    <p class="eyebrow">Applied research / Collaborative projects</p>
     <h1 id="work-title">From research<br>to flight<span class="accent">.</span></h1>
     <p class="work-lead">The projects behind my work on perception, mapping, and near-ground aerial autonomy.</p>
     <p>At Fraunhofer IVI, I work in collaborative research projects that connect algorithms with sensors, robotic systems, and field demonstrations. Here is a closer look at what each project sets out to do and my part in it.</p>
     <a class="text-link" href="{{ work.overviewUrl }}">IVI’s autonomous flight research <span aria-hidden="true">↗</span></a>
   </div>
-  <nav class="work-directory" aria-label="Fraunhofer projects">
+  <nav class="work-directory" aria-label="Collaborative projects">
     <p class="eyebrow">Explore the projects I took part in</p>
     {% for project in work.projects %}
     <a href="#{{ project.id }}"><span><strong>{{ project.name }}</strong><span>{{ project.theme }}</span></span><span aria-hidden="true">↘</span></a>

@@ -217,17 +217,17 @@ test("reduced motion disables animated navigation and no fake posts are shown", 
   ).toBe(404);
 });
 
-test("Selected research opens the Fraunhofer showcase and its ADAM contribution", async ({
+test("Selected research opens the collaborative project showcase and its ADAM contribution", async ({
   page,
 }) => {
   await page.goto("/");
   await page
     .locator("#research")
-    .getByRole("link", { name: "Explore Fraunhofer projects", exact: true })
+    .getByRole("link", { name: "Explore collaborative projects", exact: true })
     .click();
   await expect(page).toHaveURL(/\/work\.html$/);
   const directory = page.getByRole("navigation", {
-    name: "Fraunhofer projects",
+    name: "Collaborative projects",
     exact: true,
   });
   await directory.getByRole("link", { name: /^ADAM/ }).click();
