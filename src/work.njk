@@ -34,7 +34,7 @@ description: VERUM, NiKoLaS, ADAM, and ENGEL - collaborative Fraunhofer IVI proj
         {% if project.contributions.length %}<ul>{% for item in project.contributions %}<li>{{ item }}</li>{% endfor %}</ul>{% else %}<p class="work-contribution-placeholder">More on my work here soon.</p>{% endif %}
         {% if project.outputs %}<div class="work-outputs"><h4>Research outputs</h4><div class="resource-links">{% for output in project.outputs %}<a href="{{ output.url }}">{{ output.label }} <span aria-hidden="true">↗</span></a>{% endfor %}</div></div>{% endif %}
         {% if project.collaborators %}<div class="work-collaborators">{% for collaborator in project.collaborators %}<p>{{ collaborator.role }}: <a href="{{ collaborator.url }}">{{ collaborator.name }}</a></p>{% endfor %}</div>{% endif %}
-        {% if project.thanks %}<p class="work-thanks">Special thanks to {% for person in project.thanks %}{% if not loop.first %}{% if loop.last %}, and {% else %}, {% endif %}{% endif %}<a href="{{ person.url }}">{{ person.name }}</a>{% endfor %} for their great help.</p>{% endif %}
+        {% if project.thanks %}<p class="work-thanks">Special thanks to {% for person in project.thanks %}{% if not loop.first %}{% if loop.last %}{% if loop.length > 2 %},{% endif %} and {% else %}, {% endif %}{% endif %}<a href="{{ person.url }}">{{ person.name }}</a>{% endfor %} for their great help.</p>{% endif %}
         {% if project.photos %}<div class="work-gallery">{% for photo in project.photos %}<img src="{{ photo.src }}" alt="{{ photo.alt }}" width="480" height="300" loading="lazy" decoding="async">{% endfor %}</div>{% if project.photosCaption %}<p class="work-gallery-caption">{{ project.photosCaption }}</p>{% endif %}{% endif %}
       </div>
     </div>
