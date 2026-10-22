@@ -52,3 +52,11 @@ Each publication retains only its final silent MP4 for inline playback and a mat
 ## Personal portrait
 
 `taehyoung-480.webp` and `taehyoung-800.webp` are responsive derivatives of the author's supplied photo (`18b6af445884ed85680a5fa6aa39499df2de3896.JPG`). Cropped from the 1920×2560 original at x=280, y=700, width=1400, height=1750 to reduce empty sky while retaining the person and street setting. No retouching or generated content. The original stays outside the repository; only the two optimized WebP files are retained.
+
+## ADAM project map preview
+
+`adam-map-preview.mp4` and `adam-map-preview.webp` are the only inline preview derivatives retained in the repository. They come from the user-supplied `ADAM-teaser.mp4`; the original stays outside the checkout. The user authorized a public edit with restricted locations and the opening/closing montages excluded.
+
+The retained source ranges, in seconds, are 12-15, 33-34.5, 36.5-38.5, 40.5-42.5, 44.5-46.5, and 50.5-54. All other source frames are excluded. The result is a 14-second silent H.264 loop at 768×384, 15 fps. A 1920×960 crop removes the source’s lower metadata strip and original seven-site counters, retaining the map views and their main labels. Transitions use hard cuts; no source audio, chapters, or metadata are retained.
+
+Only Kamenz Airport, Hohenwart, Pörnbach, Dinopark, Buxheim, and Kamenz map-layer inspection appear in the public edit. The poster is extracted at 3.5 seconds of the edited clip. A matching 640×320 GIF export was provided separately outside the repository to avoid adding a duplicate large animation to Git. Playback uses the existing visible-only motion component, with a still fallback for reduced-motion and data-saving preferences.

@@ -5,6 +5,7 @@ title: Fraunhofer Projects
 nav: research
 description: VERUM, NiKoLaS, ADAM, and ENGEL - collaborative Fraunhofer IVI projects in perception, mapping, and near-ground aerial autonomy, with Taehyoung Kim’s contributions.
 ---
+{% from 'motion-media.njk' import motionMedia %}
 <section class="container work-heading" aria-labelledby="work-title">
   <div class="work-heading-copy">
     <p class="eyebrow">Applied research / Fraunhofer IVI</p>
@@ -28,7 +29,7 @@ description: VERUM, NiKoLaS, ADAM, and ENGEL - collaborative Fraunhofer IVI proj
       <div class="work-project-meta"><span class="work-status work-status--{{ project.statusKey }}">{{ project.status }}</span><p>{{ project.period }}</p></div>
     </header>
     <div class="work-project-body">
-      <div class="work-objective"><h3>About the project</h3><p>{{ project.summary }}</p><ul class="work-focus" aria-label="{{ project.name }} focus areas">{% for focus in project.focus %}<li>{{ focus }}</li>{% endfor %}</ul><div class="resource-links">{% for source in project.sources %}<a href="{{ source.url }}">{{ source.label }} <span aria-hidden="true">↗</span></a>{% endfor %}</div></div>
+      <div class="work-objective"><h3>About the project</h3><p>{{ project.summary }}</p><ul class="work-focus" aria-label="{{ project.name }} focus areas">{% for focus in project.focus %}<li>{{ focus }}</li>{% endfor %}</ul><div class="resource-links">{% for source in project.sources %}<a href="{{ source.url }}">{{ source.label }} <span aria-hidden="true">↗</span></a>{% endfor %}</div>{% if project.preview %}<figure class="work-map-preview">{{ motionMedia('', project.preview.alt, project.preview, project.name, false, false) }}<figcaption>{{ project.preview.caption }}</figcaption></figure>{% endif %}</div>
       <div class="work-contribution{% if not project.contributions.length %} work-contribution--pending{% endif %}"><h3>My contribution</h3>
         {% if project.contributions.length %}<ul>{% for item in project.contributions %}<li>{{ item }}</li>{% endfor %}</ul>{% else %}<p class="work-contribution-placeholder">More on my work here soon.</p>{% endif %}
         {% if project.outputs %}<div class="work-outputs"><h4>Research outputs</h4><div class="resource-links">{% for output in project.outputs %}<a href="{{ output.url }}">{{ output.label }} <span aria-hidden="true">↗</span></a>{% endfor %}</div></div>{% endif %}
