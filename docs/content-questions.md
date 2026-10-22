@@ -19,7 +19,7 @@ These inputs enable future improvements. None blocks the implemented public-cont
 
 ## Fraunhofer project showcase
 
-The user requested VERUM, NiKoLaS, ADAM, and ENGEL on the personal site on 22 October 2026. Public project overviews and contribution placeholders are authorized. `/work.html` uses `src/_data/work.json` and is linked from Selected research and the Research page.
+The user requested VERUM, NiKoLaS, ADAM, and ENGEL on the personal site on 22 October 2026. Public project overviews and contribution placeholders are authorized. The user supplied personal contribution details for all four projects in the follow-up. `/work.html` uses `src/_data/work.json` and is linked from Selected research and the Research page.
 
 ```yaml
 id: project-slug
@@ -36,9 +36,11 @@ sources:
   - label: Official project page
     url: https://official-institution.example/project
 photos: [] # optional src and descriptive alt
+outputs: [] # optional research links with label and url
+collaborators: [] # optional name, role, and url
 ```
 
-ADAM includes the user-confirmed demo-flight participation and presentation of HD semantic 3D maps, plus two previously supplied photographs. VERUM, NiKoLaS, and ENGEL need 1-3 user-confirmed contribution bullets each. Do not derive personal responsibilities from consortium descriptions.
+All four projects now include user-confirmed contributions: VERUM covers datasets, semantic/panoptic training, live voxel mapping, and SSP; NiKoLaS covers the infrared perception pipeline and DAV3 depth, with motion forecasting credited to Maximilian Bialdyga; ADAM covers acquisition through training, MultiFly, VoxelFix, and pre-flight map checks; ENGEL covers aerial perception, landing-spot detection, static/live map fusion, on-board mapping, and the map server. SSP, MultiFly, and VoxelFix are linked as research outputs. ADAM also retains the two previously supplied photographs. Do not derive additional personal responsibilities from consortium descriptions.
 
 Public status sources, checked 22 October 2026:
 

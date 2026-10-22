@@ -31,6 +31,8 @@ description: VERUM, NiKoLaS, ADAM, and ENGEL - collaborative Fraunhofer IVI proj
       <div class="work-objective"><h3>About the project</h3><p>{{ project.summary }}</p><ul class="work-focus" aria-label="{{ project.name }} focus areas">{% for focus in project.focus %}<li>{{ focus }}</li>{% endfor %}</ul><div class="resource-links">{% for source in project.sources %}<a href="{{ source.url }}">{{ source.label }} <span aria-hidden="true">↗</span></a>{% endfor %}</div></div>
       <div class="work-contribution{% if not project.contributions.length %} work-contribution--pending{% endif %}"><h3>My contribution</h3>
         {% if project.contributions.length %}<ul>{% for item in project.contributions %}<li>{{ item }}</li>{% endfor %}</ul>{% else %}<p class="work-contribution-placeholder">More on my work here soon.</p>{% endif %}
+        {% if project.outputs %}<div class="work-outputs"><h4>Research outputs</h4><div class="resource-links">{% for output in project.outputs %}<a href="{{ output.url }}">{{ output.label }} <span aria-hidden="true">↗</span></a>{% endfor %}</div></div>{% endif %}
+        {% if project.collaborators %}<div class="work-collaborators">{% for collaborator in project.collaborators %}<p>{{ collaborator.role }}: <a href="{{ collaborator.url }}">{{ collaborator.name }}</a></p>{% endfor %}</div>{% endif %}
         {% if project.photos %}<div class="work-gallery">{% for photo in project.photos %}<img src="{{ photo.src }}" alt="{{ photo.alt }}" width="480" height="300" loading="lazy" decoding="async">{% endfor %}</div><p class="work-gallery-caption">ADAM final presentation and demonstration flights · October 2026</p>{% endif %}
       </div>
     </div>

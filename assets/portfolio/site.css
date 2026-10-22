@@ -2426,6 +2426,31 @@ main:focus {
 .work-contribution > ul > li + li {
   margin-top: 12px;
 }
+.work-outputs {
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid #cbd7c8;
+}
+.work-outputs h4 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.work-outputs .resource-links {
+  margin-top: 12px;
+}
+.work-collaborators {
+  margin-top: 22px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.work-collaborators a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .work-contribution--pending {
   border: 1px dashed #b4c3b6;
   background: transparent;

@@ -16,7 +16,11 @@
         "Multimodal sensing",
         "Semantic occupancy maps"
       ],
-      "contributions": [],
+      "contributions": [
+        "Curated aerial datasets and trained semantic and panoptic segmentation models.",
+        "Co-developed the live 3D voxel-mapping module, helping lay the foundation for online semantic map building.",
+        "Co-developed SSP to improve temporal consistency in aerial semantic segmentation."
+      ],
       "sources": [
         {
           "label": "Project overview",
@@ -25,6 +29,12 @@
         {
           "label": "Open-source Radix",
           "url": "https://github.com/ProjectVERUM/radix_ros2_pkg"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "SSP · CVPR 2025",
+          "url": "/publications/ssp.html"
         }
       ]
     },
@@ -38,11 +48,22 @@
       "period": "Oct 2023 - Sep 2026",
       "summary": "NiKoLaS investigates collision avoidance close to the ground, especially during takeoff and landing. Radar and infrared sensing help detect hazards such as cranes, vehicles, and people, including obstacles that do not transmit their position.",
       "focus": ["Radar + infrared", "Obstacle detection", "Near-ground flight"],
-      "contributions": [],
+      "contributions": [
+        "Acquired and processed aerial datasets, and trained segmentation models for an infrared-only scene-parsing pipeline.",
+        "Integrated DAV3 metric depth estimation into the perception pipeline.",
+        "Provided perception outputs that are fused with dynamic obstacle detections in Max’s motion-forecasting module."
+      ],
       "sources": [
         {
           "label": "Official project page",
           "url": "https://www.fhr.fraunhofer.de/en/projects/03_industrial_applications/nikolas-non-cooperative-collision-avoidance-for-aircraft.html"
+        }
+      ],
+      "collaborators": [
+        {
+          "name": "Maximilian Bialdyga",
+          "url": "https://github.com/MaxBial",
+          "role": "Motion forecasting"
         }
       ]
     },
@@ -57,8 +78,10 @@
       "summary": "ADAM (Advanced Air Space Mapping) develops detailed, semantically annotated 3D maps for safer drone operations. It connects aerial data collection and mapping with localization, flight planning, and airspace services.",
       "focus": ["HD semantic 3D maps", "Aerial data", "Flight demonstrations"],
       "contributions": [
-        "Participated in the project’s demonstration flights.",
-        "Presented our work on high-definition 3D semantic mapping at the October 2026 final presentation."
+        "Acquired and processed aerial datasets, annotated the data, and trained segmentation models.",
+        "Co-developed MultiFly for efficient multimodal dataset creation through RGB-to-X label propagation across heterogeneous sensors.",
+        "Co-developed VoxelFix to improve the semantic quality of 3D maps.",
+        "Presented our work on high-definition 3D semantic mapping, including map-based pre-flight checks of planned flight paths, and participated in the project’s demo flights."
       ],
       "photos": [
         {
@@ -75,7 +98,20 @@
           "label": "Official project page",
           "url": "https://www.kamo.one/adam/"
         },
-        { "label": "Final presentation", "url": "/#activity" }
+        {
+          "label": "Final presentation",
+          "url": "/#activity"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "MultiFly",
+          "url": "https://markus-42.github.io/multifly/"
+        },
+        {
+          "label": "VoxelFix",
+          "url": "/publications/voxelfix.html"
+        }
       ]
     },
     {
@@ -92,7 +128,11 @@
         "Sensor fusion",
         "Landing assistance"
       ],
-      "contributions": [],
+      "contributions": [
+        "Developing semantic scene parsing and landing-spot detection for aerial environments.",
+        "Fusing static satellite-map information with live Radix maps to support downstream tasks.",
+        "Implementing on-board 3D map building and a map server for the perception and landing pipeline."
+      ],
       "sources": [
         {
           "label": "Project overview",
