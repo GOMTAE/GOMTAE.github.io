@@ -190,7 +190,9 @@
       "contributions": [
         "Developing semantic scene parsing and landing-spot detection for aerial environments.",
         "Fusing static satellite-map information with live Radix maps to support downstream tasks.",
-        "Refining the Radix-based mapping and map-serving pipeline for real-time on-board use, and optimizing segmentation models through quantization and deployment with TensorRT and Triton."
+        "Refining the Radix-based mapping and map-serving pipeline for real-time on-board use, and optimizing segmentation models through quantization and deployment with TensorRT and Triton.",
+        "Setting up hardware-in-the-loop testing in CI/CD using an Orin runner.",
+        "Designing ROS2Bench interfaces between upstream and downstream components."
       ],
       "sources": [
         {
