@@ -41,7 +41,7 @@ const records = [
     alt: "MultiFly overview: aerial sensing platform, RGB, thermal, LiDAR and radar observations, and cross-modal semantic labels.",
     paper: "https://arxiv.org/abs/2610.10359",
     arxiv: "2610.10359",
-    project: null,
+    project: "https://markus-42.github.io/multifly/",
     code: null,
     codeStatus: "pending_confirmation",
     featured: true,
