@@ -171,7 +171,33 @@
         "alt": "Semantic 3D map views from five selected aerial mapping sites.",
         "caption": "Selected semantic 3D maps and class-level inspection."
       },
-      "photosCaption": "ADAM final presentation and demonstration flights · October 2026"
+      "photosCaption": "ADAM final presentation and demonstration flights · October 2026",
+      "thanks": [
+        {
+          "name": "Paul",
+          "url": "https://www.linkedin.com/in/paulspannaus/?isSelfProfile=false"
+        },
+        {
+          "name": "Markus",
+          "url": "https://www.linkedin.com/in/markusgross42/?isSelfProfile=false"
+        },
+        {
+          "name": "Tomaž",
+          "url": "https://www.linkedin.com/in/toma%C5%BE-coti%C4%8D-080663333/?isSelfProfile=false"
+        },
+        {
+          "name": "Andreas",
+          "url": "https://www.linkedin.com/in/andreas--greiner/?isSelfProfile=false"
+        },
+        {
+          "name": "Vamsi",
+          "url": "https://www.linkedin.com/in/vkgm/?isSelfProfile=false"
+        },
+        {
+          "name": "Siva",
+          "url": "https://www.linkedin.com/in/sivasubiramaniam-subbiah-61a997217/"
+        }
+      ]
     },
     {
       "id": "engel",
