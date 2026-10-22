@@ -51,19 +51,12 @@
       "contributions": [
         "Acquired and processed aerial datasets, and trained segmentation models for an infrared-only scene-parsing pipeline.",
         "Integrated DAV3 metric depth estimation into the perception pipeline.",
-        "Provided perception outputs that are fused with dynamic obstacle detections in Max’s motion-forecasting module."
+        "Provided perception outputs that are fused with dynamic obstacle detections for downstream motion forecasting."
       ],
       "sources": [
         {
           "label": "Official project page",
           "url": "https://www.fhr.fraunhofer.de/en/projects/03_industrial_applications/nikolas-non-cooperative-collision-avoidance-for-aircraft.html"
-        }
-      ],
-      "collaborators": [
-        {
-          "name": "Maximilian Bialdyga",
-          "url": "https://github.com/MaxBial",
-          "role": "Motion forecasting"
         }
       ],
       "photos": [
@@ -101,6 +94,10 @@
         {
           "name": "Vamsi",
           "url": "https://www.linkedin.com/in/vkgm/?isSelfProfile=false"
+        },
+        {
+          "name": "Max",
+          "url": "https://github.com/MaxBial"
         }
       ],
       "preview": {
