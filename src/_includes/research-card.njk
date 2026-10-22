@@ -1,5 +1,6 @@
 {% from 'media.njk' import media %}
 {% from 'motion-media.njk' import motionMedia %}
+{% from 'coauthor-kudos.njk' import coauthorKudos %}
 {% macro researchCard(p, large=false) %}
 <article class="research-card{% if large %} research-card--large{% endif %}">
   {% if p.loop %}
@@ -15,6 +16,7 @@
   <div class="research-meta"><span>{{ p.theme }}</span><span{% if p.venue %} class="venue-badge"{% endif %}>{{ p.status }}{% if p.type != 'conference' %} · {{ p.year }}{% endif %}</span></div>
   <h3><a href="{{ p.project or p.paper }}">{{ p.shortTitle }}<span class="card-subtitle">{{ p.summary }}</span></a></h3>
   <p>{{ p.description }}</p>
+  {{ coauthorKudos(p) }}
   {% if p.imageCredit %}<p class="image-credit">Figure: {{ p.imageCredit }} · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">License</a></p>{% endif %}
   <div class="resource-links">
     {% if p.project %}<a href="{{ p.project }}">Project <span aria-hidden="true">↗</span></a>{% endif %}

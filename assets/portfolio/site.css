@@ -960,6 +960,26 @@ main:focus {
   line-height: 1.7;
   margin-top: 12px;
 }
+.publication-body .coauthor-kudos,
+.research-card .coauthor-kudos {
+  font-size: var(--text-small);
+  line-height: 1.7;
+  margin-top: 10px;
+  color: var(--muted);
+}
+.coauthor-kudos a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+.dark-section .coauthor-kudos {
+  color: #b0c1b8;
+}
+.dark-section .coauthor-kudos a {
+  color: var(--accent-bright);
+}
 .publication-thumbnail {
   padding: 16px;
   background: #fff;
