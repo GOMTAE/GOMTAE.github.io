@@ -47,11 +47,7 @@
       "statusKey": "completed",
       "period": "Oct 2023 - Sep 2026",
       "summary": "NiKoLaS investigates collision avoidance close to the ground, especially during takeoff and landing. Radar and infrared sensing help detect hazards such as cranes, vehicles, and people, including obstacles that do not transmit their position.",
-      "focus": [
-        "Radar + infrared",
-        "Obstacle detection",
-        "Near-ground flight"
-      ],
+      "focus": ["Radar + infrared", "Obstacle detection", "Near-ground flight"],
       "contributions": [
         "Acquired and processed aerial datasets, and trained segmentation models for an infrared-only scene-parsing pipeline.",
         "Integrated DAV3 metric depth estimation into the perception pipeline.",
@@ -78,9 +74,17 @@
         {
           "src": "/assets/portfolio/media/nikolas-2.webp",
           "alt": "A colleague operating the field laptop with Taehyoung nearby during NiKoLaS data collection."
+        },
+        {
+          "src": "/assets/portfolio/media/nikolas-3.webp",
+          "alt": "Sensor-equipped drone flying beside a car during NiKoLaS field trials."
+        },
+        {
+          "src": "/assets/portfolio/media/nikolas-4.webp",
+          "alt": "Drone and car in the NiKoLaS test area, viewed from another angle."
         }
       ],
-      "photosCaption": "NiKoLaS data collection and field setup.",
+      "photosCaption": "NiKoLaS data collection, field setup, and flight trials.",
       "thanks": [
         {
           "name": "Paul",
@@ -118,11 +122,7 @@
       "statusKey": "ongoing",
       "period": "Sep 2023 - Dec 2026",
       "summary": "ADAM (Advanced Air Space Mapping) develops detailed, semantically annotated 3D maps for safer drone operations. It connects aerial data collection and mapping with localization, flight planning, and airspace services.",
-      "focus": [
-        "HD semantic 3D maps",
-        "Aerial data",
-        "Flight demonstrations"
-      ],
+      "focus": ["HD semantic 3D maps", "Aerial data", "Flight demonstrations"],
       "contributions": [
         "Acquired, processed, and annotated aerial datasets, and trained segmentation models for offline and live 3D map building.",
         "Co-developed MultiFly for efficient multimodal dataset creation through RGB-to-X label propagation across heterogeneous sensors.",
