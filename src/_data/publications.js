@@ -168,6 +168,12 @@ const records = [
     summary: "Seeing consistently, frame after frame.",
     description:
       "Semantic similarity propagation improves temporal consistency in video semantic segmentation for autonomous flight.",
+    kudos: [
+      {
+        name: "Cédric",
+        url: "https://www.linkedin.com/in/c%C3%A9dric-vincent-352508225/",
+      },
+    ],
     theme: "Video perception",
     image: "ssp",
     alt: "SSP aerial video preview comparing input frames and semantic segmentation predictions over time.",

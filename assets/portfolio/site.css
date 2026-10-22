@@ -538,6 +538,9 @@ main:focus {
 .activity-list li:last-child {
   border-bottom: 1px solid var(--line);
 }
+.activity-list li:not(:has(.activity-photos)) > div {
+  grid-column: 2 / -1;
+}
 .activity-photos {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1939,8 +1942,9 @@ main:focus {
   .activity-list time {
     grid-column: 1 / -1;
   }
-  .activity-list li > div {
-    grid-column: 1;
+  .activity-list li > div,
+  .activity-list li:not(:has(.activity-photos)) > div {
+    grid-column: 1 / -1;
     grid-row: 2;
   }
   .activity-list li > .activity-photos {

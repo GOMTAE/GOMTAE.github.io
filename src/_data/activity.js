@@ -11,6 +11,7 @@ export default [
         ? `${paper.shortTitle} preprint`
         : `${paper.shortTitle} at ${paper.status}`,
     text: paper.description,
+    credits: paper.kudos,
     url: paper.project || paper.paper,
     kind: "Publication",
   })),
