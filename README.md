@@ -42,7 +42,9 @@ Do not manually edit generated root HTML, article HTML, feeds, sitemap, `.genera
 
 ## Publish a post
 
-Write directly in GitHub: copy [the article template](docs/article-template.md) into a [new Markdown file under src/posts](https://github.com/GOMTAE/GOMTAE.github.io/new/main/src/posts), set the title, slug, date, summary and tags, and set `draft: false`. Commit to `main` or merge a pull request. GitHub Actions builds, validates, and deploys automatically. No local build or generated-file commit is required.
+Open [the visual writing dashboard](https://gomtae.github.io/admin/), sign in with GitHub, and select **Writing**. Add a title, introduction, and article using the rich-text editor; upload images from its image library. New articles start as drafts. Turn off **Keep as draft** and save to publish automatically. The first visit requires authorizing Pages CMS for this repository.
+
+As a fallback, write directly in GitHub: copy [the article template](docs/article-template.md) into a [new Markdown file under src/posts](https://github.com/GOMTAE/GOMTAE.github.io/new/main/src/posts), set the title, slug, date, summary and tags, and set `draft: false`. Commit to `main` or merge a pull request. GitHub Actions builds, validates, and deploys automatically. No local build or generated-file commit is required.
 
 See [the writing guide](docs/writing.md) for editing, images, scheduling, and previews. The homepage, writing index, RSS, and sitemap update automatically. Drafts and future posts stay off the website, but committed sources remain readable in this public repository. Keep private drafts outside the repository or in ignored `src/posts/*.draft.md` files.
 

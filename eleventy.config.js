@@ -1,5 +1,6 @@
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { readFileSync } from "node:fs";
+import { sizeArticleImages } from "./scripts/article-images.mjs";
 
 export default function (config) {
   config.addPlugin(syntaxHighlight);
@@ -13,6 +14,11 @@ export default function (config) {
   config.addTransform("cleanBlankLines", (content) =>
     content.replace(/^[\t ]+$/gm, ""),
   );
+  config.addTransform("articleImages", async function (content) {
+    return /[\/]posts[\/].*\.md$/.test(this.page.inputPath || "")
+      ? sizeArticleImages(content)
+      : content;
+  });
   const sizes = JSON.parse(
     readFileSync("assets/portfolio/media/dimensions.json", "utf8"),
   );

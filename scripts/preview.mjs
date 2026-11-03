@@ -26,7 +26,7 @@ const types = {
 };
 const allowed = (path) =>
   /^\/(assets|images|publications)\//.test(path) ||
-  /^\/bio\/(index\.html)?$/.test(path) ||
+  /^\/(bio|admin)\/(index\.html)?$/.test(path) ||
   /^\/writing\/[a-z0-9-]+\/(index\.html)?$/.test(path) ||
   /^\/(index\.html|projects\.html|publications\.html|writing\.html|work\.html|404\.html|feed\.xml|sitemap\.xml|robots\.txt|google6a2a60579da58104\.html|LICENSE\.txt)?$/.test(
     path,

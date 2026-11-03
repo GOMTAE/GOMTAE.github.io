@@ -20,7 +20,7 @@ export async function packageSite(root = process.cwd()) {
   );
   for (const route of generated) {
     if (
-      !/^(index\.html|404\.html|projects\.html|publications\.html|writing\.html|work\.html|bio\/index\.html|writing\/[a-z0-9]+(?:-[a-z0-9]+)*\/index\.html|feed\.xml|sitemap\.xml)$/.test(
+      !/^(index\.html|404\.html|projects\.html|publications\.html|writing\.html|work\.html|bio\/index\.html|admin\/index\.html|writing\/[a-z0-9]+(?:-[a-z0-9]+)*\/index\.html|feed\.xml|sitemap\.xml)$/.test(
         route,
       )
     )

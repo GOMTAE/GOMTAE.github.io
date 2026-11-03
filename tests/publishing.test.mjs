@@ -13,6 +13,8 @@ import {
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { execFileSync } from "node:child_process";
+import sharp from "sharp";
+import { load as loadYaml } from "js-yaml";
 import { exportPages } from "../scripts/export-pages.mjs";
 
 const root = resolve(".");
@@ -31,6 +33,11 @@ test("publishing Markdown generates readable HTML, feed and sitemap; drafts and 
       join(root, "eleventy.config.js"),
       join(fixture, "eleventy.config.js"),
     );
+    await mkdir(join(fixture, "scripts"), { recursive: true });
+    await cp(
+      join(root, "scripts/article-images.mjs"),
+      join(fixture, "scripts/article-images.mjs"),
+    );
     await writeFile(join(fixture, "package.json"), '{"type":"module"}');
     await mkdir(join(fixture, "assets/portfolio/media"), { recursive: true });
     await cp(
@@ -46,9 +53,15 @@ test("publishing Markdown generates readable HTML, feed and sitemap; drafts and 
       join(fixture, "assets/portfolio/media/publication-loops.json"),
     );
     await symlink(join(root, "node_modules"), join(fixture, "node_modules"));
+    await mkdir(join(fixture, "images/writing"), { recursive: true });
+    await sharp({
+      create: { width: 48, height: 32, channels: 3, background: "#19736a" },
+    })
+      .png()
+      .toFile(join(fixture, "images/writing/editor-upload.png"));
     await writeFile(
       join(fixture, "src/posts/published.md"),
-      '---\ntitle: "A technical note & a test"\nslug: technical-note\ndate: 2026-01-10\nsummary: "An honest summary <with> details."\ntags: [Perception, Engineering]\ndraft: false\nrelatedProject: /publications/ssp.html\n---\n## A useful example\n\n```python\nprint("hello")\n```\n\n| Input | Output |\n| --- | --- |\n| One | Two |\n',
+      '---\ntitle: "A technical note & a test"\nslug: technical-note\ndate: 2026-01-10\nsummary: "An honest summary <with> details."\ntags: [Perception, Engineering]\ndraft: false\nrelatedProject: /publications/ssp.html\nimage: /images/writing/editor-upload.png\nimageAlt: A cover uploaded through the editor\n---\n## A useful example\n\n```python\nprint("hello")\n```\n\n| Input | Output |\n| --- | --- |\n| One | Two |\n\n![An inline image uploaded through the editor](/images/writing/editor-upload.png)\n',
     );
     await writeFile(
       join(fixture, "src/posts/draft.md"),
@@ -72,6 +85,20 @@ test("publishing Markdown generates readable HTML, feed and sitemap; drafts and 
     assert.match(article, /language-python/);
     assert.match(article, /token (keyword|string)/);
     assert.match(article, /<table>/);
+    assert.equal(
+      (
+        article.match(
+          /src="\/images\/writing\/editor-upload.png"[^>]*width="48"[^>]*height="32"/g,
+        ) || []
+      ).length,
+      2,
+    );
+    const dashboard = await readFile(join(fixture, "admin/index.html"), "utf8");
+    assert.match(
+      dashboard,
+      /https:\/\/app.pagescms.org\/GOMTAE\/GOMTAE.github.io\/main/,
+    );
+    assert.match(dashboard, /noindex, nofollow/);
     assert.match(article, /BlogPosting/);
     assert.match(
       article,
@@ -177,4 +204,21 @@ test("export preserves handwritten files and refuses to remove them as stale out
   } finally {
     await rm(fixture, { recursive: true, force: true });
   }
+});
+
+test("visual editor defaults to drafts and writes the article format consumed by the site", async () => {
+  const config = loadYaml(await readFile(join(root, ".pages.yml"), "utf8"));
+  const collection = config.content.find((item) => item.name === "articles");
+  assert.equal(collection.path, "src/posts");
+  assert.equal(collection.format, "yaml-frontmatter");
+  assert.equal(
+    collection.fields.find((field) => field.name === "draft").default,
+    true,
+  );
+  assert.equal(
+    collection.fields.find((field) => field.name === "body").options.format,
+    "markdown",
+  );
+  assert.equal(config.media.output, `/${config.media.input}`);
+  assert.equal(config.settings.content.merge, true);
 });

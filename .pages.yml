@@ -1,0 +1,72 @@
+media:
+  input: images/writing
+  output: /images/writing
+  rename: safe
+  extensions: [jpg, jpeg, png, webp, avif, gif]
+
+content:
+  - name: articles
+    label: Writing
+    type: collection
+    path: src/posts
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    subfolders: false
+    exclude: ["*.js", "*.draft.md"]
+    operations:
+      rename: false
+    view:
+      primary: title
+      fields: [title, draft, date]
+      sort: [date, title]
+      search: [title, summary]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: summary
+        label: Short introduction
+        type: text
+        required: true
+        description: A sentence or two for the homepage, writing list, and search results.
+      - name: date
+        label: Publication date
+        type: date
+        required: true
+        description: Today is selected automatically. Choose a future date to schedule publication.
+        options:
+          format: yyyy-MM-dd
+          time: false
+      - name: draft
+        label: Keep as draft
+        type: boolean
+        default: true
+        description: Save with this on while writing. Turn it off and save to publish. Saved drafts are readable in the public GitHub repository.
+      - name: tags
+        label: Topics
+        type: string
+        list: true
+        description: Optional topics such as Research, Robotics, Engineering, or Personal.
+      - name: image
+        label: Cover image
+        type: image
+        description: Optional. Upload or choose an image from your writing library.
+      - name: imageAlt
+        label: Cover image description
+        type: string
+        description: Describe the cover image for readers who cannot see it. Required when a cover image is selected.
+      - name: body
+        label: Article
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          switcher: true
+
+settings:
+  content:
+    merge: true
