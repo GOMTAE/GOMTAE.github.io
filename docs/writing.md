@@ -1,8 +1,30 @@
 # Write and publish from your browser
 
-No local checkout, build command, or terminal is required. Articles are Markdown files; GitHub builds and deploys the website after changes reach `main`.
+Use the visual dashboard for everyday writing, or the GitHub editor as a fallback. No local checkout, build command, or terminal is required. GitHub builds and deploys the website after saves reach `main`.
 
-## Publish an article
+## Use the visual writing dashboard
+
+Open [your writing dashboard](https://gomtae.github.io/admin/). It opens Pages CMS, the visual editor connected to this repository.
+
+### One-time sign-in
+
+Sign in with GitHub and authorize the Pages CMS GitHub App for **only `GOMTAE.github.io`**. This lets the editor save articles and images in that repository. Review its terms and permissions yourself. The website does not store your GitHub password or an access token.
+
+### Write and publish
+
+1. Open **Writing** and choose **New entry**.
+2. Add your title and short introduction. The publication date defaults to today, and the page address is created from the title automatically.
+3. Write in the visual **Article** editor. Use the formatting toolbar for headings, links, lists, code, and images. **Source** is available if you prefer Markdown.
+4. Upload a cover or inline image using the image picker. Add a description for each image. Image dimensions are handled automatically.
+5. Leave **Keep as draft** on and save while writing. When ready, turn it off and save again. GitHub builds and publishes the article automatically.
+
+Saved drafts are not shown on the website, but their Markdown files are readable in the public GitHub repository. Keep sensitive drafts in a private writing app until ready.
+
+Use the same dashboard to reopen and edit existing articles. Keep the page address stable after publishing. A future publication date schedules the article for a later build. The rich-text editor previews formatting; it does not preview the exact public website layout.
+
+If a cover image is selected, its description is required. Inline images also need descriptive alt text. A failed build leaves the previous live version in place; see [publishing status](https://github.com/GOMTAE/GOMTAE.github.io/actions/workflows/publish.yml) for details.
+
+## Publish without the dashboard
 
 1. Copy the text in [the article template](article-template.md).
 2. Open [New article on GitHub](https://github.com/GOMTAE/GOMTAE.github.io/new/main/src/posts).
@@ -34,7 +56,7 @@ Upload approved images into `images/writing/` using GitHub's **Add file > Upload
 </figure>
 ```
 
-Use the image's actual width and height. The site checks require descriptive alt text and dimensions. Fenced code blocks, headings, lists, and tables work in Markdown. For an optional article cover, add `image: /images/writing/example.webp` and `imageAlt: A descriptive caption` to the frontmatter.
+Uploaded images receive dimensions automatically during the build. Add descriptive alt text. Fenced code blocks, headings, lists, and tables work in Markdown. For an optional article cover, add `image: /images/writing/example.webp` and `imageAlt: A descriptive caption` to the frontmatter.
 
 ## Drafts, scheduling, and preview
 

@@ -25,6 +25,8 @@ test("deployment uses fresh generated routes and tracked public files only", asy
     for (const [path, content] of Object.entries({
       "index.html": "fresh generated homepage",
       "writing/new-note/index.html": "fresh article",
+      "admin/index.html": "dashboard launcher",
+      ".pages.yml": "editor configuration",
       "writing/removed/index.html": "stale committed article",
       "publications/ssp.html": "handwritten microsite",
       "images/public.svg": "public image",
@@ -41,13 +43,18 @@ test("deployment uses fresh generated routes and tracked public files only", asy
     await put("images/local-only.svg", "untracked image");
     await put(
       ".generated-pages.json",
-      JSON.stringify(["index.html", "writing/new-note/index.html"]),
+      JSON.stringify([
+        "index.html",
+        "admin/index.html",
+        "writing/new-note/index.html",
+      ]),
     );
     await put(".pages-build/obsolete.html", "stale previous artifact");
     await packageSite(root);
     for (const path of [
       "index.html",
       "writing/new-note/index.html",
+      "admin/index.html",
       "publications/ssp.html",
       "images/public.svg",
       "assets/site.css",
@@ -62,6 +69,7 @@ test("deployment uses fresh generated routes and tracked public files only", asy
     }
     for (const path of [
       "src",
+      ".pages.yml",
       ".git",
       "README.md",
       "node_modules",
