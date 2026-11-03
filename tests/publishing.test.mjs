@@ -100,6 +100,18 @@ test("publishing Markdown generates readable HTML, feed and sitemap; drafts and 
       ).length,
       2,
     );
+    for (const route of ["writing.html", "index.html"]) {
+      const listing = await readFile(join(fixture, route), "utf8");
+      assert.match(listing, /class="writing-card"/);
+      assert.match(
+        listing,
+        /class="writing-card-link" href="\/writing\/technical-note\/"/,
+      );
+      assert.match(
+        listing,
+        /src="\/images\/writing\/editor-upload.png"[^>]*width="48"[^>]*height="32"/,
+      );
+    }
     const dashboard = await readFile(join(fixture, "admin/index.html"), "utf8");
     assert.match(
       dashboard,

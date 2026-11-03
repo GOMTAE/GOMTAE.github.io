@@ -5,6 +5,8 @@ date: 2026-11-03
 summary: "An editable example showing headings, inline images, lists, links, and a quote. Replace this with your own introduction."
 tags: [Example, Writing]
 draft: true
+image: /images/writing/example-ssp.webp
+imageAlt: Aerial semantic segmentation from the SSP project, showing scene regions in different colors.
 ---
 This is an **example draft**, not a published article. Open the **Editor** tab to see the formatting visually. You can replace any paragraph with your own writing.
 

@@ -15,7 +15,7 @@ Sign in with GitHub and authorize the Pages CMS GitHub App for **only `GOMTAE.gi
 1. Open **Writing** and choose **New entry**.
 2. Add your title and short introduction. The publication date defaults to today, and the page address is created from the title automatically.
 3. Write in the visual **Article** editor. Use the formatting toolbar for headings, links, lists, code, and images. **Source** is available if you prefer Markdown.
-4. Upload a cover or inline image using the image picker. Add a description for each image. Image dimensions are handled automatically.
+4. Use **Cover / teaser image** to choose the image shown on the writing-page card, homepage card, and inside the article. Upload inline images anywhere in the article using the image picker. Add a description for each image. Image dimensions are handled automatically.
 5. Leave **Keep as draft** on and save while writing. When ready, turn it off and save again. GitHub builds and publishes the article automatically.
 
 Saved drafts are not shown on the website, but their Markdown files are readable in the public GitHub repository. Keep sensitive drafts in a private writing app until ready.

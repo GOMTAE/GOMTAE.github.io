@@ -52,9 +52,9 @@ content:
         list: true
         description: Optional topics such as Research, Robotics, Engineering, or Personal.
       - name: image
-        label: Cover image
+        label: Cover / teaser image
         type: image
-        description: Optional. Upload or choose an image from your writing library.
+        description: Used as the teaser on the writing page and homepage, and as the cover inside the article. Upload or choose an image from your writing library.
       - name: imageAlt
         label: Cover image description
         type: string

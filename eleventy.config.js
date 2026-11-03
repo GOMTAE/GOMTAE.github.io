@@ -16,7 +16,9 @@ export default function (config) {
   );
   config.addTransform("articleImages", async function (content, outputPath) {
     if (!outputPath) return content;
-    return /[\/]posts[\/].*\.md$/.test(this.page.inputPath || "")
+    return /(?:[\/]posts[\/].*\.md|[\/](?:index|writing)\.njk)$/.test(
+      this.page.inputPath || "",
+    )
       ? sizeArticleImages(content)
       : content;
   });

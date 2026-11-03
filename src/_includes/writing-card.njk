@@ -1,0 +1,19 @@
+{% macro writingCard(post, heading=2) %}
+<article class="writing-card">
+  <a class="writing-card-link" href="{{ post.url }}">
+    <div class="writing-visual{% if not post.data.image %} writing-visual--note{% endif %}">
+      {% if post.data.image %}
+      <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt }}" loading="lazy" decoding="async">
+      {% else %}
+      <div class="writing-note" aria-hidden="true"><span>From the notebook</span><span>Thinking<br>out loud.</span><span>Ideas, experiments & observations</span></div>
+      {% endif %}
+      <span class="visual-arrow" aria-hidden="true">↗</span>
+    </div>
+    <time class="writing-date" datetime="{{ post.date | isoDate }}">{{ post.date | dateLabel }}</time>
+    {% if heading == 2 %}<h2>{{ post.data.title }}</h2>{% else %}<h3>{{ post.data.title }}</h3>{% endif %}
+    <p>{{ post.data.summary }}</p>
+    {% if post.data.tags.length %}<div class="post-tags">{% for tag in post.data.tags %}<span>{{ tag }}</span>{% endfor %}</div>{% endif %}
+    <span class="writing-read">Read article <span aria-hidden="true">↗</span></span>
+  </a>
+</article>
+{% endmacro %}

@@ -199,7 +199,7 @@ test("reduced motion, article index and RSS remain consistent", async ({
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/writing.html");
-  const articles = page.locator(".post-row");
+  const articles = page.locator(".writing-card-link");
   const articleCount = await articles.count();
   await expect(page.locator(".writing-empty")).toHaveCount(
     articleCount ? 0 : 1,
