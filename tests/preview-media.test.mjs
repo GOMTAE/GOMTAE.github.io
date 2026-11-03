@@ -23,6 +23,13 @@ test("publication previews accept GIFs with a reduced-motion still, and user-con
   try {
     await cp("src", join(fixture, "src"), { recursive: true });
     await cp("eleventy.config.js", join(fixture, "eleventy.config.js"));
+    // Keep test posts independent of the site's real articles and their media.
+    await rm(join(fixture, "src/posts"), { recursive: true, force: true });
+    await mkdir(join(fixture, "src/posts"), { recursive: true });
+    await cp(
+      join(root, "src/posts/posts.11tydata.js"),
+      join(fixture, "src/posts/posts.11tydata.js"),
+    );
     await mkdir(join(fixture, "scripts"), { recursive: true });
     await cp(
       join(root, "scripts/article-images.mjs"),

@@ -14,7 +14,8 @@ export default function (config) {
   config.addTransform("cleanBlankLines", (content) =>
     content.replace(/^[\t ]+$/gm, ""),
   );
-  config.addTransform("articleImages", async function (content) {
+  config.addTransform("articleImages", async function (content, outputPath) {
+    if (!outputPath) return content;
     return /[\/]posts[\/].*\.md$/.test(this.page.inputPath || "")
       ? sizeArticleImages(content)
       : content;

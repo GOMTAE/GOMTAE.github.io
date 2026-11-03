@@ -33,6 +33,13 @@ test("publishing Markdown generates readable HTML, feed and sitemap; drafts and 
       join(root, "eleventy.config.js"),
       join(fixture, "eleventy.config.js"),
     );
+    // Keep test posts independent of the site's real articles and their media.
+    await rm(join(fixture, "src/posts"), { recursive: true, force: true });
+    await mkdir(join(fixture, "src/posts"), { recursive: true });
+    await cp(
+      join(root, "src/posts/posts.11tydata.js"),
+      join(fixture, "src/posts/posts.11tydata.js"),
+    );
     await mkdir(join(fixture, "scripts"), { recursive: true });
     await cp(
       join(root, "scripts/article-images.mjs"),
@@ -65,7 +72,7 @@ test("publishing Markdown generates readable HTML, feed and sitemap; drafts and 
     );
     await writeFile(
       join(fixture, "src/posts/draft.md"),
-      "---\ntitle: DRAFT_SENTINEL\nsummary: Not public\ndate: 2026-01-11\ndraft: true\n---\nPrivate draft.",
+      "---\ntitle: DRAFT_SENTINEL\nsummary: Not public\ndate: 2026-01-11\ndraft: true\n---\nPrivate draft.\n\n![An image still being prepared](/images/writing/not-uploaded-yet.png)\n",
     );
     await writeFile(
       join(fixture, "src/posts/future.md"),
