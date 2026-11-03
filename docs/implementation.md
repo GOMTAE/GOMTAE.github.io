@@ -14,7 +14,7 @@
 
 ## Architecture
 
-Retain static GitHub Pages hosting and the independent publication microsites. Eleventy provides build-time shared layouts, one publication registry and Markdown articles. It produces only generated portfolio pages in ignored .site-build/. A small exporter copies generated routes to the existing root publishing tree; it refuses to overwrite unrecognized pages. No Pages settings, workflow, backend, SPA or hosting migration. Runtime JavaScript only enhances navigation, media, copying citations and filters.
+Retain static GitHub Pages hosting and the independent publication microsites. Eleventy provides build-time shared layouts, one publication registry and Markdown articles. It produces only generated portfolio pages in ignored .site-build/. A small exporter copies generated routes to the existing root publishing tree; it refuses to overwrite unrecognized pages. GitHub Actions builds and validates maintained sources, packages public files into .pages-build/, and deploys to Pages. See writing.md for the publishing workflow. Runtime JavaScript only enhances navigation, media, copying citations and filters.
 
 ## Checklist
 

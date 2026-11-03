@@ -42,28 +42,9 @@ Do not manually edit generated root HTML, article HTML, feeds, sitemap, `.genera
 
 ## Publish a post
 
-Start locally with `src/posts/my-note.draft.md` (ignored by Git). Example frontmatter:
+Write directly in GitHub: copy [the article template](docs/article-template.md) into a [new Markdown file under src/posts](https://github.com/GOMTAE/GOMTAE.github.io/new/main/src/posts), set the title, slug, date, summary and tags, and set `draft: false`. Commit to `main` or merge a pull request. GitHub Actions builds, validates, and deploys automatically. No local build or generated-file commit is required.
 
-```yaml
----
-title: "Your article title"
-slug: your-article-title
-date: 2026-10-18
-summary: "A concise, factual description of the article."
-tags: [Perception, Engineering]
-draft: true
-# Optional:
-# image: /images/approved-image.webp
-# imageAlt: Description of the image and what it represents
-# relatedProject: /publications/ssp.html
----
-```
-
-Write Markdown below it. Fenced code blocks with a language, tables, figures, and headings are supported. `date` controls chronological order and scheduled publication; future dates and `draft: true` are excluded from generated pages, the homepage, RSS, and sitemap. Use a lowercase hyphenated slug. Keep the slug stable once published.
-
-When ready, rename to a normal `.md` filename, set `draft: false`, then run `npm run build`, `npm run check`, and `npm test`. Commit the source, generated article folder, changed indexes/feeds, and generated manifest together. The homepage automatically shows the three newest published posts. Unpublishing and rebuilding removes only previously generated article HTML.
-
-This is a public repository and root-based Pages deployment: a committed Markdown source can be read directly, even if its generated article is a draft. Keep confidential writing outside the repository. Ignored `*.draft.md` files remain local. A future-dated article appears only after a new build on or after its date; there is no scheduler.
+See [the writing guide](docs/writing.md) for editing, images, scheduling, and previews. The homepage, writing index, RSS, and sitemap update automatically. Drafts and future posts stay off the website, but committed sources remain readable in this public repository. Keep private drafts outside the repository or in ignored `src/posts/*.draft.md` files.
 
 ## Add independent work
 
@@ -79,9 +60,9 @@ Append an entry to `src/_data/projects.json` with `title`, `kind` (for example `
 
 ## GitHub Pages compatibility
 
-The build stages in ignored `.site-build/`, then exports an allowlisted set of HTML/XML routes into the existing root publishing tree. `npm run build` refuses to overwrite unrecognized handwritten files and never exports into the publication microsites. There is no new deployment workflow or hosting service. `.nojekyll`, verification HTML, historical URLs, and license files are preserved.
+The build stages in ignored `.site-build/`, then exports an allowlisted set of HTML/XML routes into the existing root publishing tree. `npm run build` refuses to overwrite unrecognized handwritten files and never exports into the publication microsites. The Publish website workflow packages generated routes and tracked public assets into ignored `.pages-build/` and deploys using GitHub Actions. Pages must use GitHub Actions as its publishing source. `.nojekyll`, verification HTML, historical URLs, and license files are preserved.
 
-Nothing has been merged or deployed as part of this redesign. Review the feature branch before deciding to publish. Keep the original `README.txt`, `LICENSE.txt`, and visible HTML5 UP attribution with retained theme assets. The scholarly microsites retain their Academic Project Page Template attribution.
+Keep the original `README.txt`, `LICENSE.txt`, and visible HTML5 UP attribution with retained theme assets. The scholarly microsites retain their Academic Project Page Template attribution.
 
 ## Publication preview images, GIFs, and video
 

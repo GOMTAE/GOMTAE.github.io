@@ -14,7 +14,8 @@
     "lint": "prettier --check 'assets/portfolio/*.{css,js}' 'scripts/*.mjs' 'src/_data/*.{js,json}' 'src/posts/*.js' 'tests/*.{js,mjs}' eleventy.config.js playwright.config.js package.json 'docs/*.md'",
     "format": "prettier --write 'assets/portfolio/*.{css,js}' 'scripts/*.mjs' 'src/_data/*.{js,json}' 'src/posts/*.js' 'tests/*.{js,mjs}' eleventy.config.js playwright.config.js package.json 'docs/*.md'",
     "assets:motion": "node scripts/prepare-motion.mjs",
-    "assets:publications": "node scripts/prepare-publication-motion.mjs"
+    "assets:publications": "node scripts/prepare-publication-motion.mjs",
+    "package:site": "node scripts/package-site.mjs"
   },
   "engines": {
     "node": ">=22"
