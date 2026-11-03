@@ -54,3 +54,7 @@ Public status sources, checked 22 October 2026:
 - Public objectives also come from the supplied IVI overview: https://www.ivi.fraunhofer.de/de/forschungsfelder/advanced-air-mobility/autonomes-fliegen.html
 
 These consortium dates are not personal employment or participation dates. Keep confidential information outside the checkout. Do not commit internal reports or imagery.
+
+## ASAAM and ENGEL project entries (November 2026)
+
+The user requested ASAAM and ENGEL as projects, not writing articles. ASAAM is added to `work.json`; the existing ENGEL entry is updated with the surface-height/land-cover landing-site work and prior/live map interfaces described in the supplied project context. ASAAM responsibilities are labeled as the Fraunhofer IVI team’s focus, rather than inferring additional individual responsibilities. Existing project entries remain in place. The two mistakenly added writing articles are removed. Original concept illustrations are stored under `images/projects/`; no internal screenshots, repository URLs, or placeholder performance metrics are published.

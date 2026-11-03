@@ -71,9 +71,9 @@ The public edit contains five selected mapping sites and a class-layer inspectio
 
 The inline H.264 clip is 800×826 with no audio, chapters, or source metadata. The poster comes from second 3 of the edited clip. A matching 560-pixel-wide GIF was exported separately outside Git. Only the final MP4, WebP poster, and four photo derivatives are retained in the repository. The user requested linked thanks using first names: Paul, Tomaž, Andreas, Vamsi, and Max.
 
-## Project-story teasers (November 2026)
+## Collaborative-project illustrations (November 2026)
 
-- `images/writing/asaam-teaser.svg`: original editable concept illustration for the ASAAM article, showing an aerial robot, a semantic scene, and the perception-to-planning connection.
-- `images/writing/engel-teaser.svg`: original editable concept illustration for the ENGEL article, showing prior terrain context, live perception, and landing assistance.
+- `images/projects/asaam-overview.svg`: original editable concept illustration for the ASAAM project entry, showing an aerial robot, a semantic scene, and the perception-to-planning connection.
+- `images/projects/engel-overview.svg`: original editable concept illustration for the ENGEL project entry, showing prior terrain context, live perception, and landing assistance.
 
-Both illustrations were created for this site from the project topics. They contain no measured performance results, site-specific maps, or copied internal screenshots. Public project sources are linked in the respective articles.
+Both illustrations were created for this site from the project topics. They contain no measured performance results, site-specific maps, or copied internal screenshots. Public project sources are linked in the respective project entries.

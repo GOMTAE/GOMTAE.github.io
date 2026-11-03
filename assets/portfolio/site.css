@@ -2637,6 +2637,9 @@ main:focus {
 .work-map-preview {
   margin: 30px 0 0;
 }
+.work-map-preview > img {
+  border-radius: 4px;
+}
 .work-map-preview .motion-media {
   height: auto;
   aspect-ratio: var(--work-preview-ratio, 2 / 1);

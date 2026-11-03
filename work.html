@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
   <title>Collaborative Projects | Taehyoung Kim</title>
-  <meta name="description" content="VERUM, NiKoLaS, ADAM, and ENGEL - collaborative Fraunhofer IVI projects in perception, mapping, and near-ground aerial autonomy, with Taehyoung Kim’s contributions.">
+  <meta name="description" content="VERUM, NiKoLaS, ADAM, ASAAM, and ENGEL - collaborative Fraunhofer IVI projects in perception, mapping, and near-ground aerial autonomy, with Taehyoung Kim’s contributions.">
   <link rel="canonical" href="https://gomtae.github.io/work.html">
   <link rel="icon" type="image/svg+xml" href="/assets/portfolio/favicon.svg">
   <script>document.documentElement.classList.add('js');</script>
@@ -15,13 +15,13 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Taehyoung Kim">
   <meta property="og:title" content="Collaborative Projects">
-  <meta property="og:description" content="VERUM, NiKoLaS, ADAM, and ENGEL - collaborative Fraunhofer IVI projects in perception, mapping, and near-ground aerial autonomy, with Taehyoung Kim’s contributions.">
+  <meta property="og:description" content="VERUM, NiKoLaS, ADAM, ASAAM, and ENGEL - collaborative Fraunhofer IVI projects in perception, mapping, and near-ground aerial autonomy, with Taehyoung Kim’s contributions.">
   <meta property="og:url" content="https://gomtae.github.io/work.html">
   <meta property="og:image" content="https://gomtae.github.io/assets/portfolio/media/social.jpg">
   <meta property="og:image:alt" content="Taehyoung Kim - robotic perception, 3D scene understanding, aerial autonomy">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Collaborative Projects">
-  <meta name="twitter:description" content="VERUM, NiKoLaS, ADAM, and ENGEL - collaborative Fraunhofer IVI projects in perception, mapping, and near-ground aerial autonomy, with Taehyoung Kim’s contributions.">
+  <meta name="twitter:description" content="VERUM, NiKoLaS, ADAM, ASAAM, and ENGEL - collaborative Fraunhofer IVI projects in perception, mapping, and near-ground aerial autonomy, with Taehyoung Kim’s contributions.">
   <meta name="twitter:image" content="https://gomtae.github.io/assets/portfolio/media/social.jpg">
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Taehyoung Kim","url":"https://gomtae.github.io","jobTitle":"Research Engineer","worksFor":{"@type":"Organization","name":"Fraunhofer IVI"},"sameAs":["https://github.com/GOMTAE/","https://www.linkedin.com/in/taehyoung-kim-935949140/","https://scholar.google.com/citations?user=Y0qbsksAAAAJ&hl=en"]}</script>
@@ -70,6 +70,8 @@
     <a href="#nikolas"><span><strong>NiKoLaS</strong><span>Sensor fusion / Collision avoidance</span></span><span aria-hidden="true">↘</span></a>
 
     <a href="#adam"><span><strong>ADAM</strong><span>Semantic 3D mapping / Field demonstrations</span></span><span aria-hidden="true">↘</span></a>
+
+    <a href="#asaam"><span><strong>ASAAM</strong><span>Perception / Mapping / Trajectory planning</span></span><span aria-hidden="true">↘</span></a>
 
     <a href="#engel"><span><strong>ENGEL</strong><span>Scene understanding / Assisted flight</span></span><span aria-hidden="true">↘</span></a>
 
@@ -144,15 +146,15 @@
     </div>
   </article>
 
-  <article class="work-project" id="engel" aria-labelledby="engel-title">
+  <article class="work-project" id="asaam" aria-labelledby="asaam-title">
     <header class="work-project-heading">
-      <div><p class="eyebrow">04 / Scene understanding / Assisted flight</p><h2 id="engel-title">ENGEL<span class="accent">.</span></h2><p class="work-tagline">Helping rescue helicopters land in unfamiliar terrain.</p></div>
-      <div class="work-project-meta"><span class="work-status work-status--ongoing">Ongoing</span><p>LuFo VI-3 research project</p></div>
+      <div><p class="eyebrow">04 / Perception / Mapping / Trajectory planning</p><h2 id="asaam-title">ASAAM<span class="accent">.</span></h2><p class="work-tagline">Connecting perception, semantic maps, and safe motion.</p></div>
+      <div class="work-project-meta"><span class="work-status work-status--ongoing">Ongoing</span><p>Fraunhofer / NTU collaboration</p></div>
     </header>
     <div class="work-project-body">
-      <div class="work-objective"><h3>About the project</h3><p>ENGEL explores sensing and AI assistance for rescue helicopters. Better awareness of terrain and obstacles supports flight, approach, and landing, with the aim of making demanding missions safer and more efficient.</p><ul class="work-focus" aria-label="ENGEL focus areas"><li>Environment perception</li><li>Sensor fusion</li><li>Landing assistance</li></ul><div class="resource-links"><a href="https://www.asg.ed.tum.de/en/ht/research/ongoing-research-projects/engel-energy-efficient-flight-guidance/">Project overview <span aria-hidden="true">↗</span></a><a href="https://xitaso.com/en/projects/engel/">Consortium perspective <span aria-hidden="true">↗</span></a></div></div>
-      <div class="work-contribution"><h3>My contribution</h3>
-        <ul><li>Developing semantic scene parsing and landing-spot detection for aerial environments.</li><li>Fusing static satellite-map information with live Radix maps to support downstream tasks.</li><li>Refining the Radix-based mapping and map-serving pipeline for real-time on-board use, and optimizing segmentation models through quantization and deployment with TensorRT and Triton.</li><li>Setting up hardware-in-the-loop testing in CI/CD using an Orin runner.</li><li>Designing ROS2Bench interfaces between upstream and downstream components.</li></ul>
+      <div class="work-objective"><h3>About the project</h3><p>ASAAM brings together Nanyang Technological University in Singapore and the Fraunhofer Institutes IVI, IEM, and IOSB to investigate safer, scalable advanced air mobility. The collaboration connects sensing and data fusion with trajectory planning and flight-control integration for automated flight, take-off, and landing.</p><ul class="work-focus" aria-label="ASAAM focus areas"><li>Semantic perception</li><li>3D voxel mapping</li><li>Perception-to-planning integration</li></ul><div class="resource-links"><a href="https://www.ivi.fraunhofer.de/en/research-fields/advanced-air-mobility/autonomous-flying.html">Official project overview <span aria-hidden="true">↗</span></a></div><figure class="work-map-preview"><img src="/images/projects/asaam-overview.svg" alt="Concept illustration of an aerial robot following a path through a semantic 3D scene, connecting perception, mapping, and planning." width="1200" height="750" loading="lazy" decoding="async"><figcaption>ASAAM concept: connecting perception, semantic mapping, and downstream planning.</figcaption></figure></div>
+      <div class="work-contribution"><h3>Our focus at Fraunhofer IVI</h3>
+        <ul><li>Connecting scene perception and sensor fusion to Radix-based semantic 3D voxel maps.</li><li>Integrating the perception, fusion, mapping, and downstream planning components into a shared ROS 2 pipeline.</li><li>Working with NTU on the project-specific interfaces between perception, tracking, trajectory planning, and flight control.</li></ul>
 
 
 
@@ -161,7 +163,24 @@
     </div>
   </article>
 
-  <div class="work-notes"><p>Collaborative projects at Fraunhofer IVI. Project descriptions and periods are drawn from the linked public sources; dates refer to the consortium’s work. Updated October 2026.</p><a class="text-link" href="/publications.html">Explore my publications <span aria-hidden="true">↗</span></a></div>
+  <article class="work-project" id="engel" aria-labelledby="engel-title">
+    <header class="work-project-heading">
+      <div><p class="eyebrow">05 / Scene understanding / Assisted flight</p><h2 id="engel-title">ENGEL<span class="accent">.</span></h2><p class="work-tagline">Helping rescue helicopters land in unfamiliar terrain.</p></div>
+      <div class="work-project-meta"><span class="work-status work-status--ongoing">Ongoing</span><p>LuFo VI-3 research project</p></div>
+    </header>
+    <div class="work-project-body">
+      <div class="work-objective"><h3>About the project</h3><p>ENGEL explores sensing and AI assistance for rescue helicopters. Better awareness of terrain and obstacles supports flight, approach, and landing, with the aim of making demanding missions safer and more efficient.</p><ul class="work-focus" aria-label="ENGEL focus areas"><li>Environment perception</li><li>Prior + live semantic maps</li><li>Landing-site assessment</li></ul><div class="resource-links"><a href="https://www.asg.ed.tum.de/en/ht/research/ongoing-research-projects/engel-energy-efficient-flight-guidance/">Project overview <span aria-hidden="true">↗</span></a><a href="https://xitaso.com/en/projects/engel/">Consortium perspective <span aria-hidden="true">↗</span></a></div><figure class="work-map-preview"><img src="/images/projects/engel-overview.svg" alt="Concept illustration of a helicopter approaching a landing area, with prior terrain information, live perception, and obstacle context." width="1200" height="750" loading="lazy" decoding="async"><figcaption>ENGEL concept: prior maps and live scene understanding support landing assistance.</figcaption></figure></div>
+      <div class="work-contribution"><h3>My contribution</h3>
+        <ul><li>Developing semantic scene parsing and landing-site identification from surface-height and land-cover data.</li><li>Connecting prior terrain and land-cover information with live Radix maps and map-serving interfaces for downstream tasks.</li><li>Refining the Radix-based mapping and map-serving pipeline for real-time on-board use, and optimizing segmentation models through quantization and deployment with TensorRT and Triton.</li><li>Setting up hardware-in-the-loop testing in CI/CD using an Orin runner.</li><li>Designing ROS2Bench interfaces between upstream and downstream components.</li></ul>
+
+
+
+
+      </div>
+    </div>
+  </article>
+
+  <div class="work-notes"><p>Collaborative projects at Fraunhofer IVI. Project descriptions and periods are drawn from the linked public sources; dates refer to the consortium’s work. Updated November 2026.</p><a class="text-link" href="/publications.html">Explore my publications <span aria-hidden="true">↗</span></a></div>
 </section>
 </main>
   <footer class="site-footer">
