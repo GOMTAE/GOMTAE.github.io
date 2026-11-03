@@ -1,3 +1,235 @@
 {
-  "projects": []
+  "updated": "October 2026",
+  "overviewUrl": "https://www.ivi.fraunhofer.de/de/forschungsfelder/advanced-air-mobility/autonomes-fliegen.html",
+  "projects": [
+    {
+      "id": "verum",
+      "name": "VERUM",
+      "tagline": "Trustworthy perception for aerial autonomy.",
+      "theme": "Perception / Reliability",
+      "status": "Completed",
+      "statusKey": "completed",
+      "period": "2023 - 2025",
+      "summary": "VERUM developed an architecture for reliable environment perception in urban air mobility. It brought together AI, multimodal sensing, and semantic mapping to help aircraft understand their surroundings.",
+      "focus": [
+        "Trustworthy AI",
+        "Multimodal sensing",
+        "Semantic occupancy maps"
+      ],
+      "contributions": [
+        "Curated aerial datasets and trained semantic and panoptic segmentation models.",
+        "Used a custom version of Radix as an end user and shared feedback during its development. This version now serves as a foundation for ENGEL.",
+        "Co-developed SSP to improve temporal consistency in aerial semantic segmentation."
+      ],
+      "sources": [
+        {
+          "label": "Project overview",
+          "url": "https://github.com/ProjectVERUM"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "SSP · CVPR 2025",
+          "url": "/publications/ssp.html"
+        }
+      ],
+      "thanks": [
+        {
+          "name": "Henri",
+          "url": "https://www.linkedin.com/in/henri-mee%C3%9F-970ba81b7/"
+        },
+        {
+          "name": "Johannes",
+          "url": "https://www.linkedin.com/in/johannes-scherer/?skipRedirect=true"
+        }
+      ]
+    },
+    {
+      "id": "nikolas",
+      "name": "NiKoLaS",
+      "tagline": "Detecting obstacles that do not announce themselves.",
+      "theme": "Sensor fusion / Collision avoidance",
+      "status": "Published term ended",
+      "statusKey": "completed",
+      "period": "Oct 2023 - Sep 2026",
+      "summary": "NiKoLaS investigates collision avoidance close to the ground, especially during takeoff and landing. Radar and infrared sensing help detect hazards such as cranes, vehicles, and people, including obstacles that do not transmit their position.",
+      "focus": ["Radar + infrared", "Obstacle detection", "Near-ground flight"],
+      "contributions": [
+        "Acquired and processed aerial datasets, and trained segmentation models for an infrared-only scene-parsing pipeline.",
+        "Integrated DAV3 metric depth estimation into the perception pipeline.",
+        "Provided perception outputs that are fused with dynamic obstacle detections for downstream motion forecasting."
+      ],
+      "sources": [
+        {
+          "label": "Official project page",
+          "url": "https://www.fhr.fraunhofer.de/en/projects/03_industrial_applications/nikolas-non-cooperative-collision-avoidance-for-aircraft.html"
+        }
+      ],
+      "photos": [
+        {
+          "src": "/assets/portfolio/media/nikolas-1.webp",
+          "alt": "Taehyoung beside the sensor-equipped drone on its transport platform during NiKoLaS fieldwork."
+        },
+        {
+          "src": "/assets/portfolio/media/nikolas-2.webp",
+          "alt": "A colleague operating the field laptop with Taehyoung nearby during NiKoLaS data collection."
+        },
+        {
+          "src": "/assets/portfolio/media/nikolas-3.webp",
+          "alt": "Sensor-equipped drone flying beside a car during NiKoLaS field trials."
+        },
+        {
+          "src": "/assets/portfolio/media/nikolas-4.webp",
+          "alt": "Drone and car in the NiKoLaS test area, viewed from another angle."
+        }
+      ],
+      "photosCaption": "NiKoLaS data collection, field setup, and flight trials.",
+      "thanks": [
+        {
+          "name": "Paul",
+          "url": "https://www.linkedin.com/in/paulspannaus/?isSelfProfile=false"
+        },
+        {
+          "name": "Tomaž",
+          "url": "https://www.linkedin.com/in/toma%C5%BE-coti%C4%8D-080663333/?isSelfProfile=false"
+        },
+        {
+          "name": "Andreas",
+          "url": "https://www.linkedin.com/in/andreas--greiner/?isSelfProfile=false"
+        },
+        {
+          "name": "Vamsi",
+          "url": "https://www.linkedin.com/in/vkgm/?isSelfProfile=false"
+        },
+        {
+          "name": "Max",
+          "url": "https://github.com/MaxBial"
+        }
+      ],
+      "preview": {
+        "src": "/assets/portfolio/media/nikolas-perception-preview.mp4",
+        "poster": "/assets/portfolio/media/nikolas-perception-preview.webp",
+        "width": 800,
+        "height": 826,
+        "duration": 15,
+        "alt": "Synchronized infrared semantics at top left, metric depth at top right, and semantic voxels across the bottom.",
+        "caption": "IR scene parsing, metric depth, and semantic voxel mapping."
+      }
+    },
+    {
+      "id": "adam",
+      "name": "ADAM",
+      "tagline": "High-definition maps for the lower airspace.",
+      "theme": "Semantic 3D mapping / Field demonstrations",
+      "status": "Final phase",
+      "statusKey": "ongoing",
+      "period": "Sep 2023 - Dec 2026",
+      "summary": "ADAM (Advanced Air Space Mapping) develops detailed, semantically annotated 3D maps for safer drone operations. It connects aerial data collection and mapping with localization, flight planning, and airspace services.",
+      "focus": ["HD semantic 3D maps", "Aerial data", "Flight demonstrations"],
+      "contributions": [
+        "Acquired, processed, and annotated aerial datasets, and trained segmentation models for offline and live 3D map building.",
+        "Co-developed MultiFly for efficient multimodal dataset creation through RGB-to-X label propagation across heterogeneous sensors.",
+        "Used VoxelFix to clean up semantic artifacts in the resulting 3D maps.",
+        "Presented our work on high-definition 3D semantic mapping, including map-based pre-flight checks of planned flight paths, and participated in the project’s demo flights."
+      ],
+      "photos": [
+        {
+          "src": "/assets/portfolio/media/adam-demo-320.webp",
+          "alt": "Discussing the ADAM project with colleagues at the final presentation."
+        },
+        {
+          "src": "/assets/portfolio/media/adam-drone-480.webp",
+          "alt": "Taehyoung and a colleague inspecting the quadrotor used in the ADAM demonstrations."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Official project page",
+          "url": "https://www.kamo.one/adam/"
+        },
+        {
+          "label": "Final presentation",
+          "url": "/#activity"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "MultiFly",
+          "url": "https://markus-42.github.io/multifly/"
+        },
+        {
+          "label": "VoxelFix",
+          "url": "/publications/voxelfix.html"
+        }
+      ],
+      "preview": {
+        "src": "/assets/portfolio/media/adam-map-preview.mp4",
+        "poster": "/assets/portfolio/media/adam-map-preview.webp",
+        "width": 768,
+        "height": 384,
+        "duration": 14,
+        "alt": "Semantic 3D map views from five selected aerial mapping sites.",
+        "caption": "Selected semantic 3D maps and class-level inspection."
+      },
+      "photosCaption": "ADAM final presentation and demonstration flights · October 2026",
+      "thanks": [
+        {
+          "name": "Paul",
+          "url": "https://www.linkedin.com/in/paulspannaus/?isSelfProfile=false"
+        },
+        {
+          "name": "Markus",
+          "url": "https://www.linkedin.com/in/markusgross42/?isSelfProfile=false"
+        },
+        {
+          "name": "Tomaž",
+          "url": "https://www.linkedin.com/in/toma%C5%BE-coti%C4%8D-080663333/?isSelfProfile=false"
+        },
+        {
+          "name": "Andreas",
+          "url": "https://www.linkedin.com/in/andreas--greiner/?isSelfProfile=false"
+        },
+        {
+          "name": "Vamsi",
+          "url": "https://www.linkedin.com/in/vkgm/?isSelfProfile=false"
+        },
+        {
+          "name": "Siva",
+          "url": "https://www.linkedin.com/in/sivasubiramaniam-subbiah-61a997217/"
+        }
+      ]
+    },
+    {
+      "id": "engel",
+      "name": "ENGEL",
+      "tagline": "Helping rescue helicopters land in unfamiliar terrain.",
+      "theme": "Scene understanding / Assisted flight",
+      "status": "Ongoing",
+      "statusKey": "ongoing",
+      "period": "LuFo VI-3 research project",
+      "summary": "ENGEL explores sensing and AI assistance for rescue helicopters. Better awareness of terrain and obstacles supports flight, approach, and landing, with the aim of making demanding missions safer and more efficient.",
+      "focus": [
+        "Environment perception",
+        "Sensor fusion",
+        "Landing assistance"
+      ],
+      "contributions": [
+        "Developing semantic scene parsing and landing-spot detection for aerial environments.",
+        "Fusing static satellite-map information with live Radix maps to support downstream tasks.",
+        "Refining the Radix-based mapping and map-serving pipeline for real-time on-board use, and optimizing segmentation models through quantization and deployment with TensorRT and Triton.",
+        "Setting up hardware-in-the-loop testing in CI/CD using an Orin runner.",
+        "Designing ROS2Bench interfaces between upstream and downstream components."
+      ],
+      "sources": [
+        {
+          "label": "Project overview",
+          "url": "https://www.asg.ed.tum.de/en/ht/research/ongoing-research-projects/engel-energy-efficient-flight-guidance/"
+        },
+        {
+          "label": "Consortium perspective",
+          "url": "https://xitaso.com/en/projects/engel/"
+        }
+      ]
+    }
+  ]
 }

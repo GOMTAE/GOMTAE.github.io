@@ -31,7 +31,7 @@ For bundled Chromium instead of Chrome, install it with `npx playwright install 
 | Shared header, footer, article layout, research cards         | `src/_includes/`                                        |
 | Publications, authors, bibliography, paper/project/code links | `src/_data/publications.js`                             |
 | Personal projects and side ventures                           | `src/_data/projects.json`                               |
-| Cleared institutional project contributions                   | `src/_data/work.json`                                   |
+| Fraunhofer project overviews and contributions                   | `src/_data/work.json`                                   |
 | Older thesis/experimental projects                            | `src/_data/archive.json`                                |
 | Identity, contact, social links                               | `src/_data/site.json`                                   |
 | Visual system and browser interactions                        | `assets/portfolio/site.css`, `assets/portfolio/site.js` |
@@ -71,7 +71,7 @@ Append an entry to `src/_data/projects.json` with `title`, `kind` (for example `
 
 ## Institutional work
 
-`src/_data/work.json` deliberately starts with no project cards. Each entry follows the schema documented in `docs/content-questions.md`. Only `review_state: approved_for_personal_website` is rendered. The public existence of an institutional project does not establish personal involvement or reuse permission. Never commit confidential reports or internal imagery.
+`src/_data/work.json` supplies the four-project showcase at `/work.html`, linked from Selected research and the Research page. Each entry includes a sourced public summary, the published project period and status, focus areas, sources, and user-confirmed contributions. An empty `contributions` array displays a short placeholder. Add only confirmed personal responsibilities; a project’s public description does not establish an individual contribution. Keep confidential reports and internal imagery outside the repository. See `docs/content-questions.md` for the schema and details still needed.
 
 ## Assets
 
@@ -123,12 +123,18 @@ The header uses the user-supplied minimal Orbit SVG beside the name as one acces
 
 ## Inline project animations
 
-The homepage KD-SSP preview and four archived project demos now play silent loops when visible. Pause/play controls are available on each. Scrolling away or hiding the tab pauses playback, and a visitor’s explicit pause is preserved. Reduced-motion and data-saving visitors receive stills until they choose to play. Without JavaScript, the static figures remain available.
+The four archived project demos play silent loops when visible. Pause/play controls are available on each. Scrolling away or hiding the tab pauses playback, and a visitor’s explicit pause is preserved. Reduced-motion and data-saving visitors receive stills until they choose to play. Without JavaScript, the static figures remain available.
 
 Run `npm run assets:motion` to regenerate the MP4 derivatives and timing/dimension manifest from the original GIFs/video. FFmpeg is required. The conversions retain the original frame timing and avoid loading the large GIF files into each card. A still remains visible if playback fails.
 
-Publication loops appear on the homepage, projects and publication index, in consistent 16:10 frames, without visible playback controls or a reserved control strip. Source content is contained without stretching or cropping; matching background colors blend the space around unusually wide or square sources. They load/play only when visible and retain stills for reduced-motion and data-saving preferences. The homepage hero and earlier-project archive retain their explicit controls.
+Publication loops appear on the homepage, projects and publication index, in consistent 16:10 frames, without visible playback controls or a reserved control strip. Source content is contained without stretching or cropping; matching background colors blend the space around unusually wide or square sources. They load/play only when visible and retain stills for reduced-motion and data-saving preferences. The earlier-project archive retains its explicit controls. The homepage opens with a priority-loaded personal portrait and introduction; research previews appear further down.
 
 Run `npm run assets:publications` to regenerate the publication media. Set `MULTIFLY_PREVIEW_SOURCE` and `VOXELFIX_PREVIEW_SOURCE` to override the original local video paths. This requires FFmpeg, sharp and network access for the four FlexPath sources. Optional `PUBLICATION_PREVIEW_ONLY=flexpath` regenerates just that output. The script writes only the final MP4 loops, matching WebP fallback posters and a source/trim/crop manifest at `publication-loops.json`. Conversion inputs and intermediates live in a temporary directory that is removed on success or failure. Duplicate GIF exports are not retained.
 
 MultiFly uses seconds 8-23 with title/legend bands and excess side space cropped to fill the frame; RGB/LiDAR labels are re-anchored inside the crop. VoxelFix uses seconds 16-20.5, cropped to the Scene 2 before/after wipe and its labels. MissionBench retains the first 15 seconds of the rooftop-inspection mission. SSP uses seconds 5-20 of the existing comparison, cropped to the KD-SSP output panel. FlexPath combines all four original GIFs into a seamless 2-by-2 collage with labels in the outer left/right margins, looping each source at its original timing within a 15-second excerpt. No scientific motion is synthesized. See the asset ledger for provenance and attribution.
+
+## Professional bio
+
+`/bio/` provides a short third-person biography with a copy button and a first-person career and education timeline. Edit `src/_data/bio.json` to update the biography or dated milestones. The homepage and footer link to this page; it uses the existing optimized portrait and is included in the sitemap.
+
+Organization marks on the biography timeline are stored in `assets/portfolio/brand/organizations/`. Sources: [TUM](https://commons.wikimedia.org/wiki/File:Logo_of_the_Technical_University_of_Munich.svg), [Fraunhofer](https://commons.wikimedia.org/wiki/File:Fraunhofer-logo.svg), [Pusan National University](https://commons.wikimedia.org/wiki/File:Pusan_national_university_logotype.svg), and [Azena via PR Newswire](https://www.prnewswire.com/de/pressemitteilungen/security-amp-safety-things-wird-zu-azena-unterstreicht-fortschritte-in-entwicklung-von-plattform-fur-smarte-kameras-809268416.html). The TUM, Fraunhofer, and PNU wordmarks are marked public domain on Wikimedia Commons; all names and marks remain trademarks of their respective organizations.

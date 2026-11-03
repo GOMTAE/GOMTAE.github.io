@@ -3,6 +3,7 @@ import AxeBuilder from "@axe-core/playwright";
 
 const routes = [
   "/",
+  "/bio/",
   "/projects.html",
   "/publications.html",
   "/writing.html",
@@ -58,7 +59,7 @@ for (const route of routes) {
     // Scroll the actual page so the browser fetches all lazy scientific figures.
     await page.evaluate(async () => {
       for (let y = 0; y < document.body.scrollHeight; y += 650) {
-        scrollTo(0, y);
+        scrollTo({ top: y, behavior: "instant" });
         await new Promise((resolve) => setTimeout(resolve, 35));
       }
     });
@@ -76,7 +77,7 @@ for (const route of routes) {
         () => document.documentElement.scrollWidth <= innerWidth,
       ),
     ).toBe(true);
-    await page.evaluate(() => scrollTo(0, 0));
+    await page.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
     const accessibility = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
       .analyze();
@@ -147,32 +148,30 @@ test("publications filter accurately and citations are usable", async ({
   );
 });
 
-test("homepage loads its visible loop but delays the full comparison and 3D assets", async ({
+test("homepage introduces the person with a priority portrait and defers research media", async ({
   page,
 }) => {
   const requests = [];
   page.on("request", (request) => requests.push(request.url()));
   await page.goto("/");
+  const photo = page.locator(".hero-portrait img");
+  await expect(photo).toBeVisible();
+  await expect(photo).toHaveAttribute("fetchpriority", "high");
   await expect
-    .poll(() => requests.some((url) => url.endsWith("hero-loop.mp4")))
+    .poll(() => photo.evaluate((img) => img.complete && img.naturalWidth > 0))
     .toBe(true);
+  await expect(page.locator(".hero video")).toHaveCount(0);
+  await expect(
+    page.locator(".hero").getByRole("link", { name: /Explore my work/ }),
+  ).toHaveAttribute("href", "#research");
+  await expect(
+    page.locator(".hero").getByRole("link", { name: /About me/ }),
+  ).toHaveAttribute("href", "#about");
   expect(
-    requests.some((url) => /ssp_banner_video|\.gif|\.gz|three/i.test(url)),
+    requests.some((url) =>
+      /hero-loop|ssp_banner_video|\.gif|\.gz|three/i.test(url),
+    ),
   ).toBe(false);
-  await page
-    .getByRole("link", {
-      name: "View full comparison: play SSP segmentation comparison video",
-    })
-    .click();
-  await expect(page.locator(".hero-media > video")).toBeVisible();
-  await expect
-    .poll(() =>
-      page.locator(".hero-media > video").evaluate((video) => video.readyState),
-    )
-    .toBeGreaterThanOrEqual(2);
-  expect(requests.some((url) => url.endsWith("ssp_banner_video.mp4"))).toBe(
-    true,
-  );
 });
 
 test("content and navigation remain usable without JavaScript", async ({
@@ -186,10 +185,8 @@ test("content and navigation remain usable without JavaScript", async ({
   await page.goto("/");
   await expect(page.getByRole("navigation")).toBeVisible();
   await expect(
-    page.getByRole("link", {
-      name: "View full comparison: play SSP segmentation comparison video",
-    }),
-  ).toHaveAttribute("href", /\.mp4$/);
+    page.locator(".hero").getByRole("link", { name: /About me/ }),
+  ).toHaveAttribute("href", "#about");
   await page.goto("/publications.html");
   await expect(page.locator("[data-publication]")).toHaveCount(5);
   await page.locator("#cite-multifly summary").click();
@@ -218,4 +215,34 @@ test("reduced motion disables animated navigation and no fake posts are shown", 
   expect(
     (await page.request.get("/reference/private-report.pdf")).status(),
   ).toBe(404);
+});
+
+test("Selected research opens the collaborative project showcase and its ADAM contribution", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page
+    .locator("#research")
+    .getByRole("link", { name: "Explore collaborative projects", exact: true })
+    .click();
+  await expect(page).toHaveURL(/\/work\.html$/);
+  const directory = page.getByRole("navigation", {
+    name: "Collaborative projects",
+    exact: true,
+  });
+  await directory.getByRole("link", { name: /^ADAM/ }).click();
+  await expect(page).toHaveURL(/#adam$/);
+  await expect(
+    page
+      .locator("#adam")
+      .getByRole("heading", { name: "My contribution", exact: true }),
+  ).toBeVisible();
+  await expect(page.locator("#adam .work-contribution")).toContainText(
+    "high-definition 3D semantic mapping",
+  );
+  await expect(page.locator("#adam .work-gallery img")).toHaveCount(2);
+  await page
+    .getByRole("link", { name: "Explore my publications", exact: true })
+    .click();
+  await expect(page).toHaveURL(/\/publications\.html$/);
 });

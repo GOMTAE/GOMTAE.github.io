@@ -1,0 +1,56 @@
+{
+  "short": "Taehyoung Kim is a research engineer at Fraunhofer IVI working on robotic perception and aerial autonomy. His research spans video understanding, multimodal sensing, and semantic 3D mapping, with a focus on connecting research ideas to working robotic systems.",
+  "journey": [
+    {
+      "dates": "Mar 2024 - Present",
+      "title": "Associate Researcher",
+      "organization": "Fraunhofer IVI",
+      "text": "Research on aerial autonomy, from data curation and multimodal perception to mapping and on-board deployment. I’m also exploring language-driven mission planning.",
+      "link": "/publications/ssp.html",
+      "linkLabel": "SSP at CVPR 2025",
+      "logo": "/assets/portfolio/brand/organizations/fraunhofer.svg"
+    },
+    {
+      "dates": "Apr 2023 - Feb 2024",
+      "title": "Research Internship",
+      "organization": "Fraunhofer IVI",
+      "text": "Developed learning-based UAV path planning for my aerospace master’s thesis, “From Supervised to Reinforced.”",
+      "logo": "/assets/portfolio/brand/organizations/fraunhofer.svg"
+    },
+    {
+      "dates": "Nov 2021 - Oct 2023",
+      "title": "M.Sc. Aerospace Engineering",
+      "organization": "Technical University of Munich",
+      "text": "Thesis: “From Supervised to Reinforced: A One-Shot Deep Learning Approach to UAV Path Planning.” Grade: 1.3.",
+      "logo": "/assets/portfolio/brand/organizations/tum.svg"
+    },
+    {
+      "dates": "Mar 2021 - Mar 2023",
+      "title": "Working Student",
+      "organization": "Azena",
+      "text": "Part-time role alongside my studies.",
+      "logo": "/assets/portfolio/brand/organizations/azena.png"
+    },
+    {
+      "dates": "Nov 2020 - Dec 2022",
+      "title": "Research Internship",
+      "organization": "Technical University of Munich",
+      "text": "Worked on quadrotor energy modeling and fault-tolerant control using deep reinforcement learning.",
+      "logo": "/assets/portfolio/brand/organizations/tum.svg"
+    },
+    {
+      "dates": "2019 - 2022",
+      "title": "M.Sc. Power Engineering",
+      "organization": "Technical University of Munich",
+      "text": "Thesis: “Fault-Tolerant Quadrotor Controller Design Using Deep Reinforcement Learning.” Grade: 1.1.",
+      "logo": "/assets/portfolio/brand/organizations/tum.svg"
+    },
+    {
+      "dates": "2013 - 2019",
+      "title": "B.Sc. Mechanical Engineering",
+      "organization": "Pusan National University",
+      "text": "Undergraduate studies in mechanical engineering.",
+      "logo": "/assets/portfolio/brand/organizations/pusan-national-university.svg"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+{% macro coauthorKudos(p) %}
+{% if p.kudos %}<p class="coauthor-kudos">Kudos to {% for person in p.kudos %}{% if not loop.first %}{% if loop.last %}{% if loop.length > 2 %},{% endif %} and {% else %}, {% endif %}{% endif %}<a href="{{ person.url }}">{{ person.name }}</a>{% endfor %}.</p>{% endif %}
+{% endmacro %}

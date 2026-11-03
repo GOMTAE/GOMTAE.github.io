@@ -55,53 +55,46 @@
   </header>
   <main id="main" tabindex="-1">
 
-
 <section class="hero container" aria-labelledby="hero-title">
   <div class="hero-copy">
     <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Research Engineer · Fraunhofer IVI</p>
-    <h1 id="hero-title">Taehyoung <br><span>Kim.</span></h1>
-    <p class="hero-description">I’m a research engineer working on robotic perception, 3D scene understanding, and aerial autonomy. I build systems that connect what a robot sees with the world around it.</p>
-    <div class="hero-actions"><a class="button button-dark" href="#research">Explore research <span aria-hidden="true">↗</span></a><a class="text-link" href="/publications.html">Publications <span aria-hidden="true">↗</span></a></div>
-    <div class="hero-socials"><a href="https://scholar.google.com/citations?user=Y0qbsksAAAAJ&amp;hl=en">Google Scholar</a><span aria-hidden="true">/</span><a href="https://github.com/GOMTAE/">GitHub</a><span aria-hidden="true">/</span><a href="https://www.linkedin.com/in/taehyoung-kim-935949140/">LinkedIn</a></div>
+    <h1 id="hero-title">Taehyoung <span>Kim.</span></h1>
+    <p class="hero-description">I’m a research engineer at Fraunhofer IVI working toward aerial autonomy. My work spans the path from data to deployment: collecting and curating aerial datasets, making multimodal annotation and training more efficient, and developing online perception and mapping alongside offline map reconstruction. I also work on getting these ideas running on real robots, bringing the models and software together into a working system.</p>
+    <p class="hero-context">The goal is to enable aerial robots to perceive and act, supporting path planning, navigation, and mission execution. I’m also exploring reinforcement learning (RL), vision-language navigation (VLN), and vision-language-action (VLA) models toward end-to-end autonomy, connecting observations and instructions to learned actions.</p>
+    <p class="hero-welcome">Here I share the research, experiments, and technical lessons that come out of that process.</p>
+    <div class="hero-actions"><a class="button button-dark" href="#research">Explore my work <span aria-hidden="true">↗</span></a><a class="text-link" href="#about">About me <span aria-hidden="true">↗</span></a></div>
+    <div class="hero-socials"><a href="https://scholar.google.com/citations?user=Y0qbsksAAAAJ&amp;hl=en">Google Scholar</a><span aria-hidden="true">/</span><a href="https://github.com/GOMTAE/">GitHub</a><span aria-hidden="true">/</span><a href="https://www.linkedin.com/in/taehyoung-kim-935949140/">LinkedIn</a><span aria-hidden="true">/</span><a href="/bio/">Bio</a></div>
   </div>
-  <figure class="hero-experiment">
-    <div class="experiment-heading"><span class="eyebrow">A closer look / 01</span><span class="pill">CVPR 2025</span></div>
-    <div class="hero-media" data-video-shell>
-
-<div class="motion-media" data-loop-shell>
-
-
-
-<picture class="">
-  <source type="image/avif" srcset="/assets/portfolio/media/hero-640.avif 640w, /assets/portfolio/media/hero-1280.avif 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px">
-  <img src="/assets/portfolio/media/hero-1280.webp" srcset="/assets/portfolio/media/hero-640.webp 640w, /assets/portfolio/media/hero-1280.webp 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px" alt="KD-SSP semantic segmentation of aerial urban video. Colored regions represent predicted semantic classes." width="1280" height="736" fetchpriority="high" decoding="async">
-</picture>
-
-
-  <video class="motion-video" data-loop-src="/assets/portfolio/media/hero-loop.mp4" width="640" height="368" loop muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
-  <button class="motion-toggle" type="button" data-loop-toggle data-label="KD-SSP aerial perception" hidden aria-label="Play animation: KD-SSP aerial perception">Play <span aria-hidden="true">▶</span></button>
-</div>
-
-      <a class="play-video" href="/publications/static/videos/ssp_banner_video.mp4" data-video="/publications/static/videos/ssp_banner_video.mp4" aria-label="View full comparison: play SSP segmentation comparison video"><span class="play-icon" aria-hidden="true">▶</span><span>View full comparison</span></a>
-    </div>
-    <figcaption><div><span class="eyebrow">Semantic Similarity Propagation</span><p>Seeing consistently.<br>Frame after frame.</p></div><a href="/publications/ssp.html" aria-label="Explore the SSP project">↗</a></figcaption>
-    <p class="experiment-note">KD-SSP crop from the paper’s video, playing inline. Open the full comparison to see all four methods. <a href="/publications/ssp.html">Source & context</a></p>
+  <figure class="hero-portrait">
+    <img src="/assets/portfolio/media/taehyoung-800.webp" srcset="/assets/portfolio/media/taehyoung-480.webp 480w, /assets/portfolio/media/taehyoung-800.webp 800w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) 42vw, 420px" width="800" height="1000" fetchpriority="high" decoding="async" alt="Taehyoung Kim standing on a cobbled lane beside ivy-covered walls and colorful street art.">
   </figure>
+  <p class="hero-current"><span class="eyebrow">Current focus</span><span>Multimodal perception, mapping, and VLN/VLA for near-ground aerial autonomy.</span></p>
 </section>
-<div class="research-strip container"><span>Robotic perception</span><span aria-hidden="true">↗</span><span>3D scene understanding</span><span aria-hidden="true">↗</span><span>Near-ground aerial autonomy</span></div>
 
-<section class="about-section" id="about" aria-labelledby="about-title"><div class="container about-grid"><div><p class="eyebrow">01 / A little about me</p><h2 id="about-title">I’m interested in how<br>robots understand the world.</h2><div class="about-signature">Taehyoung Kim<span>.</span></div></div><div class="about-copy"><p>I’m a Research Engineer at Fraunhofer IVI, working on perception systems for autonomous aerial robots. My research spans video understanding, multimodal sensing, and semantic 3D mapping.</p><p>I’m interested in the space between a promising research idea and a system that works beyond the benchmark. This site brings together my publications, experiments, and, over time, notes on what I’m learning and building.</p><a class="text-link" href="https://www.linkedin.com/in/taehyoung-kim-935949140/">More about my background <span aria-hidden="true">↗</span></a></div></div></section>
+<section class="about-section" id="about" aria-labelledby="about-title">
+  <div class="container about-grid">
+    <div class="about-heading">
+      <p class="eyebrow">01 / A little about me</p>
+      <h2 id="about-title">From an idea<br>to a working system.</h2>
+    </div>
+    <div class="about-copy">
+      <p>My research brings together video understanding, multimodal sensing, and semantic 3D mapping. I’m interested in connecting these ideas to perception systems that work beyond a benchmark.</p>
+      <p>This site is a place to share that process: the papers, the experiments, and the practical things I learn while building. It also leaves room for side projects and ideas outside my day-to-day research.</p>
+      <a class="text-link" href="/bio/">Read my bio <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
 
 <section class="section container activity-section" id="activity" aria-labelledby="activity-title">
   <div class="section-heading"><div><p class="eyebrow">02 / What I’ve been working on</p><h2 id="activity-title">Recent activity.</h2></div><p class="section-intro">Recent papers and project updates. A small record of what I’m working on and sharing.</p></div>
   <ol class="activity-list">
-    <li><time datetime="2026-10">Oct 2026</time><div><p class="eyebrow activity-kind">Publication</p><h3><a href="https://arxiv.org/abs/2610.10359">MultiFly preprint <span aria-hidden="true">↗</span></a></h3><p>A real-world aerial dataset connecting RGB, thermal, LiDAR, and radar through geometry-driven semantic label transfer.</p></div></li>
+    <li><time datetime="2026-10">Oct 2026</time><div><p class="eyebrow activity-kind">Publication</p><h3><a href="https://markus-42.github.io/multifly/">MultiFly preprint <span aria-hidden="true">↗</span></a></h3><p>A real-world aerial dataset connecting RGB, thermal, LiDAR, and radar through geometry-driven semantic label transfer. Kudos to <a class="activity-credit" href="https://www.linkedin.com/in/markusgross42/" target="_blank" rel="noopener noreferrer">Markus</a> and <a class="activity-credit" href="https://www.linkedin.com/in/andreas--greiner/" target="_blank" rel="noopener noreferrer">Andreas</a>. </p></div></li>
 
-    <li><time datetime="2026-09">Sept 2026</time><div><p class="eyebrow activity-kind">Publication</p><h3><a href="/publications/voxelfix.html">VoxelFix preprint <span aria-hidden="true">↗</span></a></h3><p>Graph-based correction of semantic labels in completed voxel maps, keeping geometry and occupancy fixed.</p></div></li>
+    <li><time datetime="2026-10">Oct 2026</time><div><p class="eyebrow activity-kind">Project update</p><h3><a href="https://www.kamo.one/adam/">ADAM project final presentation <span aria-hidden="true">↗</span></a></h3><p>Joined the ADAM project demo flights and presented our work on high-definition 3D semantic mapping. Kudos to <a class="activity-credit" href="https://www.linkedin.com/in/paulspannaus/?isSelfProfile=false" target="_blank" rel="noopener noreferrer">Paul Spannaus</a> and <a class="activity-credit" href="https://www.linkedin.com/in/markusgross42/?isSelfProfile=false" target="_blank" rel="noopener noreferrer">Markus Gross</a>. Special thanks to the ADAM team.</p></div><div class="activity-photos"><img class="activity-image" src="/assets/portfolio/media/adam-demo-320.webp" width="320" height="200" loading="lazy" decoding="async" alt="Taehyoung discussing the ADAM project with colleagues beside a drone."><img class="activity-image" src="/assets/portfolio/media/adam-drone-480.webp" width="320" height="200" loading="lazy" decoding="async" alt="Taehyoung and a colleague inspecting the ADAM project quadrotor."></div></li>
 
-    <li><time datetime="2026-07">Jul 2026</time><div><p class="eyebrow activity-kind">Publication</p><h3><a href="/publications/missionbench.html">MissionBench preprint <span aria-hidden="true">↗</span></a></h3><p>Mission-level evaluation of multimodal language-model agents for aerial tasks, including qualitative failure analysis.</p></div></li>
+    <li><time datetime="2026-09">Sept 2026</time><div><p class="eyebrow activity-kind">Publication</p><h3><a href="/publications/voxelfix.html">VoxelFix preprint <span aria-hidden="true">↗</span></a></h3><p>Graph-based correction of semantic labels in completed voxel maps, keeping geometry and occupancy fixed. Kudos to <a class="activity-credit" href="https://www.linkedin.com/in/suneshsundarasami/" target="_blank" rel="noopener noreferrer">Sunesh</a>. </p></div></li>
 
-    <li><time datetime="2026-06">Jun 2026</time><div><p class="eyebrow activity-kind">Publication</p><h3><a href="/publications/flexpath.html">FlexPath preprint <span aria-hidden="true">↗</span></a></h3><p>Learned semantic path priors connect image understanding with image-based planning.</p></div></li>
+    <li><time datetime="2026-07">Jul 2026</time><div><p class="eyebrow activity-kind">Publication</p><h3><a href="/publications/missionbench.html">MissionBench preprint <span aria-hidden="true">↗</span></a></h3><p>Mission-level evaluation of multimodal language-model agents for aerial tasks, including qualitative failure analysis. Kudos to <a class="activity-credit" href="https://www.linkedin.com/in/sumanrbt97/" target="_blank" rel="noopener noreferrer">Suman</a> and <a class="activity-credit" href="https://www.linkedin.com/in/jona-ruthardt/" target="_blank" rel="noopener noreferrer">Jona</a>. </p></div></li>
   </ol>
 </section>
 
@@ -125,11 +118,14 @@
   </div>
 
   <div class="research-meta"><span>Multimodal perception</span><span>arXiv preprint · 2026</span></div>
-  <h3><a href="https://arxiv.org/abs/2610.10359">MultiFly<span class="card-subtitle">Four sensing modalities. One shared semantic view of the world.</span></a></h3>
+  <h3><a href="https://markus-42.github.io/multifly/">MultiFly<span class="card-subtitle">Four sensing modalities. One shared semantic view of the world.</span></a></h3>
   <p>A real-world aerial dataset connecting RGB, thermal, LiDAR, and radar through geometry-driven semantic label transfer.</p>
 
-  <div class="resource-links">
+<p class="coauthor-kudos">Kudos to <a href="https://www.linkedin.com/in/markusgross42/">Markus</a> and <a href="https://www.linkedin.com/in/andreas--greiner/">Andreas</a>.</p>
 
+
+  <div class="resource-links">
+    <a href="https://markus-42.github.io/multifly/">Project <span aria-hidden="true">↗</span></a>
     <a href="https://arxiv.org/abs/2610.10359">Paper <span aria-hidden="true">↗</span></a>
 
   </div>
@@ -153,6 +149,9 @@
   <div class="research-meta"><span>3D scene understanding</span><span>arXiv preprint · 2026</span></div>
   <h3><a href="/publications/voxelfix.html">VoxelFix<span class="card-subtitle">Better semantic maps. Same geometry.</span></a></h3>
   <p>Graph-based correction of semantic labels in completed voxel maps, keeping geometry and occupancy fixed.</p>
+
+<p class="coauthor-kudos">Kudos to <a href="https://www.linkedin.com/in/suneshsundarasami/">Sunesh</a>.</p>
+
 
   <div class="resource-links">
     <a href="/publications/voxelfix.html">Project <span aria-hidden="true">↗</span></a>
@@ -180,6 +179,9 @@
   <h3><a href="/publications/ssp.html">SSP<span class="card-subtitle">Seeing consistently, frame after frame.</span></a></h3>
   <p>Semantic similarity propagation improves temporal consistency in video semantic segmentation for autonomous flight.</p>
 
+<p class="coauthor-kudos">Kudos to <a href="https://www.linkedin.com/in/c%C3%A9dric-vincent-352508225/">Cédric</a>.</p>
+
+
   <div class="resource-links">
     <a href="/publications/ssp.html">Project <span aria-hidden="true">↗</span></a>
     <a href="https://arxiv.org/abs/2503.15676">Paper <span aria-hidden="true">↗</span></a>
@@ -205,6 +207,9 @@
   <div class="research-meta"><span>Aerial autonomy</span><span>arXiv preprint · 2026</span></div>
   <h3><a href="/publications/missionbench.html">MissionBench<span class="card-subtitle">From individual actions to complete missions.</span></a></h3>
   <p>Mission-level evaluation of multimodal language-model agents for aerial tasks, including qualitative failure analysis.</p>
+
+<p class="coauthor-kudos">Kudos to <a href="https://www.linkedin.com/in/sumanrbt97/">Suman</a> and <a href="https://www.linkedin.com/in/jona-ruthardt/">Jona</a>.</p>
+
 
   <div class="resource-links">
     <a href="/publications/missionbench.html">Project <span aria-hidden="true">↗</span></a>
@@ -232,6 +237,9 @@
   <h3><a href="/publications/flexpath.html">FlexPath<span class="card-subtitle">Learning where a path could go.</span></a></h3>
   <p>Learned semantic path priors connect image understanding with image-based planning.</p>
 
+<p class="coauthor-kudos">Kudos to <a href="https://www.linkedin.com/in/tim-sch%C3%B6nbrod-615782304/">Tim</a>.</p>
+
+
   <div class="resource-links">
     <a href="/publications/flexpath.html">Project <span aria-hidden="true">↗</span></a>
     <a href="https://arxiv.org/abs/2606.10167">Paper <span aria-hidden="true">↗</span></a>
@@ -240,6 +248,12 @@
 </article>
 
     </div>
+    <a class="fraunhofer-preview" href="/work.html" aria-label="Explore collaborative projects">
+  <span class="fraunhofer-preview-mark"><img src="/assets/portfolio/brand/organizations/fraunhofer.svg" alt="Fraunhofer logo" width="258" height="45" loading="lazy" decoding="async"></span>
+  <div><p class="eyebrow">Applied research / Collaborative projects</p><h3>From perception to flight.</h3><p>VERUM · NiKoLaS · ADAM · ENGEL</p></div>
+  <span class="text-link">Explore projects <span aria-hidden="true">↗</span></span>
+</a>
+
     <div class="section-end"><span>Collaborative research, with full author credits on every paper.</span><a href="/publications.html">Full publication record <span aria-hidden="true">↗</span></a></div>
   </div>
 </section>
@@ -253,33 +267,38 @@
   </div>
 </section>
 
-<section class="lab-section dark-section" aria-labelledby="lab-title">
-  <div class="container lab-grid">
-    <div class="lab-copy"><p class="eyebrow">05 / Look beyond the figure</p><h2 id="lab-title">Same world.<br>A clearer map.</h2><p>Explore what changes when semantic labels are corrected, while the underlying geometry stays fixed.</p><p>The VoxelFix viewer places input, corrected, and ground-truth maps side by side, with synchronized cameras and real scene data.</p><a class="button button-light" href="/publications/voxelfix.html#viewer">Explore the voxel maps <span aria-hidden="true">↗</span></a><span class="lab-note">Interactive 3D opens on the project page.</span></div>
-    <figure class="lab-figure">
+<section class="section container applied-preview" aria-labelledby="applied-title">
+  <p class="eyebrow">05 / Beyond the paper</p><div class="applied-grid"><h2 id="applied-title">Research meets<br>real systems.</h2><div><p class="large-copy">My work sits at the intersection of computer vision, semantic mapping, and aerial robotics.</p><p>At Fraunhofer IVI, I work in a collaborative research environment where robotic perception connects with practical autonomous systems.</p><a class="text-link" href="/work.html">Explore collaborative projects <span aria-hidden="true">↗</span></a></div></div>
+</section>
 
-<picture class="">
-  <source type="image/avif" srcset="/assets/portfolio/media/voxel-detail-640.avif 640w, /assets/portfolio/media/voxel-detail-1280.avif 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px">
-  <img src="/assets/portfolio/media/voxel-detail-1280.webp" srcset="/assets/portfolio/media/voxel-detail-640.webp 640w, /assets/portfolio/media/voxel-detail-1280.webp 1280w" sizes="(max-width: 600px) calc(100vw - 44px), (max-width: 800px) calc(50vw - 40px), (max-width: 1440px) calc(50vw - 100px), 600px" alt="Published VoxelFix comparison of input, corrected and ground-truth semantic maps, with the original method labels preserved." width="1280" height="355" loading="lazy" decoding="async">
-</picture>
-<figcaption>VoxelFix · published qualitative comparison · <a href="/publications/voxelfix.html#id-qualitative-caption">Figure & experimental context ↗</a></figcaption></figure>
+
+
+
+
+<section class="contact-section container" id="contact" aria-labelledby="contact-title">
+  <p class="eyebrow">Ideas are better in conversation</p>
+  <h2 id="contact-title">Let’s connect.<br><span>See where it leads.</span></h2>
+  <div class="contact-interests">
+    <div><h3>External PhD opportunities</h3><p>I’m looking for an external PhD position in robotic perception and aerial autonomy. If your group has a potential fit, I’d love to talk.</p></div>
+    <div><h3>Research & project collaboration</h3><p>Have a research question or a project we could build together? I’m open to collaborations across perception, mapping, and autonomous systems.</p></div>
+    <div><h3>Interesting opportunities</h3><p>I’m always open to a conversation about roles and teams doing thoughtful, ambitious work. If you think we could build something exciting together, get in touch.</p></div>
+    <div><h3>Beyond research</h3><p>We don’t need a project to connect. I’m happy to meet new people, exchange ideas, or just have a good conversation. Say hello :)</p></div>
+  </div>
+  <div class="contact-bottom">
+    <p>Pick the channel that feels right for you.<br>I’d be happy to hear from you.</p>
+    <div class="contact-links" aria-label="Ways to connect">
+      <a class="contact-icon" href="mailto:taehyoung.kim@ivi.fraunhofer.de" aria-label="Fraunhofer email: taehyoung.kim@ivi.fraunhofer.de" title="Fraunhofer email: taehyoung.kim@ivi.fraunhofer.de"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="15" rx="2"/><path d="M8 6V3h8v3M3 11h18M9 11v3h6v-3"/></svg><span>Work email</span></a>
+      <a class="contact-icon" href="mailto:kimtwintae@gmail.com" aria-label="Personal email: kimtwintae@gmail.com" title="Personal email: kimtwintae@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></svg><span>Personal email</span></a>
+      <a class="contact-icon" href="https://www.linkedin.com/in/taehyoung-kim-935949140/" aria-label="Connect on LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M11 17v-7m0 3a3 3 0 0 1 6 0v4"/><circle cx="7" cy="7" r=".7"/></svg><span>LinkedIn</span></a>
+      <a class="contact-icon" href="https://www.instagram.com/taehyo_oung/" aria-label="Connect on Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".7"/></svg><span>Instagram</span></a>
+    </div>
   </div>
 </section>
-
-<section class="section container applied-preview" aria-labelledby="applied-title">
-  <p class="eyebrow">06 / Beyond the paper</p><div class="applied-grid"><h2 id="applied-title">Research meets<br>real systems.</h2><div><p class="large-copy">My work sits at the intersection of computer vision, semantic mapping, and aerial robotics.</p><p>At Fraunhofer IVI, I work in a collaborative research environment where robotic perception connects with practical autonomous systems.</p><a class="text-link" href="/work.html">Applied research context <span aria-hidden="true">↗</span></a></div></div>
-</section>
-
-
-
-
-
-<section class="contact-section container" id="contact" aria-labelledby="contact-title"><p class="eyebrow">Ideas are better in conversation</p><h2 id="contact-title">Let’s talk about<br><span>what comes next.</span></h2><div class="contact-bottom"><p>Research, collaboration, or an interesting technical question.<br>I’d be happy to hear from you.</p><a class="contact-email" href="mailto:taehyoung.kim@ivi.fraunhofer.de">taehyoung.kim@ivi.fraunhofer.de <span aria-hidden="true">↗</span></a></div></section>
 </main>
   <footer class="site-footer">
     <div class="container">
       <div class="footer-top"><a class="wordmark" href="/">Taehyoung Kim<span class="accent">.</span></a><p>Robotic perception. From research to real systems.</p><a href="#main">Back to top <span aria-hidden="true">↑</span></a></div>
-      <div class="footer-bottom"><span>© 2026 Taehyoung Kim</span><div><a href="https://github.com/GOMTAE/">GitHub</a><a href="https://www.linkedin.com/in/taehyoung-kim-935949140/">LinkedIn</a><a href="https://scholar.google.com/citations?user=Y0qbsksAAAAJ&amp;hl=en">Scholar</a><a href="/work.html">Applied work</a><a href="/feed.xml">RSS</a></div></div>
+      <div class="footer-bottom"><span>© 2026 Taehyoung Kim</span><div><a href="https://github.com/GOMTAE/">GitHub</a><a href="https://www.linkedin.com/in/taehyoung-kim-935949140/">LinkedIn</a><a href="https://scholar.google.com/citations?user=Y0qbsksAAAAJ&amp;hl=en">Scholar</a><a href="/bio/">Bio</a><a href="/work.html">Collaborative projects</a><a href="/feed.xml">RSS</a></div></div>
       <p class="attribution">Original site: <a href="https://html5up.net">HTML5 UP</a>. Research figures belong to their credited authors. This is a personal website.</p>
     </div>
   </footer>

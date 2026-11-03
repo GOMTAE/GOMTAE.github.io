@@ -1,12 +1,4 @@
 {
-  "hero": {
-    "src": "/assets/portfolio/media/hero-loop.mp4",
-    "width": 640,
-    "height": 368,
-    "duration": 45,
-    "source": "publications/static/videos/ssp_banner_video.mp4",
-    "bytes": 2337540
-  },
   "archive-control": {
     "src": "/assets/portfolio/media/archive-control-loop.mp4",
     "width": 450,

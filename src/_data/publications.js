@@ -36,12 +36,16 @@ const records = [
     summary: "Four sensing modalities. One shared semantic view of the world.",
     description:
       "A real-world aerial dataset connecting RGB, thermal, LiDAR, and radar through geometry-driven semantic label transfer.",
+    kudos: [
+      { name: "Markus", url: "https://www.linkedin.com/in/markusgross42/" },
+      { name: "Andreas", url: "https://www.linkedin.com/in/andreas--greiner/" },
+    ],
     theme: "Multimodal perception",
     image: "multifly",
     alt: "MultiFly overview: aerial sensing platform, RGB, thermal, LiDAR and radar observations, and cross-modal semantic labels.",
     paper: "https://arxiv.org/abs/2610.10359",
     arxiv: "2610.10359",
-    project: null,
+    project: "https://markus-42.github.io/multifly/",
     code: null,
     codeStatus: "pending_confirmation",
     featured: true,
@@ -67,6 +71,9 @@ const records = [
     summary: "Better semantic maps. Same geometry.",
     description:
       "Graph-based correction of semantic labels in completed voxel maps, keeping geometry and occupancy fixed.",
+    kudos: [
+      { name: "Sunesh", url: "https://www.linkedin.com/in/suneshsundarasami/" },
+    ],
     theme: "3D scene understanding",
     image: "voxelfix",
     alt: "VoxelFix pipeline showing a completed semantic voxel map before and after graph-based label correction.",
@@ -98,6 +105,10 @@ const records = [
     summary: "From individual actions to complete missions.",
     description:
       "Mission-level evaluation of multimodal language-model agents for aerial tasks, including qualitative failure analysis.",
+    kudos: [
+      { name: "Suman", url: "https://www.linkedin.com/in/sumanrbt97/" },
+      { name: "Jona", url: "https://www.linkedin.com/in/jona-ruthardt/" },
+    ],
     theme: "Aerial autonomy",
     image: "missionbench",
     alt: "MissionBench overview illustrating aerial agent perception, action, and mission-level evaluation.",
@@ -124,6 +135,12 @@ const records = [
     summary: "Learning where a path could go.",
     description:
       "Learned semantic path priors connect image understanding with image-based planning.",
+    kudos: [
+      {
+        name: "Tim",
+        url: "https://www.linkedin.com/in/tim-sch%C3%B6nbrod-615782304/",
+      },
+    ],
     theme: "Perception for planning",
     image: "flexpath",
     alt: "FlexPath method overview showing how semantic scene inputs produce learned path priors for planning.",
@@ -151,6 +168,12 @@ const records = [
     summary: "Seeing consistently, frame after frame.",
     description:
       "Semantic similarity propagation improves temporal consistency in video semantic segmentation for autonomous flight.",
+    kudos: [
+      {
+        name: "Cédric",
+        url: "https://www.linkedin.com/in/c%C3%A9dric-vincent-352508225/",
+      },
+    ],
     theme: "Video perception",
     image: "ssp",
     alt: "SSP aerial video preview comparing input frames and semantic segmentation predictions over time.",

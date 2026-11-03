@@ -1,1 +1,30 @@
-[]
+[
+  {
+    "date": "2026-10-08",
+    "title": "ADAM project final presentation",
+    "text": "Joined the ADAM project demo flights and presented our work on high-definition 3D semantic mapping.",
+    "kind": "Project update",
+    "images": [
+      {
+        "src": "/assets/portfolio/media/adam-demo-320.webp",
+        "alt": "Taehyoung discussing the ADAM project with colleagues beside a drone."
+      },
+      {
+        "src": "/assets/portfolio/media/adam-drone-480.webp",
+        "alt": "Taehyoung and a colleague inspecting the ADAM project quadrotor."
+      }
+    ],
+    "credits": [
+      {
+        "name": "Paul Spannaus",
+        "url": "https://www.linkedin.com/in/paulspannaus/?isSelfProfile=false"
+      },
+      {
+        "name": "Markus Gross",
+        "url": "https://www.linkedin.com/in/markusgross42/?isSelfProfile=false"
+      }
+    ],
+    "creditNote": "Special thanks to the ADAM team.",
+    "url": "https://www.kamo.one/adam/"
+  }
+]
