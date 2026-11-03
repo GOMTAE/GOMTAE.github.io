@@ -194,23 +194,29 @@ test("content and navigation remain usable without JavaScript", async ({
   await context.close();
 });
 
-test("reduced motion disables animated navigation and no fake posts are shown", async ({
+test("reduced motion, article index and RSS remain consistent", async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/writing.html");
-  await expect(
-    page.getByText("There are no posts yet.", { exact: false }),
-  ).toBeVisible();
+  const articles = page.locator(".post-row");
+  const articleCount = await articles.count();
+  await expect(page.locator(".writing-empty")).toHaveCount(
+    articleCount ? 0 : 1,
+  );
   expect(
     await page.evaluate(
       () => getComputedStyle(document.documentElement).scrollBehavior,
     ),
   ).toBe("auto");
   expect((await page.request.get("/feed.xml")).status()).toBe(200);
-  expect(await (await page.request.get("/feed.xml")).text()).not.toContain(
-    "<item>",
-  );
+  const feed = await (await page.request.get("/feed.xml")).text();
+  expect((feed.match(/<item>/g) || []).length).toBe(articleCount);
+  for (const href of await articles.evaluateAll((links) =>
+    links.map((link) => link.getAttribute("href")),
+  )) {
+    expect(feed).toContain(`https://gomtae.github.io${href}`);
+  }
   expect((await page.request.get("/src/posts/private.md")).status()).toBe(404);
   expect(
     (await page.request.get("/reference/private-report.pdf")).status(),

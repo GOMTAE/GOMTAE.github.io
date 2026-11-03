@@ -7,7 +7,8 @@
 # vibes
 .omc/
 .claude/
-.github/
+.github/*
+!.github/workflows/
 
 # reference
 reference/
@@ -15,6 +16,7 @@ reference/
 # Local development and generated staging output
 node_modules/
 .site-build/
+.pages-build/
 test-results/
 playwright-report/
 .cache/
