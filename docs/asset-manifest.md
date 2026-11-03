@@ -70,3 +70,10 @@ The public edit contains five selected mapping sites and a class-layer inspectio
 - `nikolas-perception-preview.mp4` and `.webp`: a synchronized 15-second collage using source seconds 5-20 from `ir_semantics.mp4`, `ir_depth.mp4`, and `semantic_voxels.mp4`. The first two clips form the top row, semantics left and metric depth right; the voxel clip fills the bottom row. All three retain their original 10 fps timing, legends, and data views. Panel labels are added above each row; the depth view uses a few pixels of side padding to preserve its aspect ratio. No source content is cropped out of the videos.
 
 The inline H.264 clip is 800×826 with no audio, chapters, or source metadata. The poster comes from second 3 of the edited clip. A matching 560-pixel-wide GIF was exported separately outside Git. Only the final MP4, WebP poster, and four photo derivatives are retained in the repository. The user requested linked thanks using first names: Paul, Tomaž, Andreas, Vamsi, and Max.
+
+## Project-story teasers (November 2026)
+
+- `images/writing/asaam-teaser.svg`: original editable concept illustration for the ASAAM article, showing an aerial robot, a semantic scene, and the perception-to-planning connection.
+- `images/writing/engel-teaser.svg`: original editable concept illustration for the ENGEL article, showing prior terrain context, live perception, and landing assistance.
+
+Both illustrations were created for this site from the project topics. They contain no measured performance results, site-specific maps, or copied internal screenshots. Public project sources are linked in the respective articles.
