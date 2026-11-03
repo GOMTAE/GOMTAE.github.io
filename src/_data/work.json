@@ -1,5 +1,5 @@
 {
-  "updated": "November 2026",
+  "updated": "October 2026",
   "overviewUrl": "https://www.ivi.fraunhofer.de/de/forschungsfelder/advanced-air-mobility/autonomes-fliegen.html",
   "projects": [
     {
@@ -200,40 +200,6 @@
       ]
     },
     {
-      "id": "asaam",
-      "name": "ASAAM",
-      "tagline": "Connecting perception, semantic maps, and safe motion.",
-      "theme": "Perception / Mapping / Trajectory planning",
-      "status": "Ongoing",
-      "statusKey": "ongoing",
-      "period": "Fraunhofer / NTU collaboration",
-      "summary": "ASAAM brings together Nanyang Technological University in Singapore and the Fraunhofer Institutes IVI, IEM, and IOSB to investigate safer, scalable advanced air mobility. The collaboration connects sensing and data fusion with trajectory planning and flight-control integration for automated flight, take-off, and landing.",
-      "focus": [
-        "Semantic perception",
-        "3D voxel mapping",
-        "Perception-to-planning integration"
-      ],
-      "contributionLabel": "Our focus at Fraunhofer IVI",
-      "contributions": [
-        "Connecting scene perception and sensor fusion to Radix-based semantic 3D voxel maps.",
-        "Integrating the perception, fusion, mapping, and downstream planning components into a shared ROS 2 pipeline.",
-        "Working with NTU on the project-specific interfaces between perception, tracking, trajectory planning, and flight control."
-      ],
-      "sources": [
-        {
-          "label": "Official project overview",
-          "url": "https://www.ivi.fraunhofer.de/en/research-fields/advanced-air-mobility/autonomous-flying.html"
-        }
-      ],
-      "illustration": {
-        "src": "/images/projects/asaam-overview.svg",
-        "alt": "Concept illustration of an aerial robot following a path through a semantic 3D scene, connecting perception, mapping, and planning.",
-        "width": 1200,
-        "height": 750,
-        "caption": "ASAAM concept: connecting perception, semantic mapping, and downstream planning."
-      }
-    },
-    {
       "id": "engel",
       "name": "ENGEL",
       "tagline": "Helping rescue helicopters land in unfamiliar terrain.",
@@ -244,12 +210,12 @@
       "summary": "ENGEL explores sensing and AI assistance for rescue helicopters. Better awareness of terrain and obstacles supports flight, approach, and landing, with the aim of making demanding missions safer and more efficient.",
       "focus": [
         "Environment perception",
-        "Prior + live semantic maps",
-        "Landing-site assessment"
+        "Sensor fusion",
+        "Landing assistance"
       ],
       "contributions": [
-        "Developing semantic scene parsing and landing-site identification from surface-height and land-cover data.",
-        "Connecting prior terrain and land-cover information with live Radix maps and map-serving interfaces for downstream tasks.",
+        "Developing semantic scene parsing and landing-spot detection for aerial environments.",
+        "Fusing static satellite-map information with live Radix maps to support downstream tasks.",
         "Refining the Radix-based mapping and map-serving pipeline for real-time on-board use, and optimizing segmentation models through quantization and deployment with TensorRT and Triton.",
         "Setting up hardware-in-the-loop testing in CI/CD using an Orin runner.",
         "Designing ROS2Bench interfaces between upstream and downstream components."
@@ -263,14 +229,7 @@
           "label": "Consortium perspective",
           "url": "https://xitaso.com/en/projects/engel/"
         }
-      ],
-      "illustration": {
-        "src": "/images/projects/engel-overview.svg",
-        "alt": "Concept illustration of a helicopter approaching a landing area, with prior terrain information, live perception, and obstacle context.",
-        "width": 1200,
-        "height": 750,
-        "caption": "ENGEL concept: prior maps and live scene understanding support landing assistance."
-      }
+      ]
     }
   ]
 }

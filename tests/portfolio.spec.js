@@ -236,20 +236,6 @@ test("Selected research opens the collaborative project showcase and its ADAM co
     name: "Collaborative projects",
     exact: true,
   });
-  for (const id of ["asaam", "engel"]) {
-    await expect(page.locator(`article#${id}`)).toHaveCount(1);
-    await directory
-      .getByRole("link", { name: new RegExp(`^${id.toUpperCase()}`) })
-      .click();
-    await expect(page).toHaveURL(new RegExp(`#${id}$`));
-    await expect(page.locator(`#${id} .work-map-preview img`)).toBeVisible();
-  }
-  await expect(page.locator("#asaam .work-contribution")).toContainText(
-    "Our focus at Fraunhofer IVI",
-  );
-  await expect(page.locator("#engel .work-contribution")).toContainText(
-    "surface-height and land-cover",
-  );
   await directory.getByRole("link", { name: /^ADAM/ }).click();
   await expect(page).toHaveURL(/#adam$/);
   await expect(

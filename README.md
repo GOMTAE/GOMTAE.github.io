@@ -54,7 +54,7 @@ Append an entry to `src/_data/projects.json` with `title`, `kind` (for example `
 
 ## Institutional work
 
-`src/_data/work.json` supplies the collaborative-project showcase at `/work.html`, linked from Selected research and the Research page. Each entry includes a sourced public summary, the published project period and status, focus areas, sources, and user-confirmed contributions. An empty `contributions` array displays a short placeholder. Add only confirmed personal responsibilities; a project’s public description does not establish an individual contribution. Keep confidential reports and internal imagery outside the repository. See `docs/content-questions.md` for the schema and details still needed.
+`src/_data/work.json` supplies the four-project showcase at `/work.html`, linked from Selected research and the Research page. Each entry includes a sourced public summary, the published project period and status, focus areas, sources, and user-confirmed contributions. An empty `contributions` array displays a short placeholder. Add only confirmed personal responsibilities; a project’s public description does not establish an individual contribution. Keep confidential reports and internal imagery outside the repository. See `docs/content-questions.md` for the schema and details still needed.
 
 ## Assets
 
