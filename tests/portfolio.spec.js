@@ -59,7 +59,7 @@ for (const route of routes) {
     // Scroll the actual page so the browser fetches all lazy scientific figures.
     await page.evaluate(async () => {
       for (let y = 0; y < document.body.scrollHeight; y += 650) {
-        scrollTo(0, y);
+        scrollTo({ top: y, behavior: "instant" });
         await new Promise((resolve) => setTimeout(resolve, 35));
       }
     });
@@ -77,7 +77,7 @@ for (const route of routes) {
         () => document.documentElement.scrollWidth <= innerWidth,
       ),
     ).toBe(true);
-    await page.evaluate(() => scrollTo(0, 0));
+    await page.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
     const accessibility = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
       .analyze();
